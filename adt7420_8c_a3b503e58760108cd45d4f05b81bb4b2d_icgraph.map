@@ -1,0 +1,7 @@
+<map id="adt7420_get_register_value" name="adt7420_get_register_value">
+<area shape="rect" id="node1" title="Reads the value of a register." alt="" coords="268,74,428,115"/>
+<area shape="rect" id="node2" href="$adt7420_8h.html#a04499e58b0fca74cdc4dc704a5e44c6a" title="Reads the temperature data and converts it to Celsius degrees." alt="" coords="17,5,208,32"/>
+<area shape="rect" id="node3" href="$adt7420_8h.html#a002fbfa6b776f9d63d6e394710c6fc49" title="Initializes the communication peripheral and checks if the device is present." alt="" coords="61,56,164,83"/>
+<area shape="rect" id="node4" href="$adt7420_8h.html#af66a6aad34748e4017869dd5a7cd02ed" title="Sets the operational mode for ADT7420." alt="" coords="5,107,220,133"/>
+<area shape="rect" id="node5" href="$adt7420_8h.html#a3695e9963b1b31d2fbff75cd0e9651f7" title="Sets the resolution for ADT7420." alt="" coords="25,157,200,184"/>
+</map>

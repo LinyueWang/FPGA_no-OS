@@ -1,0 +1,4 @@
+<map id="uart_remove" name="uart_remove">
+<area shape="rect" id="node1" title="Free the resources allocated by uart_init()" alt="" coords="148,5,253,32"/>
+<area shape="rect" id="node2" href="$iio_8h.html#a95383eeda23e74a7deeaae45fd79b8ce" title="Free the resources allocated by &quot;iio_init()&quot;." alt="" coords="5,5,100,32"/>
+</map>

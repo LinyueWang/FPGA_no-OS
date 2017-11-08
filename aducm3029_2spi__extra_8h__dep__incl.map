@@ -1,0 +1,4 @@
+<map id="drivers/platform/aducm3029/spi_extra.h" name="drivers/platform/aducm3029/spi_extra.h">
+<area shape="rect" id="node1" title="ADuCM302x specific header for SPI driver." alt="" coords="5,5,212,47"/>
+<area shape="rect" id="node2" href="$platform_2aducm3029_2spi_8c.html" title="Implementation of SPI driver for ADuCM302x." alt="" coords="5,95,212,136"/>
+</map>

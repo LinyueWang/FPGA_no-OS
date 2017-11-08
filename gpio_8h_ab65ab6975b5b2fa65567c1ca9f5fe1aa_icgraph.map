@@ -1,0 +1,4 @@
+<map id="gpio_get_direction" name="gpio_get_direction">
+<area shape="rect" id="node1" title="Get the direction of the specified GPIO." alt="" coords="161,5,304,32"/>
+<area shape="rect" id="node2" href="$iio__aducm3029_8h.html#a1d32d035ca9acb8a5870f18ee47c0c2b" title=" " alt="" coords="5,5,113,32"/>
+</map>

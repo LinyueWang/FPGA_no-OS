@@ -1,0 +1,6 @@
+<map id="ad5791_get_register_value" name="ad5791_get_register_value">
+<area shape="rect" id="node1" title="Reads the value of a register." alt="" coords="237,49,392,90"/>
+<area shape="rect" id="node2" href="$ad5791_8h.html#a479517b9876d7d00161ff6b977faca9d" title="Sets the DAC output in one of the three states." alt="" coords="5,5,189,32"/>
+<area shape="rect" id="node3" href="$ad5791_8h.html#a89753bea092705e1b56fc9ab9f0bd3a0" title="Configures the output amplifier, DAC coding, SDO state and the linearity error compensation." alt="" coords="41,56,154,83"/>
+<area shape="rect" id="node4" href="$cn0531_2src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="70,107,125,133"/>
+</map>

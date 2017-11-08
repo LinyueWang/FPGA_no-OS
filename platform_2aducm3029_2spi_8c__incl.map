@@ -1,0 +1,12 @@
+<map id="drivers/platform/aducm3029/spi.c" name="drivers/platform/aducm3029/spi.c">
+<area shape="rect" id="node1" title="Implementation of SPI driver for ADuCM302x." alt="" coords="190,5,397,47"/>
+<area shape="rect" id="node2" href="$aducm3029_2spi__extra_8h.html" title="ADuCM302x specific header for SPI driver." alt="" coords="111,95,206,121"/>
+<area shape="rect" id="node3" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="5,169,59,196"/>
+<area shape="rect" id="node6" href="$error_8h.html" title="Error codes definition." alt="" coords="261,95,325,121"/>
+<area shape="rect" id="node8" title=" " alt="" coords="351,169,422,196"/>
+<area shape="rect" id="node9" href="$util_8h.html" title="Implementation of utility functions." alt="" coords="422,95,477,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="83,169,235,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="210,244,281,271"/>
+<area shape="rect" id="node7" title=" " alt="" coords="259,169,327,196"/>
+<area shape="rect" id="node10" title=" " alt="" coords="497,169,580,196"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="hmc7044_init_param" name="hmc7044_init_param">
+<area shape="rect" id="node1" title=" " alt="" coords="51,184,210,211"/>
+<area shape="rect" id="node2" href="$structhmc7044__chan__spec.html" title=" " alt="" coords="5,95,163,121"/>
+<area shape="rect" id="node3" href="$structspi__init__param.html" title="Structure holding the parameters for SPI initialization." alt="" coords="187,95,306,121"/>
+<area shape="rect" id="node4" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="179,5,314,32"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="ad7124_no_check_read_register" name="ad7124_no_check_read_register">
+<area shape="rect" id="node1" title="Reads the value of the specified register without checking if the device is ready to accept user requ..." alt="" coords="1091,165,1265,207"/>
+<area shape="rect" id="node2" href="$ad7124_8h.html#a5419ac21a937bc96f22fd1d5fe0c37d6" title="Reads the value of the specified register only when the device is ready to accept user requests...." alt="" coords="880,173,1043,199"/>
+<area shape="rect" id="node3" href="$ad7124_8h.html#a3abb8a30f36fae5240e941190d82fe97" title="Reads the conversion result from the device." alt="" coords="433,122,575,149"/>
+<area shape="rect" id="node4" href="$ad7124-4sdz_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="41,97,96,123"/>
+<area shape="rect" id="node5" href="$ad7124_8h.html#acd614375f473525acd44a404a5b81df3" title="Wrap the read register function to give it a modern signature." alt="" coords="419,354,589,381"/>
+<area shape="rect" id="node11" href="$ad7124_8h.html#ad3a4ed97b6db61e8f13653f10cc5d8d5" title="Waits until a new conversion result is available." alt="" coords="651,5,819,47"/>
+<area shape="rect" id="node12" href="$ad7124_8h.html#a20e8bb5e5a602c5e2fdf1d512de8d8ee" title="Waits until the device can accept read and write user actions." alt="" coords="657,224,813,265"/>
+<area shape="rect" id="node16" href="$ad7124_8h.html#a444985647470311a6aedde23deac9655" title="Waits until the device finishes the power&#45;on reset operation." alt="" coords="637,173,832,199"/>
+<area shape="rect" id="node6" href="$ad7124_8h.html#a9fbea736223fec1e93b202c56dbb5a3b" title="Get the AD7124 reference clock." alt="" coords="211,325,340,351"/>
+<area shape="rect" id="node7" href="$ad7124_8h.html#a05375c928a9b39188f69ad5fb69d6cc9" title="Calculate ODR of the device." alt="" coords="5,375,132,402"/>
+<area shape="rect" id="node8" href="$ad7124_8h.html#af913208f4c24beac2dc537ca6d879d34" title="Set ODR of the device." alt="" coords="6,299,131,326"/>
+<area shape="rect" id="node9" href="$ad7124_8h.html#a6be1d929bcbca7f0cdf9c021472b192e" title="Get the filter coefficient for the sample rate." alt="" coords="204,375,347,402"/>
+<area shape="rect" id="node10" href="$ad7124_8h.html#a7635176c42e792c5d22874a11714eac3" title="Get the ID of the channel of the latest conversion." alt="" coords="180,477,371,503"/>
+<area shape="rect" id="node13" href="$ad7124_8h.html#a803b466e1863f153e167ad3a9748ff6c" title="Writes the value of the specified register only when the device is ready to accept user requests...." alt="" coords="421,223,587,250"/>
+<area shape="rect" id="node14" href="$ad7124_8h.html#ab8ab34afc0cfb9795819ca9f2f886ee7" title="Initializes the AD7124." alt="" coords="219,173,332,199"/>
+<area shape="rect" id="node15" href="$ad7124_8h.html#ab2edd92df4caf38e40c80e97c9d9bd95" title="Wrap the write register function to give it a modern signature." alt="" coords="188,223,363,250"/>
+<area shape="rect" id="node17" href="$ad7124_8h.html#abb99194477f1f288b13842d42dfb60bd" title="Resets the device." alt="" coords="449,173,559,199"/>
+</map>

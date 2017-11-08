@@ -1,0 +1,15 @@
+<map id="drivers/adc/ad400x/ad400x.c" name="drivers/adc/ad400x/ad400x.c">
+<area shape="rect" id="node1" title="Implementation of ad400x Driver." alt="" coords="112,5,259,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,72,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="102,393,173,420"/>
+<area shape="rect" id="node4" title=" " alt="" coords="225,393,308,420"/>
+<area shape="rect" id="node5" href="$ad400x_8h.html" title="Header file for ad400x Driver." alt="" coords="248,95,331,121"/>
+<area shape="rect" id="node6" href="$spi__engine_8h.html" title=" " alt="" coords="233,169,337,196"/>
+<area shape="rect" id="node12" href="$error_8h.html" title="Error codes definition." alt="" coords="361,95,425,121"/>
+<area shape="rect" id="node7" title=" " alt="" coords="393,393,463,420"/>
+<area shape="rect" id="node8" title=" " alt="" coords="198,244,293,271"/>
+<area shape="rect" id="node9" href="$spi__engine__private_8h.html" title=" " alt="" coords="317,244,475,271"/>
+<area shape="rect" id="node10" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="369,319,423,345"/>
+<area shape="rect" id="node11" href="$util_8h.html" title="Implementation of utility functions." alt="" coords="239,319,294,345"/>
+<area shape="rect" id="node13" title=" " alt="" coords="362,169,430,196"/>
+</map>

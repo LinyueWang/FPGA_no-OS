@@ -1,0 +1,17 @@
+<map id="fmcdaq2_init_param" name="fmcdaq2_init_param">
+<area shape="rect" id="node1" title=" " alt="" coords="929,205,1085,232"/>
+<area shape="rect" id="node2" href="$structaxi__adc__init.html" title=" " alt="" coords="613,11,713,37"/>
+<area shape="rect" id="node3" href="$structjesd204__rx__init.html" title=" " alt="" coords="602,61,723,88"/>
+<area shape="rect" id="node4" href="$structad9680__init__param.html" title=" " alt="" coords="589,163,736,189"/>
+<area shape="rect" id="node5" href="$structspi__init__param.html" title="Structure holding the parameters for SPI initialization." alt="" coords="335,164,453,191"/>
+<area shape="rect" id="node11" href="$structad9523__init__param.html" title=" " alt="" coords="589,112,736,139"/>
+<area shape="rect" id="node14" href="$structad9144__init__param.html" title=" " alt="" coords="589,213,736,240"/>
+<area shape="rect" id="node6" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="21,164,155,191"/>
+<area shape="rect" id="node7" href="$structaxi__dmac__init.html" title=" " alt="" coords="606,264,719,291"/>
+<area shape="rect" id="node8" href="$structjesd204__tx__init.html" title=" " alt="" coords="602,315,723,341"/>
+<area shape="rect" id="node9" href="$structaxi__dac__init.html" title=" " alt="" coords="613,365,713,392"/>
+<area shape="rect" id="node10" href="$structaxi__dac__channel.html" title=" " alt="" coords="329,365,459,392"/>
+<area shape="rect" id="node12" href="$structad9523__platform__data.html" title="platform specific information" alt="" coords="309,73,479,100"/>
+<area shape="rect" id="node13" href="$structad9523__channel__spec.html" title="Output channel configuration." alt="" coords="5,73,171,100"/>
+<area shape="rect" id="node15" href="$structadxcvr__init.html" title=" " alt="" coords="615,417,710,444"/>
+</map>

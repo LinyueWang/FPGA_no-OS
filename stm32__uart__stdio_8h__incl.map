@@ -1,0 +1,9 @@
+<map id="drivers/platform/stm32/stm32_uart_stdio.h" name="drivers/platform/stm32/stm32_uart_stdio.h">
+<area shape="rect" id="node1" title="Header file of stm32 UART driver stdout/stdin redirection." alt="" coords="42,5,214,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,91,121"/>
+<area shape="rect" id="node3" href="$uart_8h.html" title="Header file of UART interface." alt="" coords="98,169,158,196"/>
+<area shape="rect" id="node5" href="$stm32__uart_8h.html" title="Header file of UART driver for STM32." alt="" coords="166,95,274,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="126,244,197,271"/>
+<area shape="rect" id="node6" title=" " alt="" coords="233,169,316,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="341,169,443,196"/>
+</map>

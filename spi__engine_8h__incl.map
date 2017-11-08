@@ -1,0 +1,10 @@
+<map id="drivers/axi_core/spi_engine/spi_engine.h" name="drivers/axi_core/spi_engine/spi_engine.h">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,164,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="64,244,135,271"/>
+<area shape="rect" id="node3" title=" " alt="" coords="37,95,132,121"/>
+<area shape="rect" id="node4" href="$spi__engine__private_8h.html" title=" " alt="" coords="157,95,314,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="259,244,342,271"/>
+<area shape="rect" id="node6" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="130,169,183,196"/>
+<area shape="rect" id="node7" href="$util_8h.html" title="Implementation of utility functions." alt="" coords="208,169,263,196"/>
+<area shape="rect" id="node8" title=" " alt="" coords="164,244,235,271"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="ad5629r_dev" name="ad5629r_dev">
+<area shape="rect" id="node1" title=" " alt="" coords="182,199,289,225"/>
+<area shape="rect" id="node2" href="$structi2c__desc.html" title="Structure holding I2C descriptor." alt="" coords="61,95,140,121"/>
+<area shape="rect" id="node3" href="$structi2c__platform__ops.html" title="Structure holding I2C function pointers that point to the platform specific function." alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node4" href="$structgpio__desc.html" title="Structure holding the GPIO descriptor." alt="" coords="192,95,279,121"/>
+<area shape="rect" id="node5" href="$structgpio__platform__ops.html" title="Structure holding gpio function pointers that point to the platform specific function." alt="" coords="164,5,307,32"/>
+<area shape="rect" id="node6" href="$structspi__desc.html" title="Structure holding SPI descriptor." alt="" coords="331,95,409,121"/>
+<area shape="rect" id="node7" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="331,5,465,32"/>
+</map>

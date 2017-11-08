@@ -1,0 +1,13 @@
+<map id="ad5449_set_input_shift_reg" name="ad5449_set_input_shift_reg">
+<area shape="rect" id="node1" title="Write to input register and read from output register via SPI." alt="" coords="395,267,595,294"/>
+<area shape="rect" id="node2" href="$ad5449_8h.html#af280fd25373806a9b93466b0547c6b98" title="Set up the scale where to the output will be cleared on active CLR signal." alt="" coords="174,5,325,47"/>
+<area shape="rect" id="node3" href="$ad5449_8h.html#a469859e117351ccd205130c057be1b25" title="Enable/disable the Daisy&#45;Chain mode." alt="" coords="172,71,327,112"/>
+<area shape="rect" id="node4" href="$ad5449_8h.html#a14e962c5ae4576ef28a4fa7f6d38df91" title="Initialize SPI and Initial Values for AD5449 Board." alt="" coords="5,107,104,134"/>
+<area shape="rect" id="node5" href="$ad5449_8h.html#ab49a4ca1f6c0a9887c3da20e514e8d1e" title="Load the DAC input registers. This function has a physical result just with devices with two channels..." alt="" coords="185,187,313,214"/>
+<area shape="rect" id="node6" href="$ad5449_8h.html#a71a141b35ecda6b266f52956fe66fa57" title="Load selected DAC input register with a given value." alt="" coords="168,238,331,265"/>
+<area shape="rect" id="node7" href="$ad5449_8h.html#abbdeaf0124ab0bc9cad2dccd14fffe92" title="Loads and updates the selected DAC with a given value." alt="" coords="171,289,328,331"/>
+<area shape="rect" id="node8" href="$ad5449_8h.html#ad6f6e34dc5add0c83ab132e0c9b2dffa" title="Read from the selected DAC register." alt="" coords="152,355,347,382"/>
+<area shape="rect" id="node9" href="$ad5449_8h.html#af67216933ba9f95001afc7e3826728c4" title="Set up the active clock edge of the SPI interface." alt="" coords="180,406,319,433"/>
+<area shape="rect" id="node10" href="$ad5449_8h.html#ad7db4cf424ae790dc274a57b84f32ff6" title="Control the SDO output driver strength. This function is supported by the devices : AD5415,..." alt="" coords="177,457,322,483"/>
+<area shape="rect" id="node11" href="$ad5449_8h.html#a71731a573d93a627e612e031ede50742" title="Update the DAC outputs. This function has a physical result just with devices with two channels." alt="" coords="177,507,322,534"/>
+</map>

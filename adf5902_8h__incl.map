@@ -1,0 +1,6 @@
+<map id="drivers/frequency/adf5902/adf5902.h" name="drivers/frequency/adf5902/adf5902.h">
+<area shape="rect" id="node1" title="Header file for adf5902 Driver." alt="" coords="5,5,199,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="67,169,137,196"/>
+<area shape="rect" id="node3" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="75,95,129,121"/>
+<area shape="rect" id="node4" href="$gpio_8h.html" title="Header file of GPIO Interface." alt="" coords="153,95,216,121"/>
+</map>

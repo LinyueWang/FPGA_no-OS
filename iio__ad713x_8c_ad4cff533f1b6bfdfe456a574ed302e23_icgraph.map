@@ -1,0 +1,4 @@
+<map id="iio_ad713x_transfer_dev_to_mem" name="iio_ad713x_transfer_dev_to_mem">
+<area shape="rect" id="node1" title="Transfer data from device into RAM." alt="" coords="175,5,325,47"/>
+<area shape="rect" id="node2" href="$iio__ad713x_8h.html#a259a55182ae9a8bbf607f56a79f97f45" title="Init for reading/writing and parameterization of a ad9361 device." alt="" coords="5,13,127,39"/>
+</map>

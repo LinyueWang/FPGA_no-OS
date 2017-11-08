@@ -1,0 +1,15 @@
+<map id="drivers/adc/ad7799/iio_ad7799.c" name="drivers/adc/ad7799/iio_ad7799.c">
+<area shape="rect" id="node1" title="Implementation of AD7799 iio." alt="" coords="361,5,508,47"/>
+<area shape="rect" id="node2" href="$iio__types_8h.html" title="Header file for iio_types." alt="" coords="64,95,157,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="417,169,487,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="472,95,539,121"/>
+<area shape="rect" id="node8" title=" " alt="" coords="563,95,634,121"/>
+<area shape="rect" id="node9" href="$ad7799_8h.html" title="Header file of AD7798/AD7799 Driver." alt="" coords="217,95,300,121"/>
+<area shape="rect" id="node11" href="$util_8h.html" title="Implementation of utility functions." alt="" coords="342,95,397,121"/>
+<area shape="rect" id="node12" href="$error_8h.html" title="Error codes definition." alt="" coords="659,95,723,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="131,169,213,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="247,244,318,271"/>
+<area shape="rect" id="node5" title=" " alt="" coords="24,169,107,196"/>
+<area shape="rect" id="node10" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="288,169,341,196"/>
+<area shape="rect" id="node13" title=" " alt="" coords="657,169,725,196"/>
+</map>

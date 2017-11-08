@@ -1,0 +1,11 @@
+<map id="drivers/platform/aducm3029/i2c.c" name="drivers/platform/aducm3029/i2c.c">
+<area shape="rect" id="node1" title="Implementation of I2C driver for ADuCM302x." alt="" coords="188,5,395,47"/>
+<area shape="rect" id="node2" href="$i2c_8h.html" title="Header file of I2C Interface." alt="" coords="19,95,73,121"/>
+<area shape="rect" id="node4" href="$error_8h.html" title="Error codes definition." alt="" coords="99,95,163,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="188,95,259,121"/>
+<area shape="rect" id="node7" title=" " alt="" coords="283,95,435,121"/>
+<area shape="rect" id="node8" title=" " alt="" coords="459,95,630,121"/>
+<area shape="rect" id="node9" title=" " alt="" coords="655,95,725,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,169,76,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="100,169,168,196"/>
+</map>

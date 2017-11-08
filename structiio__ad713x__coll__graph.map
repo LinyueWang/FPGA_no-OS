@@ -1,0 +1,6 @@
+<map id="iio_ad713x" name="iio_ad713x">
+<area shape="rect" id="node1" title=" " alt="" coords="109,213,203,240"/>
+<area shape="rect" id="node2" href="$structspi__engine__offload__message.html" title="Structure representing an offload message." alt="" coords="5,95,149,136"/>
+<area shape="rect" id="node3" href="$structspi__desc.html" title="Structure holding SPI descriptor." alt="" coords="195,102,274,129"/>
+<area shape="rect" id="node4" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="167,5,302,32"/>
+</map>

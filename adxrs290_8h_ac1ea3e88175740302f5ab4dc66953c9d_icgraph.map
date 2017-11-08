@@ -1,0 +1,7 @@
+<map id="adxrs290_reg_write" name="adxrs290_reg_write">
+<area shape="rect" id="node1" title="Write device register." alt="" coords="388,52,539,79"/>
+<area shape="rect" id="node2" href="$adxrs290_8h.html#a577b03b60bb2ad4cd1713c1bf712368c" title=" " alt="" coords="5,27,116,54"/>
+<area shape="rect" id="node3" href="$adxrs290_8h.html#afc1c51c64e22a51dfac92899f21609d2" title="Set the low&#45;pass filter pole location." alt="" coords="183,27,321,54"/>
+<area shape="rect" id="node4" href="$adxrs290_8h.html#aaac78320a104deec1e5b3d21fc5105d6" title="Set the low&#45;pass filter pole location." alt="" coords="185,78,319,104"/>
+<area shape="rect" id="node5" href="$adxrs290_8h.html#ab4e680182efd5eb39184ea282cf56d4d" title="Set device operation mode." alt="" coords="164,128,340,155"/>
+</map>

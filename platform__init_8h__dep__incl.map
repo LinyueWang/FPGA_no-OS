@@ -1,0 +1,6 @@
+<map id="drivers/platform/aducm3029/platform_init.h" name="drivers/platform/aducm3029/platform_init.h">
+<area shape="rect" id="node1" title="ADuCM3029 platform initialization header." alt="" coords="155,5,362,47"/>
+<area shape="rect" id="node2" href="$ad7746-ebz_2src_2app_2headless_8c.html" title="AD7746&#45;EBZ demo project main file." alt="" coords="5,95,160,136"/>
+<area shape="rect" id="node3" href="$cn0552_2src_2app_2headless_8c.html" title="CN0552 IIO demo project main file." alt="" coords="185,95,333,136"/>
+<area shape="rect" id="node4" href="$iio__aducm3029_2src_2main_8c.html" title="Implementation of Main Function." alt="" coords="357,95,534,136"/>
+</map>

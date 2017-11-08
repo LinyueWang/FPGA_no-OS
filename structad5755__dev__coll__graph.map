@@ -1,0 +1,8 @@
+<map id="ad5755_dev" name="ad5755_dev">
+<area shape="rect" id="node1" title=" " alt="" coords="135,228,237,255"/>
+<area shape="rect" id="node2" href="$structad5755__setup.html" title="Stores the settings that will be written to the device when the &quot;AD5755_Init&quot; functions is called." alt="" coords="5,95,119,121"/>
+<area shape="rect" id="node3" href="$structgpio__desc.html" title="Structure holding the GPIO descriptor." alt="" coords="143,95,229,121"/>
+<area shape="rect" id="node4" href="$structgpio__platform__ops.html" title="Structure holding gpio function pointers that point to the platform specific function." alt="" coords="100,5,243,32"/>
+<area shape="rect" id="node5" href="$structspi__desc.html" title="Structure holding SPI descriptor." alt="" coords="267,95,345,121"/>
+<area shape="rect" id="node6" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="267,5,401,32"/>
+</map>

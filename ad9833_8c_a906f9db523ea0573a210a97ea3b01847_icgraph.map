@@ -1,0 +1,13 @@
+<map id="ad9833_tx_spi" name="ad9833_tx_spi">
+<area shape="rect" id="node1" title="Transmits 16 bits on SPI." alt="" coords="555,226,671,253"/>
+<area shape="rect" id="node2" href="$ad9833_8h.html#aaf7b32900432e682c63e548c4a7236ce" title="Initialize the SPI communication with the device." alt="" coords="5,113,104,140"/>
+<area shape="rect" id="node3" href="$ad9833_8h.html#a9374a83b58ac105beb9100b6b3a2b78c" title="Selects the type of output." alt="" coords="176,88,319,114"/>
+<area shape="rect" id="node4" href="$ad9833_8h.html#a36c1b9b625e03f7ce94e3f71e663d786" title="Select the frequency register to be used." alt="" coords="159,138,336,165"/>
+<area shape="rect" id="node5" href="$ad9833_8h.html#a1af4bb76b620dc35547a2512018115bb" title="Select the phase register to be used." alt="" coords="152,292,343,318"/>
+<area shape="rect" id="node6" href="$ad9833_8h.html#ad88cffd6da72850056046f3cbafd5e98" title="Loads a frequency value in a register." alt="" coords="182,189,313,216"/>
+<area shape="rect" id="node7" href="$ad9833_8h.html#a772f3c2619170aa5a922f5dfbd9c26bb" title="Loads a phase value in a register." alt="" coords="176,37,319,64"/>
+<area shape="rect" id="node8" href="$ad9833_8h.html#af145878574f8f17a5ade366abc643a80" title="Enable / Disable the sleep function." alt="" coords="169,344,325,370"/>
+<area shape="rect" id="node9" href="$ad9833_8h.html#a906f9db523ea0573a210a97ea3b01847" title="Transmits 16 bits on SPI." alt="" coords="391,264,507,290"/>
+<area shape="rect" id="node10" href="$ad9833_8h.html#afa3d57144eb1dd2e4ee1abb8e8501c6c" title="Configures the control register for logic output. (only for AD9834 &amp; AD9838)" alt="" coords="169,398,326,425"/>
+<area shape="rect" id="node11" href="$ad9833_8h.html#a08b0d0d82ecd248afda6fd6a1c2bfe4b" title="Sets the programming method. (only for AD9834 &amp; AD9838)" alt="" coords="171,458,323,499"/>
+</map>

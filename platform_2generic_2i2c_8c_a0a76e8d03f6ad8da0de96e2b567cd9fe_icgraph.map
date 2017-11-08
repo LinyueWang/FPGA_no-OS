@@ -1,0 +1,18 @@
+<map id="i2c_init" name="i2c_init">
+<area shape="rect" id="node1" title="Initialize the I2C communication peripheral." alt="" coords="285,335,355,361"/>
+<area shape="rect" id="node2" href="$ad5110_8h.html#a3448460175919318a5b9a634933d38fe" title="Initializes the communication with the device." alt="" coords="123,5,222,32"/>
+<area shape="rect" id="node3" href="$ad525x_8h.html#ad7ec79dd130985fa7ae0c14a069bf77a" title="Initialize SPI and Initial Values for AD5172 Board." alt="" coords="123,56,222,83"/>
+<area shape="rect" id="node4" href="$ad5629r_8h.html#a5d5c52f8a3f5513e169a235da42c0552" title="Initializes the communication with the device." alt="" coords="121,107,224,133"/>
+<area shape="rect" id="node5" href="$ad5686_8h.html#aa4a4256f0190f9e81f6e77d6711b27b8" title="Initializes the communication peripheral and the initial Values for AD5686 Board." alt="" coords="123,157,222,184"/>
+<area shape="rect" id="node6" href="$ad5933_8h.html#ac086b59be4e3f1cb3344614b7a1b8ec0" title="Initializes the communication peripheral and the initial Values for AD5933 Board." alt="" coords="123,208,222,235"/>
+<area shape="rect" id="node7" href="$ad7156_8h.html#abf1912546bb46e9017d48747a5398569" title="Initializes the communication peripheral and the initial Values for AD7156 Board." alt="" coords="123,259,222,285"/>
+<area shape="rect" id="node8" href="$ad7746_8h.html#a2f5d9a49f99bf836d5614406c98897c4" title="Initialize the ad7606 device structure." alt="" coords="123,309,222,336"/>
+<area shape="rect" id="node10" href="$ad799x_8h.html#a5cf26ad49fe3939cf6535c06847bf1e4" title="Initializes I2C." alt="" coords="123,360,222,387"/>
+<area shape="rect" id="node11" href="$adp5589_8h.html#a0be6cd6c51c1a7e61eeb3e845a4ff211" title="Initializes the communication peripheral and checks if the ADP5589 part is present." alt="" coords="119,411,226,437"/>
+<area shape="rect" id="node12" href="$adpd188_8h.html#ad498aa08ccb8f2c328fcc761f391738d" title="Initialize the ADPD188 driver." alt="" coords="119,461,226,488"/>
+<area shape="rect" id="node13" href="$adpd410x_8h.html#a8c47ad8226f8c0882232750616b4ac6d" title="Setup the device and the driver." alt="" coords="108,512,237,539"/>
+<area shape="rect" id="node14" href="$adt7420_8h.html#a002fbfa6b776f9d63d6e394710c6fc49" title="Initializes the communication peripheral and checks if the device is present." alt="" coords="121,563,224,589"/>
+<area shape="rect" id="node15" href="$adxl345_8h.html#a4e9e8761ad2bfa6baeb1d1f1c82e0a7d" title="Initializes the communication peripheral and checks if the ADXL345 part is present." alt="" coords="121,613,224,640"/>
+<area shape="rect" id="node16" href="$adxl372_8h.html#a30746b358cf0ef10cbdb0a8d49d37d49" title=" " alt="" coords="121,664,224,691"/>
+<area shape="rect" id="node9" href="$ad7746-ebz_2src_2app_2headless_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,309,60,336"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="drivers/platform/aducm3029/uart_extra.h" name="drivers/platform/aducm3029/uart_extra.h">
+<area shape="rect" id="node1" title="Header file of UART driver for ADuCM302x." alt="" coords="120,5,327,47"/>
+<area shape="rect" id="node2" href="$aducm3029_2irq_8c.html" title="Implementation of External IRQ driver for ADuCM302x." alt="" coords="5,95,212,136"/>
+<area shape="rect" id="node3" href="$aducm3029_2uart_8c.html" title="Implementation of UART driver for ADuCM302x." alt="" coords="236,95,443,136"/>
+</map>

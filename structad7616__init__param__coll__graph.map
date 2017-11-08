@@ -1,0 +1,8 @@
+<map id="ad7616_init_param" name="ad7616_init_param">
+<area shape="rect" id="node1" title=" " alt="" coords="193,272,339,299"/>
+<area shape="rect" id="node2" href="$structgpio__init__param.html" title="Structure holding the parameters for GPIO initialization." alt="" coords="13,102,140,129"/>
+<area shape="rect" id="node3" href="$structgpio__platform__ops.html" title="Structure holding gpio function pointers that point to the platform specific function." alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node4" href="$structspi__engine__offload__init__param.html" title="Structure containing the init parameters needed by the offload module." alt="" coords="194,95,338,136"/>
+<area shape="rect" id="node5" href="$structspi__init__param.html" title="Structure holding the parameters for SPI initialization." alt="" coords="364,102,483,129"/>
+<area shape="rect" id="node6" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="356,5,491,32"/>
+</map>

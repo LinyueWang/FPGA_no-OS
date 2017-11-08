@@ -1,0 +1,13 @@
+<map id="drivers/platform/stm32/stm32_tdm.c" name="drivers/platform/stm32/stm32_tdm.c">
+<area shape="rect" id="node1" title="Implementation of TDM driver using STM32&#39;s SAI peripheral." alt="" coords="167,5,339,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,76,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="105,169,173,196"/>
+<area shape="rect" id="node4" href="$gpio_8h.html" title="Header file of GPIO Interface." alt="" coords="199,169,261,196"/>
+<area shape="rect" id="node6" href="$stm32__gpio_8h.html" title="Header file for stm32 gpio specifics." alt="" coords="479,95,589,121"/>
+<area shape="rect" id="node9" href="$tdm_8h.html" title="Header file of TDM Interface." alt="" coords="337,169,397,196"/>
+<area shape="rect" id="node10" href="$stm32__tdm_8h.html" title="Header file for the stm32 tdm driver." alt="" coords="291,95,399,121"/>
+<area shape="rect" id="node11" href="$error_8h.html" title="Error codes definition." alt="" coords="151,95,215,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="297,244,368,271"/>
+<area shape="rect" id="node7" title=" " alt="" coords="482,244,565,271"/>
+<area shape="rect" id="node8" title=" " alt="" coords="421,169,524,196"/>
+</map>

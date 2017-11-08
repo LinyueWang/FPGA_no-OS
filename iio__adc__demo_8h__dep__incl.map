@@ -1,0 +1,5 @@
+<map id="drivers/adc/adc_demo/iio_adc_demo.h" name="drivers/adc/adc_demo/iio_adc_demo.h">
+<area shape="rect" id="node1" title="Header file of ADC Demo iio." alt="" coords="99,5,264,47"/>
+<area shape="rect" id="node2" href="$iio__adc__demo_8c.html" title="Implementation of iio_adc_demo." alt="" coords="5,95,171,136"/>
+<area shape="rect" id="node3" href="$iio__demo_2src_2app_2main_8c.html" title="Implementation of Main Function." alt="" coords="195,95,357,136"/>
+</map>

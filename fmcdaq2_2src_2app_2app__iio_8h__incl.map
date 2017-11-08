@@ -1,0 +1,18 @@
+<map id="projects/fmcdaq2/src/app/app_iio.h" name="projects/fmcdaq2/src/app/app_iio.h">
+<area shape="rect" id="node1" title="Application IIO setup." alt="" coords="507,5,665,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="457,319,528,345"/>
+<area shape="rect" id="node3" href="$iio__axi__adc_8h.html" title="Header file of iio_axi_adc." alt="" coords="378,95,485,121"/>
+<area shape="rect" id="node11" href="$iio__axi__dac_8h.html" title="Header file of iio_axi_dac." alt="" coords="217,95,323,121"/>
+<area shape="rect" id="node13" href="$ad9680_8h.html" title="Header file of AD9680 Driver." alt="" coords="651,169,734,196"/>
+<area shape="rect" id="node16" href="$ad9144_8h.html" title="Header file of AD9144 Driver." alt="" coords="545,169,627,196"/>
+<area shape="rect" id="node4" href="$iio__types_8h.html" title="Header file for iio_types." alt="" coords="163,169,257,196"/>
+<area shape="rect" id="node7" href="$axi__adc__core_8h.html" title="Driver for the Analog Devices AXI&#45;ADC&#45;CORE module." alt="" coords="403,169,521,196"/>
+<area shape="rect" id="node10" href="$axi__dmac_8h.html" title="Driver for the Analog Devices AXI&#45;DMAC core." alt="" coords="281,169,379,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="77,319,159,345"/>
+<area shape="rect" id="node6" title=" " alt="" coords="166,244,249,271"/>
+<area shape="rect" id="node8" href="$util_8h.html" title="Implementation of utility functions." alt="" coords="324,244,379,271"/>
+<area shape="rect" id="node9" title=" " alt="" coords="316,319,387,345"/>
+<area shape="rect" id="node12" href="$axi__dac__core_8h.html" title="Driver for the Analog Devices AXI&#45;DAC&#45;CORE module." alt="" coords="24,244,143,271"/>
+<area shape="rect" id="node14" href="$delay_8h.html" title="Header file of Delay functions." alt="" coords="556,244,624,271"/>
+<area shape="rect" id="node15" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="649,244,702,271"/>
+</map>

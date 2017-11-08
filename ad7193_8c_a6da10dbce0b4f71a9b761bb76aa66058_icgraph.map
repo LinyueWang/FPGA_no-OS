@@ -1,0 +1,10 @@
+<map id="ad7193_set_register_value" name="ad7193_set_register_value">
+<area shape="rect" id="node1" title="Writes data into a register." alt="" coords="511,110,665,151"/>
+<area shape="rect" id="node2" href="$ad7193_8h.html#a4f3be9ee2e79642188ad5a8aed6167a8" title="Performs the given calibration to the specified channel." alt="" coords="35,16,170,43"/>
+<area shape="rect" id="node3" href="$ad7193_8h.html#aa8d8bcec75181d42d9625cae482380be" title="Selects the channel to be enabled." alt="" coords="268,41,443,68"/>
+<area shape="rect" id="node5" href="$ad7193_8h.html#ac537f4c3f7ec047d1b4c53a7406fa15c" title="Returns the average of several conversion results." alt="" coords="248,92,463,119"/>
+<area shape="rect" id="node6" href="$ad7193_8h.html#ac1d8c818c2c32f47eb78b7adc0a0d461" title="Selects the polarity of the conversion and the ADC input range." alt="" coords="277,143,434,169"/>
+<area shape="rect" id="node7" href="$ad7193_8h.html#aa3651f3aa9fcc7a8a4f1fe54d55e5498" title="Set device to idle or power&#45;down." alt="" coords="283,193,427,220"/>
+<area shape="rect" id="node8" href="$ad7193_8h.html#a5f76b4d843ad4a6858a0ed4c9d7a43ec" title="Returns the result of a single conversion." alt="" coords="258,244,453,271"/>
+<area shape="rect" id="node4" href="$ad7193_8h.html#abee68b09ba2dbc9f05cb2c006ce1679a" title="Read data from temperature sensor and converts it to Celsius degrees." alt="" coords="5,143,200,169"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="drivers/platform/xilinx/xilinx_i2c.c" name="drivers/platform/xilinx/xilinx_i2c.c">
+<area shape="rect" id="node1" title="Implementation of Xilinx I2C Generic Driver." alt="" coords="232,5,399,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,76,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="101,95,218,121"/>
+<area shape="rect" id="node4" href="$error_8h.html" title="Error codes definition." alt="" coords="242,95,306,121"/>
+<area shape="rect" id="node6" href="$i2c_8h.html" title="Header file of I2C Interface." alt="" coords="330,95,383,121"/>
+<area shape="rect" id="node8" href="$xilinx_2i2c__extra_8h.html" title=" " alt="" coords="408,95,503,121"/>
+<area shape="rect" id="node9" href="$list_8h.html" title="List library header." alt="" coords="527,95,581,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="240,169,308,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="419,169,489,196"/>
+<area shape="rect" id="node10" title=" " alt="" coords="514,169,597,196"/>
+</map>

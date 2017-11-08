@@ -1,0 +1,5 @@
+<map id="drivers/platform/aducm3029/uart_stdio.h" name="drivers/platform/aducm3029/uart_stdio.h">
+<area shape="rect" id="node1" title="Header file for UART driver stdout/stdin redirection." alt="" coords="5,5,212,47"/>
+<area shape="rect" id="node2" href="$uart_8h.html" title="Header file of UART interface." alt="" coords="79,95,139,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="73,169,144,196"/>
+</map>

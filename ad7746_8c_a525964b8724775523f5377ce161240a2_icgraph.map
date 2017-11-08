@@ -1,0 +1,6 @@
+<map id="ad7746_set_config" name="ad7746_set_config">
+<area shape="rect" id="node1" title="Set the configuration register." alt="" coords="291,31,433,57"/>
+<area shape="rect" id="node2" href="$ad7746_8h.html#a58fa38513e2e6b5f781d8dccd072b523" title="Perform offset/gain calibration." alt="" coords="108,5,243,32"/>
+<area shape="rect" id="node3" href="$ad7746_8h.html#a2f5d9a49f99bf836d5614406c98897c4" title="Initialize the ad7606 device structure." alt="" coords="126,56,225,83"/>
+<area shape="rect" id="node4" href="$ad7746-ebz_2src_2app_2headless_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,56,60,83"/>
+</map>

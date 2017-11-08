@@ -1,0 +1,9 @@
+<map id="drivers/adc/ltc2312/ltc2312.c" name="drivers/adc/ltc2312/ltc2312.c">
+<area shape="rect" id="node1" title=" " alt="" coords="61,5,207,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,76,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="100,95,168,121"/>
+<area shape="rect" id="node4" href="$ltc2312_8h.html" title=" " alt="" coords="193,95,275,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="199,244,269,271"/>
+<area shape="rect" id="node6" href="$delay_8h.html" title="Header file of Delay functions." alt="" coords="200,169,268,196"/>
+<area shape="rect" id="node7" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="293,169,346,196"/>
+</map>

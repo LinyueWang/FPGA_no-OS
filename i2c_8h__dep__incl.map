@@ -1,0 +1,54 @@
+<map id="include/i2c.h" name="include/i2c.h">
+<area shape="rect" id="node1" title="Header file of I2C Interface." alt="" coords="3269,5,3373,32"/>
+<area shape="rect" id="node2" href="$adxl345_8h.html" title="Header file of ADXL345 Driver." alt="" coords="191,80,352,121"/>
+<area shape="rect" id="node4" href="$adxl372_8h.html" title="Header file for adxl372 Driver." alt="" coords="468,80,629,121"/>
+<area shape="rect" id="node8" href="$ad7091r5_8h.html" title="Header file for ad7091r5 Driver." alt="" coords="747,80,905,121"/>
+<area shape="rect" id="node10" href="$ad799x_8h.html" title="Header file of AD799x Driver." alt="" coords="1057,80,1203,121"/>
+<area shape="rect" id="node12" href="$ad5592r-base_8h.html" title="Header file of AD5592R Base Driver." alt="" coords="1455,80,1634,121"/>
+<area shape="rect" id="node18" href="$ad7156_8h.html" title="Header file of AD7156 Driver." alt="" coords="1944,80,2089,121"/>
+<area shape="rect" id="node20" href="$ad7746_8h.html" title="Header file of AD7746 Driver." alt="" coords="2248,80,2393,121"/>
+<area shape="rect" id="node23" href="$ad7746-ebz_2src_2app_2headless_8c.html" title="AD7746&#45;EBZ demo project main file." alt="" coords="2319,169,2474,211"/>
+<area shape="rect" id="node24" href="$cn0552_2src_2app_2headless_8c.html" title="CN0552 IIO demo project main file." alt="" coords="2499,169,2647,211"/>
+<area shape="rect" id="node25" href="$ad5629r_8h.html" title="Header file of AD5629R Driver for Microblaze processor." alt="" coords="2520,80,2671,121"/>
+<area shape="rect" id="node27" href="$ad5686_8h.html" title="Header file of AD5686 Driver. This driver supporting the following devices: AD5684R,..." alt="" coords="2695,80,2842,121"/>
+<area shape="rect" id="node29" href="$i2c_2i2c_8c.html" title="Implementation of the I2C Interface." alt="" coords="2867,87,2991,114"/>
+<area shape="rect" id="node30" href="$ad5933_8h.html" title="Header file of AD5933 Driver." alt="" coords="3015,80,3219,121"/>
+<area shape="rect" id="node32" href="$adp5589_8h.html" title="Header file of ADP5589 Driver." alt="" coords="3243,80,3398,121"/>
+<area shape="rect" id="node34" href="$adpd188_8h.html" title="ADPD188 driver header file." alt="" coords="3423,80,3600,121"/>
+<area shape="rect" id="node36" href="$adpd410x_8h.html" title=" " alt="" coords="3624,80,3801,121"/>
+<area shape="rect" id="node39" href="$platform_2aducm3029_2i2c_8c.html" title="Implementation of I2C driver for ADuCM302x." alt="" coords="3825,80,4032,121"/>
+<area shape="rect" id="node40" href="$altera__i2c_8c.html" title="Implementation of Altera I2C Generic Driver." alt="" coords="4056,80,4225,121"/>
+<area shape="rect" id="node41" href="$platform_2generic_2i2c_8c.html" title=" " alt="" coords="4250,80,4429,121"/>
+<area shape="rect" id="node42" href="$platform__drivers_8h.html" title="Header file of Generic Platform Drivers." alt="" coords="4453,80,4631,121"/>
+<area shape="rect" id="node43" href="$linux__i2c_8c.html" title="Implementation of Linux platform I2C Driver." alt="" coords="4655,80,4818,121"/>
+<area shape="rect" id="node44" href="$xilinx__i2c_8c.html" title="Implementation of Xilinx I2C Generic Driver." alt="" coords="4843,80,5009,121"/>
+<area shape="rect" id="node45" href="$ad5110_8h.html" title="Header file of ad5110 Driver for Microblaze processor." alt="" coords="5033,80,5197,121"/>
+<area shape="rect" id="node47" href="$ad525x_8h.html" title="Header file of AD525X Driver for Microblaze processor. This driver supporting the following devices :..." alt="" coords="5221,80,5385,121"/>
+<area shape="rect" id="node49" href="$adt7420_8h.html" title="Header file of ADT7420 Driver." alt="" coords="5410,80,5562,121"/>
+<area shape="rect" id="node51" href="$adv7511_2src_2main_8c.html" title="The implementation of the main function of the app." alt="" coords="5586,80,5743,121"/>
+<area shape="rect" id="node52" href="$wrapper_8c.html" title=" " alt="" coords="5767,80,5925,121"/>
+<area shape="rect" id="node3" href="$adxl345_8c.html" title="Implementation of ADXL345 Driver." alt="" coords="5,169,167,211"/>
+<area shape="rect" id="node5" href="$adxl372_8c.html" title="Implementation of adxl372 Core Driver." alt="" coords="191,169,352,211"/>
+<area shape="rect" id="node6" href="$adxl372__i2c_8c.html" title="Implementation of adxl372 I2C Driver." alt="" coords="376,169,537,211"/>
+<area shape="rect" id="node7" href="$adxl372__spi_8c.html" title="Implementation of adxl372 SPI Driver." alt="" coords="561,169,723,211"/>
+<area shape="rect" id="node9" href="$ad7091r5_8c.html" title="Implementation of ad7091r5 Driver." alt="" coords="747,169,905,211"/>
+<area shape="rect" id="node11" href="$ad799x_8c.html" title="Implementation of AD799x Driver." alt="" coords="930,169,1077,211"/>
+<area shape="rect" id="node13" href="$ad5592r-base_8c.html" title="Implementation of AD5592R Base Driver." alt="" coords="1354,169,1533,211"/>
+<area shape="rect" id="node14" href="$ad5592r_8c.html" title="Implementation of AD5592R driver." alt="" coords="1619,259,1798,300"/>
+<area shape="rect" id="node15" href="$ad5592r_8h.html" title="Header file of AD5592R driver." alt="" coords="1557,169,1735,211"/>
+<area shape="rect" id="node16" href="$ad5593r_8c.html" title="Implementation of AD5593R driver." alt="" coords="1089,259,1267,300"/>
+<area shape="rect" id="node17" href="$ad5593r_8h.html" title="Header file of AD5593R driver." alt="" coords="1151,169,1330,211"/>
+<area shape="rect" id="node19" href="$ad7156_8c.html" title="Implementation of AD7156 Driver." alt="" coords="1811,169,1956,211"/>
+<area shape="rect" id="node21" href="$ad7746_8c.html" title="Implementation of AD7746 Driver." alt="" coords="1980,169,2125,211"/>
+<area shape="rect" id="node22" href="$iio__ad7746_8c.html" title=" " alt="" coords="2149,169,2295,211"/>
+<area shape="rect" id="node26" href="$ad5629r_8c.html" title="Implementation of ad5629r Driver for Microblaze processor." alt="" coords="2671,169,2821,211"/>
+<area shape="rect" id="node28" href="$ad5686_8c.html" title="Implementation of AD5686 Driver." alt="" coords="2846,169,2993,211"/>
+<area shape="rect" id="node31" href="$ad5933_8c.html" title="Implementation of AD5933 Driver." alt="" coords="3017,169,3221,211"/>
+<area shape="rect" id="node33" href="$adp5589_8c.html" title="Implementation of ADP5589 Driver." alt="" coords="3245,169,3399,211"/>
+<area shape="rect" id="node35" href="$adpd188_8c.html" title="ADPD188 driver implementation." alt="" coords="3423,169,3600,211"/>
+<area shape="rect" id="node37" href="$adpd410x_8c.html" title=" " alt="" coords="3624,169,3801,211"/>
+<area shape="rect" id="node38" href="$iio__adpd410x_8c.html" title="Implementation of adpd410x iio." alt="" coords="3826,169,4018,211"/>
+<area shape="rect" id="node46" href="$ad5110_8c.html" title="Implementation of AD5110 Driver for Microblaze processor." alt="" coords="5033,169,5197,211"/>
+<area shape="rect" id="node48" href="$ad525x_8c.html" title=" " alt="" coords="5221,169,5385,211"/>
+<area shape="rect" id="node50" href="$adt7420_8c.html" title="Implementation of ADT7420 Driver." alt="" coords="5410,169,5562,211"/>
+</map>

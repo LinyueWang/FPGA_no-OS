@@ -1,0 +1,7 @@
+<map id="ad7124_write_register" name="ad7124_write_register">
+<area shape="rect" id="node1" title="Writes the value of the specified register only when the device is ready to accept user requests...." alt="" coords="401,31,568,57"/>
+<area shape="rect" id="node2" href="$ad7124_8h.html#ab8ab34afc0cfb9795819ca9f2f886ee7" title="Initializes the AD7124." alt="" coords="209,5,323,32"/>
+<area shape="rect" id="node4" href="$ad7124_8h.html#ab2edd92df4caf38e40c80e97c9d9bd95" title="Wrap the write register function to give it a modern signature." alt="" coords="179,56,353,83"/>
+<area shape="rect" id="node3" href="$ad7124-4sdz_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="41,5,95,32"/>
+<area shape="rect" id="node5" href="$ad7124_8h.html#af913208f4c24beac2dc537ca6d879d34" title="Set ODR of the device." alt="" coords="5,56,131,83"/>
+</map>

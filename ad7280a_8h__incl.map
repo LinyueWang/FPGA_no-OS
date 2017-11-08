@@ -1,0 +1,7 @@
+<map id="drivers/adc/ad7280a/ad7280a.h" name="drivers/adc/ad7280a/ad7280a.h">
+<area shape="rect" id="node1" title=" " alt="" coords="23,5,178,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="65,169,136,196"/>
+<area shape="rect" id="node3" href="$delay_8h.html" title="Header file of Delay functions." alt="" coords="22,95,90,121"/>
+<area shape="rect" id="node4" href="$gpio_8h.html" title="Header file of GPIO Interface." alt="" coords="114,95,177,121"/>
+<area shape="rect" id="node5" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="202,95,255,121"/>
+</map>

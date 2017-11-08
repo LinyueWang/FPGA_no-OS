@@ -1,0 +1,21 @@
+<map id="crc8" name="crc8">
+<area shape="rect" id="node1" title=" " alt="" coords="861,233,911,260"/>
+<area shape="rect" id="node2" href="$ad7124_8h.html#a6909ee74950f4467f95e0613237b738e" title="Writes the value of the specified register without checking if the device is ready to accept user req..." alt="" coords="635,107,813,149"/>
+<area shape="rect" id="node8" href="$ad717x_8h.html#a7f24a7cd5283b2a5683907c3ac376eba" title="Writes the value of the specified register." alt="" coords="639,208,809,235"/>
+<area shape="rect" id="node10" href="$ad7606_8h.html#ab7974a111bd5ae75e6e5ae212509c2f1" title="Read a device register via SPI." alt="" coords="644,309,804,336"/>
+<area shape="rect" id="node11" href="$ad7606_8h.html#a5438391d9471eaea26f267ca8a49f946" title="Write a device register via SPI." alt="" coords="421,284,585,311"/>
+<area shape="rect" id="node3" href="$ad7124_8h.html#a803b466e1863f153e167ad3a9748ff6c" title="Writes the value of the specified register only when the device is ready to accept user requests...." alt="" coords="420,56,587,83"/>
+<area shape="rect" id="node4" href="$ad7124_8h.html#ab8ab34afc0cfb9795819ca9f2f886ee7" title="Initializes the AD7124." alt="" coords="219,5,332,32"/>
+<area shape="rect" id="node6" href="$ad7124_8h.html#ab2edd92df4caf38e40c80e97c9d9bd95" title="Wrap the write register function to give it a modern signature." alt="" coords="188,56,363,83"/>
+<area shape="rect" id="node5" href="$ad7124-4sdz_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="41,5,95,32"/>
+<area shape="rect" id="node7" href="$ad7124_8h.html#af913208f4c24beac2dc537ca6d879d34" title="Set ODR of the device." alt="" coords="5,56,131,83"/>
+<area shape="rect" id="node9" href="$ad717x_8h.html#af92ad585cabc0f6ef31f41589946bb34" title="Initializes the AD717X." alt="" coords="452,208,555,235"/>
+<area shape="rect" id="node19" href="$ad7606_8h.html#a6adb5704bfa72226e1fa25e0ac6db8f4" title="Write a device register via SPI with masking." alt="" coords="186,461,365,488"/>
+<area shape="rect" id="node12" href="$ad7606_8h.html#af543646f8ff88bb2104880eff9881aa6" title="Toggle the CONVST pin to start a conversion." alt="" coords="215,107,335,133"/>
+<area shape="rect" id="node13" href="$ad7606_8h.html#a8b8917b88bf8a962cf4c03bbcc32d787" title="Set the channel gain." alt="" coords="198,157,353,184"/>
+<area shape="rect" id="node14" href="$ad7606_8h.html#abc9cacda6c8f8496a798487f9bbc727d" title="Set the channel offset." alt="" coords="194,208,357,235"/>
+<area shape="rect" id="node15" href="$ad7606_8h.html#a7c95873d263944b0a6fe60ac8491bc4a" title="Set the channel phase." alt="" coords="193,259,358,285"/>
+<area shape="rect" id="node16" href="$ad7606_8h.html#a805c34e6e494c53ab140d91581f9e59e" title="Set the device config register." alt="" coords="204,309,347,336"/>
+<area shape="rect" id="node17" href="$ad7606_8h.html#a1417edc65b2d70eef23d8cb08b39f915" title="Set the device digital diagnostics configuration." alt="" coords="185,360,365,387"/>
+<area shape="rect" id="node18" href="$ad7606_8h.html#abc4948edb50ed62de9ab4a96119360d9" title="Set the oversampling ratio." alt="" coords="179,411,372,437"/>
+</map>

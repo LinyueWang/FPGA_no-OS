@@ -1,0 +1,8 @@
+<map id="ad9523_dev" name="ad9523_dev">
+<area shape="rect" id="node1" title=" " alt="" coords="129,273,230,300"/>
+<area shape="rect" id="node2" href="$structad9523__state.html" title=" " alt="" coords="124,184,235,211"/>
+<area shape="rect" id="node3" href="$structad9523__platform__data.html" title="platform specific information" alt="" coords="5,95,175,121"/>
+<area shape="rect" id="node4" href="$structad9523__channel__spec.html" title="Output channel configuration." alt="" coords="7,5,173,32"/>
+<area shape="rect" id="node5" href="$structspi__desc.html" title="Structure holding SPI descriptor." alt="" coords="259,184,337,211"/>
+<area shape="rect" id="node6" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="231,95,365,121"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="adas1000_init_param" name="adas1000_init_param">
+<area shape="rect" id="node1" title=" " alt="" coords="5,184,168,211"/>
+<area shape="rect" id="node2" href="$structspi__init__param.html" title="Structure holding the parameters for SPI initialization." alt="" coords="27,95,146,121"/>
+<area shape="rect" id="node3" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="19,5,154,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="ad5791_soft_instruction" name="ad5791_soft_instruction">
+<area shape="rect" id="node1" title="Asserts RESET, CLR or LDAC in a software manner." alt="" coords="204,5,381,32"/>
+<area shape="rect" id="node2" href="$iio__ad5791_8h.html#a3401ac8083e560b79b91ea61fc0d5d53" title="IIO set method to the &#39;raw&#39; attribute of the channel." alt="" coords="5,5,156,32"/>
+</map>

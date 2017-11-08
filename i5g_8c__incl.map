@@ -1,0 +1,9 @@
+<map id="projects/fmcadc5/src/devices/i5g/i5g.c" name="projects/fmcadc5/src/devices/i5g/i5g.c">
+<area shape="rect" id="node1" title=" " alt="" coords="61,5,219,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,75,121"/>
+<area shape="rect" id="node3" href="$ad9625_8h.html" title="Header file of AD9625 Driver." alt="" coords="99,95,181,121"/>
+<area shape="rect" id="node7" href="$i5g_8h.html" title=" " alt="" coords="206,95,261,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="105,244,175,271"/>
+<area shape="rect" id="node5" href="$delay_8h.html" title="Header file of Delay functions." alt="" coords="106,169,174,196"/>
+<area shape="rect" id="node6" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="199,169,252,196"/>
+</map>

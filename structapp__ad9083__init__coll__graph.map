@@ -1,0 +1,5 @@
+<map id="app_ad9083_init" name="app_ad9083_init">
+<area shape="rect" id="node1" title="Structure holding the parameters for ad9083 app initialization." alt="" coords="5,95,135,121"/>
+<area shape="rect" id="node2" href="$structclk.html" title=" " alt="" coords="157,5,199,32"/>
+<area shape="rect" id="node3" href="$structclk__hw.html" title=" " alt="" coords="179,95,246,121"/>
+</map>

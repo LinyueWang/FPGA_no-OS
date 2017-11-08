@@ -1,0 +1,19 @@
+<map id="drivers/adc/ad7616/ad7616.c" name="drivers/adc/ad7616/ad7616.c">
+<area shape="rect" id="node1" title="Implementation of AD7616 Driver." alt="" coords="472,5,619,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="349,319,419,345"/>
+<area shape="rect" id="node3" title=" " alt="" coords="237,95,304,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="7,319,78,345"/>
+<area shape="rect" id="node5" href="$spi__engine_8h.html" title=" " alt="" coords="379,95,483,121"/>
+<area shape="rect" id="node11" href="$axi__dmac_8h.html" title="Driver for the Analog Devices AXI&#45;DMAC core." alt="" coords="33,169,130,196"/>
+<area shape="rect" id="node12" href="$gpio_8h.html" title="Header file of GPIO Interface." alt="" coords="659,169,722,196"/>
+<area shape="rect" id="node13" href="$ad7616_8h.html" title="Header file of AD7616 Driver." alt="" coords="709,95,792,121"/>
+<area shape="rect" id="node14" href="$error_8h.html" title="Error codes definition." alt="" coords="816,95,880,121"/>
+<area shape="rect" id="node16" href="$delay_8h.html" title="Header file of Delay functions." alt="" coords="422,244,490,271"/>
+<area shape="rect" id="node17" href="$axi__io_8h.html" title="Header file of AXI IO." alt="" coords="514,244,587,271"/>
+<area shape="rect" id="node6" title=" " alt="" coords="337,169,431,196"/>
+<area shape="rect" id="node7" href="$spi__engine__private_8h.html" title=" " alt="" coords="155,169,312,196"/>
+<area shape="rect" id="node8" title=" " alt="" coords="157,319,240,345"/>
+<area shape="rect" id="node9" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="293,244,347,271"/>
+<area shape="rect" id="node10" href="$util_8h.html" title="Implementation of utility functions." alt="" coords="62,244,117,271"/>
+<area shape="rect" id="node15" title=" " alt="" coords="814,169,882,196"/>
+</map>

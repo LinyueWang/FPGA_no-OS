@@ -1,0 +1,8 @@
+<map id="drivers/platform/altera/axi_io.c" name="drivers/platform/altera/axi_io.c">
+<area shape="rect" id="node1" title="Implementation of Altera AXI IO ." alt="" coords="24,5,193,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,52,121"/>
+<area shape="rect" id="node3" href="$error_8h.html" title="Error codes definition." alt="" coords="77,95,141,121"/>
+<area shape="rect" id="node5" href="$axi__io_8h.html" title="Header file of AXI IO." alt="" coords="165,95,239,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="75,169,143,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="167,169,237,196"/>
+</map>

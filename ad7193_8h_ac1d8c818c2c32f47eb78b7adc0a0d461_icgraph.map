@@ -1,0 +1,4 @@
+<map id="ad7193_range_setup" name="ad7193_range_setup">
+<area shape="rect" id="node1" title="Selects the polarity of the conversion and the ADC input range." alt="" coords="248,5,405,32"/>
+<area shape="rect" id="node2" href="$ad7193_8h.html#abee68b09ba2dbc9f05cb2c006ce1679a" title="Read data from temperature sensor and converts it to Celsius degrees." alt="" coords="5,5,200,32"/>
+</map>

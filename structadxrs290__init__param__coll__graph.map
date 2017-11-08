@@ -1,0 +1,7 @@
+<map id="adxrs290_init_param" name="adxrs290_init_param">
+<area shape="rect" id="node1" title="Device driver initialization structure." alt="" coords="73,184,232,211"/>
+<area shape="rect" id="node2" href="$structgpio__init__param.html" title="Structure holding the parameters for GPIO initialization." alt="" coords="17,95,144,121"/>
+<area shape="rect" id="node3" href="$structgpio__platform__ops.html" title="Structure holding gpio function pointers that point to the platform specific function." alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node4" href="$structspi__init__param.html" title="Structure holding the parameters for SPI initialization." alt="" coords="176,95,295,121"/>
+<area shape="rect" id="node5" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="172,5,307,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="adi_hal_BbicCfg" name="adi_hal_BbicCfg">
+<area shape="rect" id="node1" title="Data structure to hold platform Hardware layer settings for all system related feature of the ADI tra..." alt="" coords="19,124,146,151"/>
+<area shape="rect" id="node2" href="$structadi__hal__fpga___axi_cfg.html" title="Data structure for memory Fpga Driver configuration." alt="" coords="5,5,160,32"/>
+</map>

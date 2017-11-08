@@ -1,0 +1,4 @@
+<map id="gpio_desc" name="gpio_desc">
+<area shape="rect" id="node1" title="Structure holding the GPIO descriptor." alt="" coords="33,95,120,121"/>
+<area shape="rect" id="node2" href="$structgpio__platform__ops.html" title="Structure holding gpio function pointers that point to the platform specific function." alt="" coords="5,5,148,32"/>
+</map>

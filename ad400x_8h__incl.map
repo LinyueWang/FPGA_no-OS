@@ -1,0 +1,11 @@
+<map id="drivers/adc/ad400x/ad400x.h" name="drivers/adc/ad400x/ad400x.h">
+<area shape="rect" id="node1" title="Header file for ad400x Driver." alt="" coords="5,5,152,47"/>
+<area shape="rect" id="node2" href="$spi__engine_8h.html" title=" " alt="" coords="27,95,131,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="58,319,129,345"/>
+<area shape="rect" id="node4" title=" " alt="" coords="31,169,126,196"/>
+<area shape="rect" id="node5" href="$spi__engine__private_8h.html" title=" " alt="" coords="151,169,308,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="253,319,336,345"/>
+<area shape="rect" id="node7" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="124,244,177,271"/>
+<area shape="rect" id="node8" href="$util_8h.html" title="Implementation of utility functions." alt="" coords="202,244,257,271"/>
+<area shape="rect" id="node9" title=" " alt="" coords="158,319,229,345"/>
+</map>

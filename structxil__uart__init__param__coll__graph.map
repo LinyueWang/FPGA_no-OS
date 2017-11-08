@@ -1,0 +1,4 @@
+<map id="xil_uart_init_param" name="xil_uart_init_param">
+<area shape="rect" id="node1" title="Structure holding the initialization parameters for Xilinx platform specific UART parameters." alt="" coords="5,95,153,121"/>
+<area shape="rect" id="node2" href="$structirq__ctrl__desc.html" title=" " alt="" coords="27,5,131,32"/>
+</map>

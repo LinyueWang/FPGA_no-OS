@@ -1,0 +1,7 @@
+<map id="_gpio_init" name="_gpio_init">
+<area shape="rect" id="node1" title="Prepare the GPIO decriptor." alt="" coords="415,31,500,57"/>
+<area shape="rect" id="node2" href="$stm32__gpio_8h.html#ad30bf8452056bc724e51fac467ffb459" title="Obtain the GPIO decriptor." alt="" coords="240,5,367,32"/>
+<area shape="rect" id="node4" href="$xilinx__gpio_8c.html#aa9c4a05867f9082cfc181279193cb792" title="Obtain the GPIO decriptor." alt="" coords="253,56,354,83"/>
+<area shape="rect" id="node3" href="$stm32__gpio_8h.html#a7efb9e5cf5cc72e28d8b30eceadc911f" title="Get the value of an optional GPIO." alt="" coords="5,5,192,32"/>
+<area shape="rect" id="node5" href="$xilinx__gpio_8c.html#acbb7a97814e9c7ac871599c905ecd525" title="Get the value of an optional GPIO." alt="" coords="18,56,179,83"/>
+</map>

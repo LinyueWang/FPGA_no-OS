@@ -1,0 +1,5 @@
+<map id="adt7420_set_register_value" name="adt7420_set_register_value">
+<area shape="rect" id="node1" title="Sets the value of a register." alt="" coords="268,23,427,65"/>
+<area shape="rect" id="node2" href="$adt7420_8h.html#af66a6aad34748e4017869dd5a7cd02ed" title="Sets the operational mode for ADT7420." alt="" coords="5,5,220,32"/>
+<area shape="rect" id="node3" href="$adt7420_8h.html#a3695e9963b1b31d2fbff75cd0e9651f7" title="Sets the resolution for ADT7420." alt="" coords="25,56,200,83"/>
+</map>

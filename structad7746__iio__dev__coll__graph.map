@@ -1,0 +1,16 @@
+<map id="ad7746_iio_dev" name="ad7746_iio_dev">
+<area shape="rect" id="node1" title=" " alt="" coords="275,291,399,317"/>
+<area shape="rect" id="node2" href="$structiio__device.html" title="Structure holding channels and attributes of a device." alt="" coords="189,201,277,228"/>
+<area shape="rect" id="node3" href="$structiio__channel.html" title="Struct describing the scan type." alt="" coords="185,103,281,130"/>
+<area shape="rect" id="node4" href="$structiio__attribute.html" title="Structure holding pointers to show and store functions." alt="" coords="5,5,107,32"/>
+<area shape="rect" id="node5" href="$structiio__chan__type.html" title="IIO channel types." alt="" coords="133,5,245,32"/>
+<area shape="rect" id="node6" href="$structscan__type.html" title=" " alt="" coords="269,5,357,32"/>
+<area shape="rect" id="node7" href="$structad7746__dev.html" title=" " alt="" coords="399,201,500,228"/>
+<area shape="rect" id="node8" href="$structi2c__desc.html" title="Structure holding I2C descriptor." alt="" coords="410,103,489,130"/>
+<area shape="rect" id="node9" href="$structi2c__platform__ops.html" title="Structure holding I2C function pointers that point to the platform specific function." alt="" coords="382,5,517,32"/>
+<area shape="rect" id="node10" href="$structad7746__setup.html" title=" " alt="" coords="658,103,771,130"/>
+<area shape="rect" id="node11" href="$structad7746__vt.html" title=" " alt="" coords="541,5,632,32"/>
+<area shape="rect" id="node12" href="$structad7746__config.html" title=" " alt="" coords="657,5,773,32"/>
+<area shape="rect" id="node13" href="$structad7746__exc.html" title=" " alt="" coords="797,5,897,32"/>
+<area shape="rect" id="node14" href="$structad7746__cap.html" title=" " alt="" coords="921,5,1021,32"/>
+</map>

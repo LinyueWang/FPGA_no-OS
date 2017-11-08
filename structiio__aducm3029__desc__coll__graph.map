@@ -1,0 +1,8 @@
+<map id="iio_aducm3029_desc" name="iio_aducm3029_desc">
+<area shape="rect" id="node1" title=" " alt="" coords="145,184,303,211"/>
+<area shape="rect" id="node2" href="$structpwm__desc.html" title="Structure representing an PWM generator device." alt="" coords="5,95,96,121"/>
+<area shape="rect" id="node3" href="$structtimer__desc.html" title="Structure holding timer descriptor." alt="" coords="121,95,215,121"/>
+<area shape="rect" id="node4" href="$structadc__desc.html" title="Adc descriptor." alt="" coords="240,95,323,121"/>
+<area shape="rect" id="node5" href="$structgpio__desc.html" title="Structure holding the GPIO descriptor." alt="" coords="347,95,434,121"/>
+<area shape="rect" id="node6" href="$structgpio__platform__ops.html" title="Structure holding gpio function pointers that point to the platform specific function." alt="" coords="319,5,462,32"/>
+</map>

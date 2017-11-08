@@ -1,0 +1,9 @@
+<map id="ad9528_init_param" name="ad9528_init_param">
+<area shape="rect" id="node1" title=" " alt="" coords="182,184,329,211"/>
+<area shape="rect" id="node2" href="$structgpio__init__param.html" title="Structure holding the parameters for GPIO initialization." alt="" coords="17,95,144,121"/>
+<area shape="rect" id="node3" href="$structgpio__platform__ops.html" title="Structure holding gpio function pointers that point to the platform specific function." alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node4" href="$structad9528__platform__data.html" title="platform specific information" alt="" coords="171,95,340,121"/>
+<area shape="rect" id="node5" href="$structad9528__channel__spec.html" title="Output channel configuration." alt="" coords="173,5,338,32"/>
+<area shape="rect" id="node6" href="$structspi__init__param.html" title="Structure holding the parameters for SPI initialization." alt="" coords="368,95,487,121"/>
+<area shape="rect" id="node7" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="363,5,497,32"/>
+</map>

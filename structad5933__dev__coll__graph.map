@@ -1,0 +1,5 @@
+<map id="ad5933_dev" name="ad5933_dev">
+<area shape="rect" id="node1" title=" " alt="" coords="22,184,123,211"/>
+<area shape="rect" id="node2" href="$structi2c__desc.html" title="Structure holding I2C descriptor." alt="" coords="33,95,112,121"/>
+<area shape="rect" id="node3" href="$structi2c__platform__ops.html" title="Structure holding I2C function pointers that point to the platform specific function." alt="" coords="5,5,140,32"/>
+</map>

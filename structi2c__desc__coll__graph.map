@@ -1,0 +1,4 @@
+<map id="i2c_desc" name="i2c_desc">
+<area shape="rect" id="node1" title="Structure holding I2C descriptor." alt="" coords="33,95,112,121"/>
+<area shape="rect" id="node2" href="$structi2c__platform__ops.html" title="Structure holding I2C function pointers that point to the platform specific function." alt="" coords="5,5,140,32"/>
+</map>

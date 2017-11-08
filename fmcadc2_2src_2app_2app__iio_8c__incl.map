@@ -1,0 +1,21 @@
+<map id="projects/fmcadc2/src/app/app_iio.c" name="projects/fmcadc2/src/app/app_iio.c">
+<area shape="rect" id="node1" title="Application IIO setup." alt="" coords="194,5,351,47"/>
+<area shape="rect" id="node2" href="$error_8h.html" title="Error codes definition." alt="" coords="7,95,71,121"/>
+<area shape="rect" id="node4" href="$uart_8h.html" title="Header file of UART interface." alt="" coords="136,169,196,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="378,95,479,121"/>
+<area shape="rect" id="node7" href="$iio_8h.html" title="Header file of iio." alt="" coords="146,95,197,121"/>
+<area shape="rect" id="node11" title=" " alt="" coords="503,95,613,121"/>
+<area shape="rect" id="node12" href="$fmcadc2_2src_2app_2app__iio_8h.html" title="Application IIO setup." alt="" coords="272,95,353,121"/>
+<area shape="rect" id="node18" href="$irq_8h.html" title="Header file of IRQ interface." alt="" coords="214,319,265,345"/>
+<area shape="rect" id="node19" title=" " alt="" coords="637,95,729,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,169,73,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="440,393,511,420"/>
+<area shape="rect" id="node8" href="$iio__types_8h.html" title="Header file for iio_types." alt="" coords="355,244,449,271"/>
+<area shape="rect" id="node9" title=" " alt="" coords="543,393,626,420"/>
+<area shape="rect" id="node10" title=" " alt="" coords="355,319,438,345"/>
+<area shape="rect" id="node13" href="$iio__axi__adc_8h.html" title="Header file of iio_axi_adc." alt="" coords="426,169,533,196"/>
+<area shape="rect" id="node14" href="$axi__adc__core_8h.html" title="Driver for the Analog Devices AXI&#45;ADC&#45;CORE module." alt="" coords="473,244,592,271"/>
+<area shape="rect" id="node17" href="$axi__dmac_8h.html" title="Driver for the Analog Devices AXI&#45;DMAC core." alt="" coords="616,244,713,271"/>
+<area shape="rect" id="node15" href="$util_8h.html" title="Implementation of utility functions." alt="" coords="665,319,720,345"/>
+<area shape="rect" id="node16" title=" " alt="" coords="657,393,728,420"/>
+</map>

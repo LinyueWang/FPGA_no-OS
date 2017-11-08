@@ -1,0 +1,12 @@
+<map id="ad7799_read" name="ad7799_read">
+<area shape="rect" id="node1" title="Read device register." alt="" coords="855,183,961,209"/>
+<area shape="rect" id="node2" href="$ad7799_8h.html#a18800a95ed9485ca8e6390800551e52f" title="Read the /RDY bit of status register and check the status of the device." alt="" coords="657,5,802,32"/>
+<area shape="rect" id="node3" href="$ad7799_8h.html#a078b67608f7960dbe19be8d97cd2dea3" title="Read specific ADC channel." alt="" coords="245,81,401,108"/>
+<area shape="rect" id="node5" href="$ad7799_8h.html#a424e4b340124d033e7590e04ddff1f42" title="Set the device mode." alt="" coords="456,56,597,83"/>
+<area shape="rect" id="node6" href="$ad7799_8h.html#ade22f5ff6c7eafdce95952246caa89ac" title="Get the ADC gain." alt="" coords="663,157,796,184"/>
+<area shape="rect" id="node7" href="$ad7799_8h.html#a110505fddc9c9ab83e769c67869bddc0" title="Select the ADC channel." alt="" coords="449,183,604,209"/>
+<area shape="rect" id="node8" href="$ad7799_8h.html#a76aff4822d5897bf3755d2484ce1736f" title="Set the ADC gain." alt="" coords="663,259,795,285"/>
+<area shape="rect" id="node9" href="$ad7799_8h.html#aae396916539b5fe342eb3d9404ebf85e" title="Set ADC polarity." alt="" coords="652,309,807,336"/>
+<area shape="rect" id="node10" href="$ad7799_8h.html#a88b03084d9542b44987004214efafd6d" title="Enable or disable the reference detect function." alt="" coords="658,360,801,387"/>
+<area shape="rect" id="node4" href="$ad7799_8h.html#a5baa5386378ad5adae8e6abb61437632" title="Read data in mV from specific ADC channel." alt="" coords="5,81,197,108"/>
+</map>

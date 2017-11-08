@@ -1,0 +1,7 @@
+<map id="drivers/potentiometer/ad5110/ad5110.c" name="drivers/potentiometer/ad5110/ad5110.c">
+<area shape="rect" id="node1" title="Implementation of AD5110 Driver for Microblaze processor." alt="" coords="9,5,173,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,76,121"/>
+<area shape="rect" id="node3" href="$ad5110_8h.html" title="Header file of ad5110 Driver for Microblaze processor." alt="" coords="101,95,183,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="107,244,177,271"/>
+<area shape="rect" id="node5" href="$i2c_8h.html" title="Header file of I2C Interface." alt="" coords="147,169,201,196"/>
+</map>

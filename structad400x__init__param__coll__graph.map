@@ -1,0 +1,5 @@
+<map id="ad400x_init_param" name="ad400x_init_param">
+<area shape="rect" id="node1" title=" " alt="" coords="5,184,152,211"/>
+<area shape="rect" id="node2" href="$structspi__init__param.html" title="Structure holding the parameters for SPI initialization." alt="" coords="19,95,138,121"/>
+<area shape="rect" id="node3" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="11,5,146,32"/>
+</map>

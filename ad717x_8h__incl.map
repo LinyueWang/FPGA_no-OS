@@ -1,0 +1,5 @@
+<map id="drivers/adc/ad717x/ad717x.h" name="drivers/adc/ad717x/ad717x.h">
+<area shape="rect" id="node1" title="AD717X header file. Devices: AD7172&#45;2, AD7172&#45;4, AD7173&#45;8, AD7175&#45;2, AD7175&#45;8, AD7176&#45;2,..." alt="" coords="5,5,152,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="43,169,114,196"/>
+<area shape="rect" id="node3" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="84,95,137,121"/>
+</map>

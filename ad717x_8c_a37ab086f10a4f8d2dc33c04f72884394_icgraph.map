@@ -1,0 +1,4 @@
+<map id="AD717X_ComputeDataregSize" name="AD717X_ComputeDataregSize">
+<area shape="rect" id="node1" title="Computes data register read size to account for bit number and status read." alt="" coords="199,5,417,32"/>
+<area shape="rect" id="node2" href="$ad717x_8h.html#add8ae6c28ff4f84338b5a57c53a84ccc" title="Reads the conversion result from the device." alt="" coords="5,5,151,32"/>
+</map>

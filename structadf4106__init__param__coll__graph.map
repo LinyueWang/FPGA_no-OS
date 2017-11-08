@@ -1,0 +1,8 @@
+<map id="adf4106_init_param" name="adf4106_init_param">
+<area shape="rect" id="node1" title=" " alt="" coords="164,228,316,255"/>
+<area shape="rect" id="node2" href="$structadf4106__settings__t.html" title="store the value of all the latch and the input reference frequency" alt="" coords="5,95,152,121"/>
+<area shape="rect" id="node3" href="$structgpio__init__param.html" title="Structure holding the parameters for GPIO initialization." alt="" coords="177,95,303,121"/>
+<area shape="rect" id="node4" href="$structgpio__platform__ops.html" title="Structure holding gpio function pointers that point to the platform specific function." alt="" coords="165,5,307,32"/>
+<area shape="rect" id="node5" href="$structspi__init__param.html" title="Structure holding the parameters for SPI initialization." alt="" coords="331,95,450,121"/>
+<area shape="rect" id="node6" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="331,5,466,32"/>
+</map>

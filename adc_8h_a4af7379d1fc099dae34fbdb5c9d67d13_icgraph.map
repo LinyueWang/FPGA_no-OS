@@ -1,0 +1,4 @@
+<map id="aducm3029_adc_read" name="aducm3029_adc_read">
+<area shape="rect" id="node1" title="Read adc data. aducm3029_adc_update_active_channels should be called in order to enable channeles." alt="" coords="240,5,404,32"/>
+<area shape="rect" id="node2" href="$iio__aducm3029_8h.html#ac7d0f4fb4151e669a07e93cffe6e0572" title=" " alt="" coords="5,5,192,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="ad7799_set_gain" name="ad7799_set_gain">
+<area shape="rect" id="node1" title="Set the ADC gain." alt="" coords="221,5,353,32"/>
+<area shape="rect" id="node2" href="$iio__ad7799_8c.html#a2e9b283b97073e50c0de4e00d994f281" title="Write ADC Gain value." alt="" coords="5,5,173,32"/>
+</map>

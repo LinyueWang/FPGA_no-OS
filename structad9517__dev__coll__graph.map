@@ -1,0 +1,9 @@
+<map id="ad9517_dev" name="ad9517_dev">
+<area shape="rect" id="node1" title=" " alt="" coords="664,107,765,133"/>
+<area shape="rect" id="node2" href="$structad9517__state.html" title=" " alt="" coords="433,81,544,108"/>
+<area shape="rect" id="node3" href="$structad9517__platform__data.html" title=" " alt="" coords="41,5,211,32"/>
+<area shape="rect" id="node4" href="$structad9517__lvds__cmos__channel__spec.html" title=" " alt="" coords="5,56,247,83"/>
+<area shape="rect" id="node5" href="$structad9517__lvpecl__channel__spec.html" title=" " alt="" coords="21,107,231,133"/>
+<area shape="rect" id="node6" href="$structspi__desc.html" title="Structure holding SPI descriptor." alt="" coords="449,132,528,159"/>
+<area shape="rect" id="node7" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="59,157,193,184"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="projects/adf5902_sdz/src/adf5902_sdz.c" name="projects/adf5902_sdz/src/adf5902_sdz.c">
+<area shape="rect" id="node1" title="Implementation of Main Function." alt="" coords="389,5,549,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,169,123,196"/>
+<area shape="rect" id="node3" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="551,169,604,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="189,95,283,121"/>
+<area shape="rect" id="node6" href="$gpio_8h.html" title="Header file of GPIO Interface." alt="" coords="413,169,475,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="359,95,462,121"/>
+<area shape="rect" id="node8" href="$error_8h.html" title="Error codes definition." alt="" coords="648,95,712,121"/>
+<area shape="rect" id="node10" href="$adf5902_8h.html" title="Header file for adf5902 Driver." alt="" coords="486,95,573,121"/>
+<area shape="rect" id="node11" href="$adf5902__sdz_2src_2parameters_8h.html" title="Platform dependent parameters." alt="" coords="55,95,164,121"/>
+<area shape="rect" id="node12" href="$util_8h.html" title="Implementation of utility functions." alt="" coords="766,95,821,121"/>
+<area shape="rect" id="node15" href="$print__log_8h.html" title="Print messages helpers." alt="" coords="912,95,1003,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="510,244,581,271"/>
+<area shape="rect" id="node9" title=" " alt="" coords="629,169,697,196"/>
+<area shape="rect" id="node13" title=" " alt="" coords="773,169,843,196"/>
+<area shape="rect" id="node14" title=" " alt="" coords="868,169,951,196"/>
+<area shape="rect" id="node16" title=" " alt="" coords="975,169,1041,196"/>
+</map>

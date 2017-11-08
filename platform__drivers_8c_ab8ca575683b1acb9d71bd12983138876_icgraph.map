@@ -1,0 +1,181 @@
+<map id="i2c_write" name="i2c_write">
+<area shape="rect" id="node1" title="Write data to a slave device." alt="" coords="993,1939,1075,1965"/>
+<area shape="rect" id="node2" href="$ad5110_8h.html#a40a90e7532d1109dbb1c40f77c3294c5" title="Read the content of RDAC register." alt="" coords="766,5,907,32"/>
+<area shape="rect" id="node3" href="$ad5110_8h.html#aa6007daadc0db979e4d76f990be7a888" title="Read resistor tolerance from EEPROM." alt="" coords="736,56,937,83"/>
+<area shape="rect" id="node4" href="$ad5110_8h.html#ad060467f1dd7edf518694d54debcb27a" title="Read wiper position from EEPROM." alt="" coords="762,107,911,133"/>
+<area shape="rect" id="node5" href="$ad5110_8h.html#a344c362ee3ae12e0e58c008217b6fe2d" title="Software reset; makes a refresh of RDAC register with EEPROM." alt="" coords="781,157,892,184"/>
+<area shape="rect" id="node6" href="$ad5110_8h.html#aa713f357eb73108cabf31aad829c8367" title="Software shutdown." alt="" coords="763,208,910,235"/>
+<area shape="rect" id="node7" href="$ad5110_8h.html#a4038ef3fbf86016038bed2ee6531cd7f" title="Write the content of serial register data to RDAC." alt="" coords="764,259,909,285"/>
+<area shape="rect" id="node8" href="$ad5110_8h.html#a5cf2c5845476270298621ead92a2ecca" title="Write the content of RDAC register to EEPROM." alt="" coords="735,309,938,336"/>
+<area shape="rect" id="node9" href="$ad525x_8h.html#aad4ae071ada59e680b4c4953dc5944a8" title="Read data from the EEMEM." alt="" coords="763,360,910,387"/>
+<area shape="rect" id="node10" href="$ad525x_8h.html#a65ca5c91df9875f5cc4e9eb8976f349c" title="Read data from the RDAC register." alt="" coords="766,411,907,437"/>
+<area shape="rect" id="node11" href="$ad525x_8h.html#afa0af7eba78168703b5eb1ea47c96d64" title="Write quick commands to the device." alt="" coords="745,461,928,488"/>
+<area shape="rect" id="node12" href="$ad525x_8h.html#accc76704f20d93cc6a0a79a318dc0d76" title="Write data to EEMEM." alt="" coords="761,512,912,539"/>
+<area shape="rect" id="node13" href="$ad525x_8h.html#abb4c0408c6e0883d17e3e5ccf05da696" title="Write data to RDAC register." alt="" coords="764,563,909,589"/>
+<area shape="rect" id="node14" href="$ad5593r_8h.html#a47ceb49bd76423eb384416a131ba1b53" title=" " alt="" coords="763,613,910,640"/>
+<area shape="rect" id="node15" href="$ad5593r_8h.html#ad2ffdbcc3244bea57c95c127078f667c" title=" " alt="" coords="745,664,928,691"/>
+<area shape="rect" id="node16" href="$ad5593r_8h.html#ad2e68c1e5f2fee785450cd088740515f" title=" " alt="" coords="766,715,907,741"/>
+<area shape="rect" id="node17" href="$ad5593r_8h.html#abe057b1a0afdf9b6cc2cada6774e7f90" title=" " alt="" coords="767,765,906,792"/>
+<area shape="rect" id="node19" href="$ad5593r_8h.html#a97f71bc274e09b577f9bf748ac8b393d" title=" " alt="" coords="765,816,908,843"/>
+<area shape="rect" id="node20" href="$ad5593r_8h.html#a5e3ba7568bee162f72e413495d403ea3" title=" " alt="" coords="764,867,909,893"/>
+<area shape="rect" id="node21" href="$ad5629r_8c.html#a287abfa8dfe75b28756cd1c0e9535610" title="Write to input register and read from output register via SPI." alt="" coords="771,917,902,944"/>
+<area shape="rect" id="node27" href="$ad5629r_8c.html#a66c5758215d821cbd1c01178e4b8969d" title="Write to input register and read from output register via SPI." alt="" coords="751,968,922,995"/>
+<area shape="rect" id="node32" href="$ad5686_8h.html#a72500211bf6cfd3b3159f7a22c7cf66e" title="Read back Input Register n." alt="" coords="462,555,663,581"/>
+<area shape="rect" id="node33" href="$ad5686_8h.html#a46a55cd0a55e0b1be7ed6ef715f1d05f" title="Write to input shift register." alt="" coords="757,1069,917,1096"/>
+<area shape="rect" id="node44" href="$ad5933_8h.html#a17e889b94634f6a578611f74fdb8b5a3" title="Reads the value of a register." alt="" coords="759,1197,914,1238"/>
+<area shape="rect" id="node50" href="$ad5933_8h.html#a7b3a3994ff04efcaebd99829b2712fbd" title="Writes data into a register." alt="" coords="759,1374,914,1415"/>
+<area shape="rect" id="node56" href="$ad7091r5_8c.html#a58f5f15775e5578c4cd84a5de682ee99" title=" " alt="" coords="750,1736,923,1763"/>
+<area shape="rect" id="node69" href="$ad7091r5_8c.html#a55d224187e387bd7a2dd445e46d12d53" title=" " alt="" coords="748,1863,925,1889"/>
+<area shape="rect" id="node71" href="$ad7156_8h.html#ad2d5436b3f884aab31a55958b4bf3e81" title="Performs a burst read of a specified number of registers." alt="" coords="759,2210,914,2251"/>
+<area shape="rect" id="node83" href="$ad7156_8h.html#a662f0e59a517271ad62aeef62a49bf67" title="Resets the device." alt="" coords="781,2276,892,2303"/>
+<area shape="rect" id="node84" href="$ad7156_8h.html#a9e936d3d903138b46f98a332ea72ce26" title="Writes data into one or two registers." alt="" coords="759,2033,914,2074"/>
+<area shape="rect" id="node86" href="$ad7746_8h.html#a74a8ae9db2da5efa2f0e151e146d2f3c" title="Reads data from AD7746 registers, starting from the selected register address pointer." alt="" coords="495,2851,630,2877"/>
+<area shape="rect" id="node91" href="$ad7746_8h.html#a20cee105c71b1cbc59b21d227c6ca4a6" title="Writes data into AD7746 registers, starting from the selected register address pointer." alt="" coords="767,2623,906,2649"/>
+<area shape="rect" id="node99" href="$ad7746_8h.html#ae7b1795c8fea0707d5d4d63a8e889621" title="Resets the AD7746." alt="" coords="781,2424,892,2451"/>
+<area shape="rect" id="node100" href="$ad799x_8h.html#a9c1203d9ef79b82dfa10a929d5478cdc" title="Writes data into the Configuration Register." alt="" coords="728,2724,945,2751"/>
+<area shape="rect" id="node101" href="$adp5589_8h.html#aa96ea649ccf8ac432eaaa1b2d8c16fb8" title="Reads the value of a register." alt="" coords="755,2919,918,2961"/>
+<area shape="rect" id="node105" href="$adp5589_8h.html#a590b05465e236a2cb1763f9adac1d75c" title="Writes data into a register." alt="" coords="755,3071,918,3113"/>
+<area shape="rect" id="node111" href="$adpd188_8h.html#a36ac12718994bcb06be23d6065ca7a24" title="Read one 16 bit register of the ADPD188." alt="" coords="765,3813,908,3840"/>
+<area shape="rect" id="node126" href="$adpd188_8h.html#a2ccc723de5fcee424fc9096974cc5f53" title="Write one 16 bit register of the ADPD188." alt="" coords="763,3560,910,3587"/>
+<area shape="rect" id="node130" href="$adpd410x_8h.html#acea46e9c43d9e459cc0b50253d76c9f8" title="Read device register." alt="" coords="761,4320,912,4347"/>
+<area shape="rect" id="node140" href="$adpd410x_8h.html#aa97bab6665b0c8a99322c8d3a357b0a5" title="Write device register." alt="" coords="759,4472,914,4499"/>
+<area shape="rect" id="node141" href="$adt7420_8h.html#a3b503e58760108cd45d4f05b81bb4b2d" title="Reads the value of a register." alt="" coords="757,4653,917,4694"/>
+<area shape="rect" id="node146" href="$adt7420_8h.html#a76bc9a3dfb991b9f4622260d4a7289f1" title="Resets the ADT7420. The ADT7420 does not respond to I2C bus commands while the default values upload ..." alt="" coords="779,4784,894,4811"/>
+<area shape="rect" id="node147" href="$adt7420_8h.html#a19ef33e571d9d22cebdd83032595bbcf" title="Sets the value of a register." alt="" coords="757,4718,916,4759"/>
+<area shape="rect" id="node148" href="$adxl345_8h.html#ab2922eecf9ec81b60c2ee7a700ed587f" title="Reads the value of a register." alt="" coords="757,4927,916,4969"/>
+<area shape="rect" id="node156" href="$adxl345_8h.html#afbb16e3ae47545305692a761eaf8bf32" title="Reads the raw output data of each axis." alt="" coords="771,5076,903,5103"/>
+<area shape="rect" id="node158" href="$adxl345_8h.html#a42ab419e9ff735b1493361c6d4f4df36" title="Writes data into a register." alt="" coords="757,4997,916,5038"/>
+<area shape="rect" id="node160" href="$adxl372__i2c_8c.html#a5a97de1aa58eb94d95209f9a7fd9b69a" title=" " alt="" coords="755,5327,919,5353"/>
+<area shape="rect" id="node162" href="$adxl372__i2c_8c.html#a64c2ec0eaf06f2ef2a308fa0884f1874" title=" " alt="" coords="755,5154,919,5195"/>
+<area shape="rect" id="node163" href="$adxl372__i2c_8c.html#a01daaae3b4200dad0ff3603595dbd27f" title=" " alt="" coords="753,5273,921,5300"/>
+<area shape="rect" id="node164" href="$wrapper_8h.html#aeaa8c1c69d24b90e54211af90103c991" title=" " alt="" coords="764,5480,909,5507"/>
+<area shape="rect" id="node171" href="$wrapper_8h.html#ad20bb5eb216f69d566ec3a5f09735088" title=" " alt="" coords="767,5784,906,5811"/>
+<area shape="rect" id="node174" href="$wrapper_8h.html#acda402288dee41c473e5d8883e0d8925" title=" " alt="" coords="763,5632,910,5659"/>
+<area shape="rect" id="node178" href="$wrapper_8h.html#ae81f82cf7a87ddb0b24b0559f1962546" title=" " alt="" coords="766,5835,907,5861"/>
+<area shape="rect" id="node18" href="$ad5593r_8h.html#a0df0e8e4f01b7f9781df0ba0284676bc" title=" " alt="" coords="511,32,614,59"/>
+<area shape="rect" id="node22" href="$ad5629r_8h.html#ad2fc18091d5d91cf9004a8fac805cee4" title="Loads the Clear Code Register with a certain value." alt="" coords="488,83,637,125"/>
+<area shape="rect" id="node23" href="$ad5629r_8h.html#af9c260f65b587ac1144ce9923be8edd9" title="Loads the LDAC register with a certain value." alt="" coords="477,149,649,176"/>
+<area shape="rect" id="node24" href="$ad5629r_8h.html#a9598efa57983f7a6d613209d17d61b84" title="Makes a power&#45;on reset." alt="" coords="505,200,620,227"/>
+<area shape="rect" id="node25" href="$ad5629r_8h.html#a156a7464e44712495e4d0aca8309b2e8" title="Sets the power mode for one or more selected DAC channels." alt="" coords="466,251,659,277"/>
+<area shape="rect" id="node26" href="$ad5629r_8h.html#abc1261a2ca90a704fd4782e0290e19b7" title="Turns on/off the internal reference." alt="" coords="499,301,626,328"/>
+<area shape="rect" id="node28" href="$ad5629r_8h.html#a6bf25c9f2fb6762e45a5f60ba02d5dd3" title="Updates selected DAC register." alt="" coords="477,453,649,480"/>
+<area shape="rect" id="node29" href="$ad5629r_8h.html#a19898251ca79798aed0c626041054596" title="Writes a value to Input Register N of selected DAC channel." alt="" coords="483,504,642,531"/>
+<area shape="rect" id="node30" href="$ad5629r_8h.html#a2bebcfaa968939b044b912f80f419dae" title="Writes a value to Input Register N of selected DAC channel, then updates all." alt="" coords="449,352,676,379"/>
+<area shape="rect" id="node31" href="$ad5629r_8h.html#ae8c205a7c078f25538b4901d387ee914" title="Writes a value to Input Register N and updates the respective DAC channel." alt="" coords="453,403,672,429"/>
+<area shape="rect" id="node34" href="$ad5686_8h.html#a19948ba80bf52832f6356679b690089c" title="Set up DCEN register (daisy&#45;chain enable)" alt="" coords="474,605,651,632"/>
+<area shape="rect" id="node35" href="$ad5686_8h.html#ae9a2c1ac19cc79b87f4cdee9c2b88602" title="Set Gain mode." alt="" coords="488,656,637,683"/>
+<area shape="rect" id="node36" href="$ad5686_8h.html#a6170466526b42a3de6f8571bc496228b" title="Write to Internal reference setup register." alt="" coords="465,707,661,733"/>
+<area shape="rect" id="node37" href="$ad5686_8h.html#a97c30168a4d652976a1856598ee77ac1" title="Set hardware LDAC mask register." alt="" coords="489,757,636,784"/>
+<area shape="rect" id="node38" href="$ad5686_8h.html#aea51a3634ebc5d8d4f51b2a18da69e9d" title="Set Power&#45;down mode for DAC channel n." alt="" coords="482,808,643,835"/>
+<area shape="rect" id="node39" href="$ad5686_8h.html#aafba15362684ae3efb1ea930ed1fdb19" title="Set up readback register (readback enable)" alt="" coords="479,859,646,885"/>
+<area shape="rect" id="node40" href="$ad5686_8h.html#a111437ff26adccd56f4da53e66944f9f" title="Software reset (power&#45;on reset)" alt="" coords="476,909,649,936"/>
+<area shape="rect" id="node41" href="$ad5686_8h.html#a721d6d5395df39a3ddafdd80f4f5008c" title="Update DAC Register n with contents of Input Register n." alt="" coords="473,960,652,987"/>
+<area shape="rect" id="node42" href="$ad5686_8h.html#a85da0ec7b580afc02899f08828a257fb" title="Write to Input Register n (dependent on LDAC)" alt="" coords="479,1011,646,1037"/>
+<area shape="rect" id="node43" href="$ad5686_8h.html#a692eb334565b60d469a3ac44b7970f0f" title="Write to and update DAC channel n." alt="" coords="481,1062,644,1103"/>
+<area shape="rect" id="node45" href="$ad5933_8h.html#afc3dbd39564f171cbd400ea487774662" title="Reads the real and imaginary value from register." alt="" coords="495,1128,630,1155"/>
+<area shape="rect" id="node48" href="$ad5933_8h.html#a124cb2de4fbcb440c16006c4ca8e233c" title="Reads the temperature from the part and returns the data in degrees Celsius." alt="" coords="469,1229,656,1256"/>
+<area shape="rect" id="node49" href="$ad5933_8h.html#a170de42560e2a346b6e90b55094f1180" title="Starts the sweep operation." alt="" coords="212,1280,368,1307"/>
+<area shape="rect" id="node46" href="$ad5933_8h.html#a58b3907982945d725fa5c40b8b548869" title="Reads the real and the imaginary data and calculates the Gain Factor." alt="" coords="205,1091,375,1133"/>
+<area shape="rect" id="node47" href="$ad5933_8h.html#af7159e3dc1e00ce2e03c2943aad4aa34" title="Reads the real and the imaginary data and calculates the Impedance." alt="" coords="183,1157,397,1184"/>
+<area shape="rect" id="node51" href="$ad5933_8h.html#ad0784276ebcb6d9445892f3ea374d7aa" title="Configures the sweep parameters: Start frequency, Frequency increment and Number of increments." alt="" coords="480,1483,645,1509"/>
+<area shape="rect" id="node52" href="$ad5933_8h.html#a2e26b83eb857f404768f289338c980d2" title="Resets the device." alt="" coords="507,1432,618,1459"/>
+<area shape="rect" id="node53" href="$ad5933_8h.html#a54f4c92b425f6132a8874d0cdca0cd38" title="Selects the range and gain of the device." alt="" coords="459,1533,666,1560"/>
+<area shape="rect" id="node54" href="$ad5933_8h.html#aaa3c92f75c6162c5058fe12b05c4863e" title="Selects the number of settling cycles of the device." alt="" coords="467,1331,658,1357"/>
+<area shape="rect" id="node55" href="$ad5933_8h.html#a0e9a5378edfb0cfad844827c8d5cee73" title="Selects the source of the system clock." alt="" coords="473,1381,652,1408"/>
+<area shape="rect" id="node57" href="$ad7091r5_8h.html#a615d8d52337a067229a210da5509b203" title=" " alt="" coords="489,1635,637,1661"/>
+<area shape="rect" id="node58" href="$ad7091r5_8h.html#a9e27d8c976c79a781662ad629d358e1d" title=" " alt="" coords="489,1685,637,1712"/>
+<area shape="rect" id="node59" href="$ad7091r5_8c.html#a20ada634d54d4eed05226a00271aa96c" title=" " alt="" coords="469,1584,657,1611"/>
+<area shape="rect" id="node60" href="$ad7091r5_8c.html#ae7c89b3a56043899fd1130188a763ec7" title=" " alt="" coords="467,1837,659,1864"/>
+<area shape="rect" id="node67" href="$ad7091r5_8h.html#afd5f1bab7a81aa51cb426cd9bdf63277" title=" " alt="" coords="215,1711,365,1737"/>
+<area shape="rect" id="node68" href="$ad7091r5_8h.html#a4b7341a8ad881172bdeeac9bed14b83b" title=" " alt="" coords="479,1787,647,1813"/>
+<area shape="rect" id="node61" href="$ad7091r5_8c.html#ab5910ad53c54d79c7fcf4f9a3d0d3e5f" title="Initialize GPIO driver handlers for the GPIOs in the system. ad7091r5_init() helper function." alt="" coords="229,1913,351,1940"/>
+<area shape="rect" id="node62" href="$ad7091r5_8h.html#a3f8a54fe65cfc89920b07ed66ee3c646" title=" " alt="" coords="215,1965,365,2006"/>
+<area shape="rect" id="node63" href="$ad7091r5_8h.html#ad6f09a2a2f289b0c9c1f7dd64df73e8f" title=" " alt="" coords="193,2031,387,2057"/>
+<area shape="rect" id="node64" href="$ad7091r5_8h.html#ab7e6212b303777358db1f635c5633da9" title=" " alt="" coords="213,1761,367,1788"/>
+<area shape="rect" id="node65" href="$ad7091r5_8h.html#a148942113a94c0fd6bddbf28667e9979" title=" " alt="" coords="219,1812,361,1839"/>
+<area shape="rect" id="node66" href="$ad7091r5_8h.html#ae02330da130a896a798df4487fc83eb6" title=" " alt="" coords="205,1863,375,1889"/>
+<area shape="rect" id="node70" href="$ad7091r5_8h.html#a495fc1c9d3909a4f1612be6198985f47" title=" " alt="" coords="489,1888,636,1915"/>
+<area shape="rect" id="node72" href="$ad7156_8h.html#a6cd927732f1fadbef1401432166df250" title="Enables or disables conversion on the selected channel." alt="" coords="479,2141,647,2168"/>
+<area shape="rect" id="node73" href="$ad7156_8h.html#a4c777653d93acf42c71ad5cccb16e0af" title="Reads the range bits from the device and returns the range in pF." alt="" coords="491,2243,634,2269"/>
+<area shape="rect" id="node74" href="$ad7156_8h.html#aff4df363af93715fa75cd724df080892" title="Sets the input range of the specified channel." alt="" coords="219,2243,361,2269"/>
+<area shape="rect" id="node76" href="$ad7156_8h.html#abf1912546bb46e9017d48747a5398569" title="Initializes the communication peripheral and the initial Values for AD7156 Board." alt="" coords="513,2445,612,2472"/>
+<area shape="rect" id="node77" href="$ad7156_8h.html#ade01fa2388c868b3df58ef6d3f7ce692" title="Reads a 12&#45;bit sample from the selected channel." alt="" coords="463,2344,663,2371"/>
+<area shape="rect" id="node79" href="$ad7156_8h.html#a1baa5f16bef109f1bfe0258545891b66" title="Sets the converter mode of operation." alt="" coords="469,2192,657,2219"/>
+<area shape="rect" id="node80" href="$ad7156_8h.html#ae2b4dbcc2eb52fac731cd934577afe74" title="Selects the threshold mode of operation." alt="" coords="458,2091,667,2117"/>
+<area shape="rect" id="node81" href="$ad7156_8h.html#a58c404bee549781c62767a21ea475374" title="Waits for a finished CDC conversion and reads a 12&#45;bit sample from the selected channel." alt="" coords="445,2395,680,2421"/>
+<area shape="rect" id="node75" href="$ad7156_8h.html#aa80cfa5cd961c7bde4355b47eeab0675" title="Writes to the threshold register when threshold fixed mode is enabled." alt="" coords="207,2149,373,2176"/>
+<area shape="rect" id="node78" href="$ad7156_8h.html#a2441eed2bab5b9ca5ba44ce7ec31189b" title="Reads a sample the selected channel and converts the data to picofarads(pF)." alt="" coords="208,2329,372,2370"/>
+<area shape="rect" id="node82" href="$ad7156_8h.html#aadbc4753dd57c1a2296aaa705ea7829d" title="Waits for a finished CDC conversion the selected channel, reads a sample and converts the data to pic..." alt="" coords="191,2394,389,2435"/>
+<area shape="rect" id="node85" href="$ad7156_8h.html#a27be5c43d46c4a545a2c4a226262b2d9" title="Writes a value(pF) to the sensitivity register. This functions should be used when adaptive threshold..." alt="" coords="477,1989,649,2016"/>
+<area shape="rect" id="node87" href="$ad7746_8h.html#a58fa38513e2e6b5f781d8dccd072b523" title="Perform offset/gain calibration." alt="" coords="223,2749,357,2776"/>
+<area shape="rect" id="node88" href="$ad7746_8h.html#ae3d0541802a583196755c4e068b83673" title="Waits until a conversion on the capacitive channel has been finished and returns the output data." alt="" coords="208,2851,372,2877"/>
+<area shape="rect" id="node90" href="$ad7746_8h.html#a9e658ccc3e9028043a62c11dc180c531" title="Waits until a conversion on a voltage/temperature channel has been finished and returns the output da..." alt="" coords="213,2901,367,2928"/>
+<area shape="rect" id="node89" href="$ad7746-ebz_2src_2app_2headless_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="43,2825,97,2852"/>
+<area shape="rect" id="node92" href="$ad7746_8h.html#a0910d0a1f46726bbfd81d39b3358a4b3" title="Configure the capacitive setup register." alt="" coords="499,2597,626,2624"/>
+<area shape="rect" id="node94" href="$ad7746_8h.html#a40f2c50f5074aa7b49f24670df77dc95" title="Set the DAC code and enable state for EXCA." alt="" coords="204,2800,376,2827"/>
+<area shape="rect" id="node95" href="$ad7746_8h.html#acfb3e4e3d33d323d26559285d6a07f6b" title="Set the DAC code and enable state for EXCB." alt="" coords="477,2648,649,2675"/>
+<area shape="rect" id="node96" href="$ad7746_8h.html#a525964b8724775523f5377ce161240a2" title="Set the configuration register." alt="" coords="491,2749,634,2776"/>
+<area shape="rect" id="node97" href="$ad7746_8h.html#a4bb798aef3aec00883ae34c7f001877f" title="Configure the excitation setup register." alt="" coords="499,2699,626,2725"/>
+<area shape="rect" id="node98" href="$ad7746_8h.html#a9c225faf11c8392042d47a84ca028c3c" title="Configure the voltage/temperature setup register." alt="" coords="504,2547,621,2573"/>
+<area shape="rect" id="node93" href="$ad7746_8h.html#a2f5d9a49f99bf836d5614406c98897c4" title="Initialize the ad7606 device structure." alt="" coords="241,2648,339,2675"/>
+<area shape="rect" id="node102" href="$adp5589_8h.html#afdd05e4025e183669d7ca8c597be7e53" title="Reads the state of the pins." alt="" coords="476,2901,649,2928"/>
+<area shape="rect" id="node103" href="$adp5589_8h.html#a0be6cd6c51c1a7e61eeb3e845a4ff211" title="Initializes the communication peripheral and checks if the ADP5589 part is present." alt="" coords="509,2952,616,2979"/>
+<area shape="rect" id="node104" href="$adp5589_8h.html#a00c689e4357243d8a5242456a0547006" title="Locks the ADP5589 and requests Password for unlock." alt="" coords="491,3003,634,3029"/>
+<area shape="rect" id="node106" href="$adp5589_8h.html#a8f72cb7501f903550bf857f9948a7173" title="Sets the direction of the pins." alt="" coords="474,3053,651,3080"/>
+<area shape="rect" id="node107" href="$adp5589_8h.html#ad27d45de6044faf886de84348f76f71d" title="Initializes keyboard decoder." alt="" coords="495,3104,631,3131"/>
+<area shape="rect" id="node108" href="$adp5589_8h.html#aca12875a042564b8477e564c7d567eee" title="Initializes the PWM generator in continuous mode." alt="" coords="490,3155,635,3181"/>
+<area shape="rect" id="node109" href="$adp5589_8h.html#a1be7b79145ba9807fe9d046c6c5e63a8" title="Sets the state of the pins." alt="" coords="477,3205,649,3232"/>
+<area shape="rect" id="node110" href="$adp5589_8h.html#a9801c2a8869b67d3d192541021b21c05" title="Sets the PWM On and Off times." alt="" coords="491,3256,635,3283"/>
+<area shape="rect" id="node112" href="$adpd188_8h.html#a6a86776acf6c366a12b80e2d1dd99afb" title="Get sample frequency of the ADC." alt="" coords="465,4067,661,4093"/>
+<area shape="rect" id="node113" href="$adpd188_8h.html#a58dcdaeaea13b7cede4ff91b17bdc673" title="Do internal 32MHz clock calibration. This calibration requires the 32kHz clock to be calibrated first..." alt="" coords="475,3864,650,3891"/>
+<area shape="rect" id="node114" href="$adpd188_8h.html#ac3baebd256bcb88c876657e053332af5" title="Empty the FIFO." alt="" coords="490,3509,635,3536"/>
+<area shape="rect" id="node115" href="$adpd188_8h.html#af8cf6758753eccd6cadf55b23743c374" title="Get the number of bytes currently present in FIFO." alt="" coords="472,4168,653,4195"/>
+<area shape="rect" id="node116" href="$adpd188_8h.html#a4de4eaf34b044fef4fc71952c643ab3b" title="Set the number of 16 bit words that need to be in the FIFO to trigger an interrupt." alt="" coords="472,3560,653,3587"/>
+<area shape="rect" id="node117" href="$adpd188_8h.html#ab223f6408746c282f88ed468144ad05c" title="Setup the GPIO source." alt="" coords="473,3611,653,3637"/>
+<area shape="rect" id="node118" href="$adpd188_8h.html#abc11fae86542999dc0381978a94faa14" title="Setup drive and polarity of the GPIOs. Also enable GPIO if necessary." alt="" coords="485,3661,641,3688"/>
+<area shape="rect" id="node119" href="$adpd188_8h.html#ad498aa08ccb8f2c328fcc761f391738d" title="Initialize the ADPD188 driver." alt="" coords="237,3817,343,3844"/>
+<area shape="rect" id="node120" href="$adpd188_8h.html#ad0a577b65b64df5ed10a5ecedbad965c" title="Clear the slot and FIFO interrupt flags." alt="" coords="473,3763,653,3789"/>
+<area shape="rect" id="node121" href="$adpd188_8h.html#abc82bd34fefd0372b5ccb60a923d19c1" title="Enable the slot and FIFO interrupt flags." alt="" coords="481,3813,645,3840"/>
+<area shape="rect" id="node122" href="$adpd188_8h.html#ae966fc779c67a898b07758b57583fcc0" title="Get the slot and FIFO interrupt flags." alt="" coords="478,3965,647,3992"/>
+<area shape="rect" id="node123" href="$adpd188_8h.html#aa5234f9448e830cf73ead5eccaf5d68c" title="Get the mode of operation of the ADPD188." alt="" coords="487,4117,638,4144"/>
+<area shape="rect" id="node124" href="$adpd188_8h.html#ad71f0c49d59a0a13a416871efbe4cf1f" title="Enable slot and setup its FIFO interaction." alt="" coords="487,3712,639,3739"/>
+<area shape="rect" id="node125" href="$adpd188_8h.html#ab8a0efa4cbeda4444394df7c4c327938" title="Do initial configuration of the device to use as a smoke detector. The configuration is described in ..." alt="" coords="202,3553,378,3594"/>
+<area shape="rect" id="node127" href="$adpd188_8h.html#abae39f2c40f5701e7bfb8b1759ace5ee" title="Set sample frequency of the ADC." alt="" coords="465,3408,660,3435"/>
+<area shape="rect" id="node128" href="$adpd188_8h.html#a1528b746a9b5267058f97c57bfca0942" title="Set the mode of operation of the ADPD188." alt="" coords="488,3307,637,3333"/>
+<area shape="rect" id="node129" href="$adpd188_8h.html#ac05d2aa664470028697dd810520fdd5d" title="Do software reset of the device." alt="" coords="491,3459,634,3485"/>
+<area shape="rect" id="node131" href="$adpd410x_8h.html#a4a65d1440f2d41e7f808ef813b77b237" title="Get a full data packet from the device containing data from all active time slots." alt="" coords="487,4219,638,4245"/>
+<area shape="rect" id="node132" href="$adpd410x_8h.html#a1af8b15290b36ee55a1844a2f6f851d4" title="Get number of bytes in the device FIFO." alt="" coords="455,4320,670,4347"/>
+<area shape="rect" id="node133" href="$adpd410x_8h.html#a3398d6eea6ec9b5840cbdbfb21363ac0" title="Do a read and write of a register to update only part of a register." alt="" coords="464,4371,661,4397"/>
+<area shape="rect" id="node135" href="$adpd410x_8h.html#a8c47ad8226f8c0882232750616b4ac6d" title="Setup the device and the driver." alt="" coords="5,4421,135,4448"/>
+<area shape="rect" id="node138" href="$adpd410x_8h.html#aeebd23ab85c6cd30017c65946538e5e3" title="Setup an active time slot." alt="" coords="195,4523,385,4549"/>
+<area shape="rect" id="node139" href="$adpd410x_8h.html#adfc05439df83ca920f95cda419f45ee3" title="Set device sampling frequency." alt="" coords="456,4472,669,4499"/>
+<area shape="rect" id="node134" href="$adpd410x_8h.html#a7a74b5425d1d67e763df0ab85dc2df12" title="Do a software reset." alt="" coords="227,4371,353,4397"/>
+<area shape="rect" id="node136" href="$adpd410x_8c.html#a276c3d1815c3a76bc0c4a8556d51cc3b" title="Set number of active time slots." alt="" coords="187,4421,393,4448"/>
+<area shape="rect" id="node137" href="$adpd410x_8h.html#a2f5eb641289541459498a473a416724d" title="Set operation mode." alt="" coords="203,4320,377,4347"/>
+<area shape="rect" id="node142" href="$adt7420_8h.html#a04499e58b0fca74cdc4dc704a5e44c6a" title="Reads the temperature data and converts it to Celsius degrees." alt="" coords="467,4624,658,4651"/>
+<area shape="rect" id="node143" href="$adt7420_8h.html#a002fbfa6b776f9d63d6e394710c6fc49" title="Initializes the communication peripheral and checks if the device is present." alt="" coords="511,4675,614,4701"/>
+<area shape="rect" id="node144" href="$adt7420_8h.html#af66a6aad34748e4017869dd5a7cd02ed" title="Sets the operational mode for ADT7420." alt="" coords="455,4725,670,4752"/>
+<area shape="rect" id="node145" href="$adt7420_8h.html#a3695e9963b1b31d2fbff75cd0e9651f7" title="Sets the resolution for ADT7420." alt="" coords="475,4776,650,4803"/>
+<area shape="rect" id="node149" href="$adxl345_8h.html#a4e9e8761ad2bfa6baeb1d1f1c82e0a7d" title="Initializes the communication peripheral and checks if the ADXL345 part is present." alt="" coords="511,4827,614,4853"/>
+<area shape="rect" id="node150" href="$adxl345_8h.html#afba00ca105a0d3a67bc8abf2d00b703f" title="Enables/disables the activity detection." alt="" coords="484,4979,641,5021"/>
+<area shape="rect" id="node151" href="$adxl345_8h.html#af5ac6a0dd16e927e4ea43e2880f87708" title="Enables/disables the free&#45;fall detection." alt="" coords="481,5045,644,5086"/>
+<area shape="rect" id="node152" href="$adxl345_8h.html#a1cf9afad1c3d6a81e5bc7fd1a745e6f0" title="Enables/disables the inactivity detection." alt="" coords="478,5110,647,5151"/>
+<area shape="rect" id="node153" href="$adxl345_8h.html#ac08a9bb3aefcf7f2adb12b0ab0abe2ca" title="Places the device into standby/measure mode." alt="" coords="467,5176,659,5203"/>
+<area shape="rect" id="node154" href="$adxl345_8h.html#a6a7c64d2827df1e1277ea1cfb3e87579" title="Selects the measurement range." alt="" coords="454,4877,671,4904"/>
+<area shape="rect" id="node155" href="$adxl345_8h.html#ab061b09e44c20b393e2e6eb935a83dd2" title="Enables/disables the tap detection." alt="" coords="464,4928,661,4955"/>
+<area shape="rect" id="node157" href="$adxl345_8h.html#a88594289b442c1a52ecdb807ca4a4194" title="Reads the raw output data of each axis and converts it to g." alt="" coords="489,5277,636,5304"/>
+<area shape="rect" id="node159" href="$adxl345_8h.html#af568732d605456e0d3a7155c19e02e6b" title="Sets an offset value for each axis (Offset Calibration)." alt="" coords="490,5227,635,5253"/>
+<area shape="rect" id="node161" href="$adxl372_8h.html#a30746b358cf0ef10cbdb0a8d49d37d49" title=" " alt="" coords="511,5328,614,5355"/>
+<area shape="rect" id="node165" href="$wrapper_8h.html#ab5f82c7bf49e985eec67654e85da3c4b" title=" " alt="" coords="485,5480,640,5507"/>
+<area shape="rect" id="node166" href="$wrapper_8h.html#a533b3af0030a961b0e3b2ed1e09b83c4" title=" " alt="" coords="477,5531,648,5557"/>
+<area shape="rect" id="node167" href="$wrapper_8h.html#a1fead1933ed6cf83b2edaeb89f89300e" title=" " alt="" coords="489,5379,636,5405"/>
+<area shape="rect" id="node168" href="$wrapper_8h.html#a44a49d54d98361c52c5f0b757a74cd74" title=" " alt="" coords="484,5581,641,5608"/>
+<area shape="rect" id="node169" href="$wrapper_8h.html#afa4746abacae9e1629b9db7a1a0355bf" title=" " alt="" coords="477,5632,649,5659"/>
+<area shape="rect" id="node170" href="$wrapper_8h.html#a25f5b36f05792144889cfdd7c3306b2e" title=" " alt="" coords="527,5429,598,5456"/>
+<area shape="rect" id="node172" href="$wrapper_8h.html#aad978d693686cc1a63f69c6e4c4d2adb" title=" " alt="" coords="488,5784,637,5811"/>
+<area shape="rect" id="node173" href="$wrapper_8h.html#aab7d4c1a8e2bc99a45abf2bc571bf9bc" title=" " alt="" coords="489,5835,637,5861"/>
+<area shape="rect" id="node175" href="$wrapper_8h.html#a94958535e45d005c5b3de7fce18a845d" title=" " alt="" coords="490,5683,635,5709"/>
+<area shape="rect" id="node177" href="$wrapper_8h.html#ac28401c343589f8bf0a49e9c5b5d94e8" title=" " alt="" coords="479,5733,647,5760"/>
+<area shape="rect" id="node176" href="$wrapper_8h.html#add4d29543fddc813f608fcc84f33ebcc" title=" " alt="" coords="209,5683,371,5709"/>
+<area shape="rect" id="node179" href="$wrapper_8h.html#a3996dd2bedee88bf81d3a679d936e9ce" title=" " alt="" coords="491,5885,635,5912"/>
+</map>

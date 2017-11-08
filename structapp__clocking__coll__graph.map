@@ -1,0 +1,11 @@
+<map id="app_clocking" name="app_clocking">
+<area shape="rect" id="node1" title="Structure holding clocking app descriptor." alt="" coords="247,273,354,300"/>
+<area shape="rect" id="node2" href="$structad9528__dev.html" title=" " alt="" coords="250,184,351,211"/>
+<area shape="rect" id="node3" href="$structad9528__state.html" title=" " alt="" coords="5,95,116,121"/>
+<area shape="rect" id="node4" href="$structad9528__platform__data.html" title="platform specific information" alt="" coords="140,95,309,121"/>
+<area shape="rect" id="node5" href="$structad9528__channel__spec.html" title="Output channel configuration." alt="" coords="115,5,281,32"/>
+<area shape="rect" id="node6" href="$structgpio__desc.html" title="Structure holding the GPIO descriptor." alt="" coords="333,95,420,121"/>
+<area shape="rect" id="node7" href="$structgpio__platform__ops.html" title="Structure holding gpio function pointers that point to the platform specific function." alt="" coords="305,5,448,32"/>
+<area shape="rect" id="node8" href="$structspi__desc.html" title="Structure holding SPI descriptor." alt="" coords="488,95,567,121"/>
+<area shape="rect" id="node9" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="472,5,607,32"/>
+</map>

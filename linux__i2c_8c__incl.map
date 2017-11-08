@@ -1,0 +1,14 @@
+<map id="drivers/platform/linux/linux_i2c.c" name="drivers/platform/linux/linux_i2c.c">
+<area shape="rect" id="node1" title="Implementation of Linux platform I2C Driver." alt="" coords="337,5,499,47"/>
+<area shape="rect" id="node2" href="$error_8h.html" title="Error codes definition." alt="" coords="13,95,77,121"/>
+<area shape="rect" id="node4" href="$i2c_8h.html" title="Header file of I2C Interface." alt="" coords="103,95,157,121"/>
+<area shape="rect" id="node6" href="$linux__i2c_8h.html" title=" " alt="" coords="181,95,273,121"/>
+<area shape="rect" id="node7" title=" " alt="" coords="297,95,360,121"/>
+<area shape="rect" id="node8" title=" " alt="" coords="385,95,451,121"/>
+<area shape="rect" id="node9" title=" " alt="" coords="476,95,547,121"/>
+<area shape="rect" id="node10" title=" " alt="" coords="571,95,646,121"/>
+<area shape="rect" id="node11" title=" " alt="" coords="670,95,758,121"/>
+<area shape="rect" id="node12" title=" " alt="" coords="782,95,899,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,169,73,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="97,169,168,196"/>
+</map>

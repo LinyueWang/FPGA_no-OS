@@ -1,0 +1,4 @@
+<map id="ad5446_set_register" name="ad5446_set_register">
+<area shape="rect" id="node1" title="Writes to input register via SPI." alt="" coords="207,5,361,32"/>
+<area shape="rect" id="node2" href="$ad5446_8h.html#afb8de1792f03179d69c4163d278257b0" title="Sets the output voltage." alt="" coords="5,5,159,32"/>
+</map>

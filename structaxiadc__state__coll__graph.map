@@ -1,0 +1,29 @@
+<map id="axiadc_state" name="axiadc_state">
+<area shape="rect" id="node1" title=" " alt="" coords="362,216,467,243"/>
+<area shape="rect" id="node2" href="$structad9361__rf__phy.html" title=" " alt="" coords="692,355,811,381"/>
+<area shape="rect" id="node19" href="$structrefclk__scale.html" title=" " alt="" coords="948,400,1048,427"/>
+<area shape="rect" id="node3" href="$structgain__table__info.html" title=" " alt="" coords="353,281,476,308"/>
+<area shape="rect" id="node4" href="$structaxi__adc.html" title=" " alt="" coords="379,332,451,359"/>
+<area shape="rect" id="node5" href="$structad9361__phy__platform__data.html" title=" " alt="" coords="315,383,515,409"/>
+<area shape="rect" id="node6" href="$structrssi__control.html" title=" " alt="" coords="42,299,139,325"/>
+<area shape="rect" id="node7" href="$structelna__control.html" title=" " alt="" coords="39,349,142,376"/>
+<area shape="rect" id="node8" href="$structtx__monitor__control.html" title=" " alt="" coords="18,400,163,427"/>
+<area shape="rect" id="node9" href="$structauxadc__control.html" title=" " alt="" coords="30,451,151,477"/>
+<area shape="rect" id="node10" href="$structauxdac__control.html" title=" " alt="" coords="30,501,151,528"/>
+<area shape="rect" id="node11" href="$structport__control.html" title=" " alt="" coords="41,552,141,579"/>
+<area shape="rect" id="node12" href="$structctrl__outs__control.html" title=" " alt="" coords="25,147,156,173"/>
+<area shape="rect" id="node13" href="$structgpo__control.html" title=" " alt="" coords="41,197,140,224"/>
+<area shape="rect" id="node14" href="$structgain__control.html" title=" " alt="" coords="39,248,142,275"/>
+<area shape="rect" id="node15" href="$structad9361__fastlock.html" title=" " alt="" coords="350,440,479,467"/>
+<area shape="rect" id="node16" href="$structad9361__fastlock__entry.html" title=" " alt="" coords="5,603,176,629"/>
+<area shape="rect" id="node17" href="$structaxiadc__converter.html" title=" " alt="" coords="347,501,482,528"/>
+<area shape="rect" id="node18" href="$structaxiadc__chip__info.html" title=" " alt="" coords="25,653,156,680"/>
+<area shape="rect" id="node20" href="$structspi__desc.html" title="Structure holding SPI descriptor." alt="" coords="375,557,454,584"/>
+<area shape="rect" id="node21" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="23,704,158,731"/>
+<area shape="rect" id="node22" href="$structclk.html" title=" " alt="" coords="394,652,435,679"/>
+<area shape="rect" id="node23" href="$structclk__hw.html" title=" " alt="" coords="718,675,785,701"/>
+<area shape="rect" id="node24" href="$structgpio__desc.html" title="Structure holding the GPIO descriptor." alt="" coords="371,51,458,77"/>
+<area shape="rect" id="node25" href="$structgpio__platform__ops.html" title="Structure holding gpio function pointers that point to the platform specific function." alt="" coords="19,45,162,72"/>
+<area shape="rect" id="node26" href="$structaxi__dac.html" title=" " alt="" coords="379,105,451,132"/>
+<area shape="rect" id="node27" href="$structaxi__dac__channel.html" title=" " alt="" coords="25,96,156,123"/>
+</map>

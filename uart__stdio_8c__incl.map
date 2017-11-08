@@ -1,0 +1,8 @@
+<map id="drivers/platform/aducm3029/uart_stdio.c" name="drivers/platform/aducm3029/uart_stdio.c">
+<area shape="rect" id="node1" title="Source file to use printf over uart." alt="" coords="78,5,285,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,72,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="97,95,165,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="189,95,275,121"/>
+<area shape="rect" id="node5" href="$uart_8h.html" title="Header file of UART interface." alt="" coords="299,95,359,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="294,169,365,196"/>
+</map>

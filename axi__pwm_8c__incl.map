@@ -1,0 +1,12 @@
+<map id="drivers/axi_core/axi_pwmgen/axi_pwm.c" name="drivers/axi_core/axi_pwmgen/axi_pwm.c">
+<area shape="rect" id="node1" title=" " alt="" coords="161,5,320,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,169,76,196"/>
+<area shape="rect" id="node3" href="$pwm_8h.html" title="Header file of PWM Interface." alt="" coords="145,95,211,121"/>
+<area shape="rect" id="node6" href="$axi__pwm__extra_8h.html" title=" " alt="" coords="236,95,371,121"/>
+<area shape="rect" id="node7" href="$axi__io_8h.html" title="Header file of AXI IO." alt="" coords="395,95,468,121"/>
+<area shape="rect" id="node8" href="$util_8h.html" title="Implementation of utility functions." alt="" coords="65,95,120,121"/>
+<area shape="rect" id="node9" href="$error_8h.html" title="Error codes definition." alt="" coords="493,95,557,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="244,169,315,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="113,169,195,196"/>
+<area shape="rect" id="node10" title=" " alt="" coords="491,169,559,196"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="iio_ad9361_desc" name="iio_ad9361_desc">
+<area shape="rect" id="node1" title="Structure holding iio descriptor." alt="" coords="5,291,136,317"/>
+<area shape="rect" id="node2" href="$structiio__device.html" title="Structure holding channels and attributes of a device." alt="" coords="27,201,115,228"/>
+<area shape="rect" id="node3" href="$structiio__channel.html" title="Struct describing the scan type." alt="" coords="184,103,280,130"/>
+<area shape="rect" id="node4" href="$structiio__attribute.html" title="Structure holding pointers to show and store functions." alt="" coords="19,5,120,32"/>
+<area shape="rect" id="node5" href="$structiio__chan__type.html" title="IIO channel types." alt="" coords="164,5,276,32"/>
+<area shape="rect" id="node6" href="$structscan__type.html" title=" " alt="" coords="300,5,388,32"/>
+</map>

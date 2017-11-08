@@ -1,0 +1,7 @@
+<map id="phy_comm_init_param" name="phy_comm_init_param">
+<area shape="rect" id="node1" title="Contains physical communication initialization structure." alt="" coords="62,184,233,211"/>
+<area shape="rect" id="node2" href="$structi2c__init__param.html" title="Structure holding the parameters for I2C initialization." alt="" coords="17,95,136,121"/>
+<area shape="rect" id="node3" href="$structi2c__platform__ops.html" title="Structure holding I2C function pointers that point to the platform specific function." alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node4" href="$structspi__init__param.html" title="Structure holding the parameters for SPI initialization." alt="" coords="168,95,287,121"/>
+<area shape="rect" id="node5" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="164,5,299,32"/>
+</map>

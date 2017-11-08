@@ -1,0 +1,4 @@
+<map id="ad7799_get_gain" name="ad7799_get_gain">
+<area shape="rect" id="node1" title="Get the ADC gain." alt="" coords="217,5,351,32"/>
+<area shape="rect" id="node2" href="$iio__ad7799_8c.html#a389962169920522cf10914894718f28a" title="Read ADC Gain value." alt="" coords="5,5,169,32"/>
+</map>

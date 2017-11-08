@@ -1,0 +1,11 @@
+<map id="projects/ad9208/src/app_iio.h" name="projects/ad9208/src/app_iio.h">
+<area shape="rect" id="node1" title="Application IIO setup." alt="" coords="217,5,367,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="274,319,345,345"/>
+<area shape="rect" id="node3" href="$iio__axi__adc_8h.html" title="Header file of iio_axi_adc." alt="" coords="193,95,300,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,169,99,196"/>
+<area shape="rect" id="node5" href="$axi__adc__core_8h.html" title="Driver for the Analog Devices AXI&#45;ADC&#45;CORE module." alt="" coords="123,169,242,196"/>
+<area shape="rect" id="node9" href="$axi__dmac_8h.html" title="Driver for the Analog Devices AXI&#45;DMAC core." alt="" coords="266,169,363,196"/>
+<area shape="rect" id="node6" href="$util_8h.html" title="Implementation of utility functions." alt="" coords="171,244,226,271"/>
+<area shape="rect" id="node7" title=" " alt="" coords="169,319,239,345"/>
+<area shape="rect" id="node8" title=" " alt="" coords="61,319,144,345"/>
+</map>

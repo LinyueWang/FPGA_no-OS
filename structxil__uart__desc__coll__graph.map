@@ -1,0 +1,5 @@
+<map id="xil_uart_desc" name="xil_uart_desc">
+<area shape="rect" id="node1" title="Xilinx platform specific UART descriptor." alt="" coords="57,95,165,121"/>
+<area shape="rect" id="node2" href="$structirq__ctrl__desc.html" title=" " alt="" coords="5,5,109,32"/>
+<area shape="rect" id="node3" href="$structfifo__element.html" title="Structure holding the fifo element parameters." alt="" coords="133,5,237,32"/>
+</map>

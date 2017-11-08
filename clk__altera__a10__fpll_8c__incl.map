@@ -1,0 +1,14 @@
+<map id="drivers/axi_core/clk_altera_a10_fpll/clk_altera_a10_fpll.c" name="drivers/axi_core/clk_altera_a10_fpll/clk_altera_a10_fpll.c">
+<area shape="rect" id="node1" title="Driver for the Altera FPLL." alt="" coords="331,5,481,61"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,184,76,211"/>
+<area shape="rect" id="node3" title=" " alt="" coords="100,184,171,211"/>
+<area shape="rect" id="node4" title=" " alt="" coords="441,109,507,136"/>
+<area shape="rect" id="node5" title=" " alt="" coords="195,184,278,211"/>
+<area shape="rect" id="node6" title=" " alt="" coords="532,109,619,136"/>
+<area shape="rect" id="node7" title=" " alt="" coords="643,109,713,136"/>
+<area shape="rect" id="node8" title=" " alt="" coords="737,109,784,136"/>
+<area shape="rect" id="node9" href="$util_8h.html" title="Implementation of utility functions." alt="" coords="79,109,133,136"/>
+<area shape="rect" id="node10" href="$error_8h.html" title="Error codes definition." alt="" coords="809,109,873,136"/>
+<area shape="rect" id="node12" href="$clk__altera__a10__fpll_8h.html" title="Driver for the Altera FPLL." alt="" coords="259,109,417,136"/>
+<area shape="rect" id="node11" title=" " alt="" coords="807,184,875,211"/>
+</map>

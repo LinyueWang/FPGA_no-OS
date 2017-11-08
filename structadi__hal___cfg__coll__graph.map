@@ -1,0 +1,14 @@
+<map id="adi_hal_Cfg" name="adi_hal_Cfg">
+<area shape="rect" id="node1" title="Data structure to hold platform Hardware layer settings for all system/platform related features." alt="" coords="601,189,700,216"/>
+<area shape="rect" id="node2" href="$structadi__hal___i2c_cfg.html" title="Data structure for I2C configuration." alt="" coords="326,5,443,32"/>
+<area shape="rect" id="node3" href="$structadi__hal___bbic_cfg.html" title="Data structure to hold platform Hardware layer settings for all system related feature of the ADI tra..." alt="" coords="321,56,448,83"/>
+<area shape="rect" id="node4" href="$structadi__hal__fpga___axi_cfg.html" title="Data structure for memory Fpga Driver configuration." alt="" coords="5,56,160,83"/>
+<area shape="rect" id="node5" href="$structadi__hal___hw_reset_cfg.html" title="Data structure for Hardware reset pin functionality." alt="" coords="307,107,463,133"/>
+<area shape="rect" id="node6" href="$structgpio__desc.html" title="Structure holding the GPIO descriptor." alt="" coords="341,157,428,184"/>
+<area shape="rect" id="node7" href="$structgpio__platform__ops.html" title="Structure holding gpio function pointers that point to the platform specific function." alt="" coords="11,157,154,184"/>
+<area shape="rect" id="node8" href="$structspi__desc.html" title="Structure holding SPI descriptor." alt="" coords="345,208,424,235"/>
+<area shape="rect" id="node9" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="15,208,150,235"/>
+<area shape="rect" id="node10" href="$structadi__hal___log_cfg.html" title="Data structure for Logging facility." alt="" coords="324,259,445,285"/>
+<area shape="rect" id="node11" href="$structadi__hal___timer_cfg.html" title=" " alt="" coords="317,309,453,336"/>
+<area shape="rect" id="node12" href="$structadi__hal___spi_cfg.html" title="Data structure for SPI configuration." alt="" coords="325,360,444,387"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="adpd188_sw_reset" name="adpd188_sw_reset">
+<area shape="rect" id="node1" title="Do software reset of the device." alt="" coords="160,5,303,32"/>
+<area shape="rect" id="node2" href="$adpd188_8h.html#ad498aa08ccb8f2c328fcc761f391738d" title="Initialize the ADPD188 driver." alt="" coords="5,5,112,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="pwm_init" name="pwm_init">
+<area shape="rect" id="node1" title="Initialize the pwm axi generator and the handler associated with it." alt="" coords="171,5,245,32"/>
+<area shape="rect" id="node2" href="$adaq7980_8h.html#a0db55892937414f2d5dc84a14fd89677" title=" " alt="" coords="5,5,123,32"/>
+</map>

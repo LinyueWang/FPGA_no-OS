@@ -1,0 +1,11 @@
+<map id="drivers/accel/adxl372/adxl372.h" name="drivers/accel/adxl372/adxl372.h">
+<area shape="rect" id="node1" title="Header file for adxl372 Driver." alt="" coords="110,5,272,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="166,169,237,196"/>
+<area shape="rect" id="node3" href="$util_8h.html" title="Implementation of utility functions." alt="" coords="361,95,416,121"/>
+<area shape="rect" id="node6" href="$delay_8h.html" title="Header file of Delay functions." alt="" coords="26,95,94,121"/>
+<area shape="rect" id="node7" href="$gpio_8h.html" title="Header file of GPIO Interface." alt="" coords="118,95,181,121"/>
+<area shape="rect" id="node8" href="$i2c_8h.html" title="Header file of I2C Interface." alt="" coords="206,95,259,121"/>
+<area shape="rect" id="node9" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="283,95,336,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="282,169,353,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="378,169,460,196"/>
+</map>

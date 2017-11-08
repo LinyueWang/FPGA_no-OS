@@ -1,0 +1,4 @@
+<map id="iio_ad713x_read_dev" name="iio_ad713x_read_dev">
+<area shape="rect" id="node1" title="Read chunk of data from RAM to pbuf. Call &quot;iio_ad713x_transfer_dev_to_mem&quot; first. This function is pr..." alt="" coords="175,5,335,32"/>
+<area shape="rect" id="node2" href="$iio__ad713x_8h.html#a259a55182ae9a8bbf607f56a79f97f45" title="Init for reading/writing and parameterization of a ad9361 device." alt="" coords="5,5,127,32"/>
+</map>

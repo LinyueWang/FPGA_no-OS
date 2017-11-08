@@ -1,0 +1,9 @@
+<map id="ad9144_spi_write" name="ad9144_spi_write">
+<area shape="rect" id="node1" title="ad9144_spi_write" alt="" coords="417,132,553,159"/>
+<area shape="rect" id="node2" href="$ad9144_8h.html#a08ce45c8bcf99c7da3787d620cf2e55d" title=" " alt="" coords="186,5,350,32"/>
+<area shape="rect" id="node3" href="$ad9144_8h.html#aaf06c22427ee662beb6ac3e5e502c636" title="ad9144_datapath_prbs_test" alt="" coords="167,56,369,83"/>
+<area shape="rect" id="node4" href="$ad9144_8h.html#a37f9b383ea7e7bf5a39f3f9ba6ec260b" title=" " alt="" coords="205,107,331,133"/>
+<area shape="rect" id="node5" href="$ad9144_8h.html#a204417b365a61839fff3dee300141b72" title="ad9144_setup" alt="" coords="5,208,119,235"/>
+<area shape="rect" id="node6" href="$ad9144_8h.html#a5c6deb37b6af03fcaef768811b00237e" title="ad9144_short_pattern_test" alt="" coords="170,208,366,235"/>
+<area shape="rect" id="node7" href="$ad9144_8c.html#a1aa061ffd6111ad64ee00dd031753c69" title=" " alt="" coords="185,259,351,285"/>
+</map>

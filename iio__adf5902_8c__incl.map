@@ -1,0 +1,11 @@
+<map id="drivers/frequency/adf5902/iio_adf5902.c" name="drivers/frequency/adf5902/iio_adf5902.c">
+<area shape="rect" id="node1" title="Implementation of ADF5902 IIO Driver." alt="" coords="135,5,329,47"/>
+<area shape="rect" id="node2" href="$iio__adf5902_8h.html" title="Header file of adf5902 IIO." alt="" coords="177,95,287,121"/>
+<area shape="rect" id="node3" href="$iio__types_8h.html" title="Header file for iio_types." alt="" coords="128,169,221,196"/>
+<area shape="rect" id="node7" href="$adf5902_8h.html" title="Header file for adf5902 Driver." alt="" coords="267,169,354,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,244,88,271"/>
+<area shape="rect" id="node5" title=" " alt="" coords="279,319,350,345"/>
+<area shape="rect" id="node6" title=" " alt="" coords="163,244,245,271"/>
+<area shape="rect" id="node8" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="320,244,373,271"/>
+<area shape="rect" id="node9" href="$gpio_8h.html" title="Header file of GPIO Interface." alt="" coords="398,244,461,271"/>
+</map>

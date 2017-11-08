@@ -1,0 +1,5 @@
+<map id="adf4350_init_param" name="adf4350_init_param">
+<area shape="rect" id="node1" title=" " alt="" coords="5,184,157,211"/>
+<area shape="rect" id="node2" href="$structspi__init__param.html" title="Structure holding the parameters for SPI initialization." alt="" coords="22,95,141,121"/>
+<area shape="rect" id="node3" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="14,5,149,32"/>
+</map>

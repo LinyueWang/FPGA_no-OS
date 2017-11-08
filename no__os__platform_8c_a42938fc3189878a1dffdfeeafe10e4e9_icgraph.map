@@ -1,0 +1,4 @@
+<map id="no_os_LogWrite" name="no_os_LogWrite">
+<area shape="rect" id="node1" title="Writes a message to the currently open logFile specified in the adi_hal_LogCfg_t of the devHalCfg str..." alt="" coords="223,5,348,32"/>
+<area shape="rect" id="node2" href="$no__os__platform_8c.html#aaeb48388fae629816d07a1bcd6ab6237" title="Platform setup." alt="" coords="5,5,175,32"/>
+</map>

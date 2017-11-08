@@ -1,0 +1,54 @@
+<map id="gpio_get" name="gpio_get">
+<area shape="rect" id="node1" title="Obtain the GPIO decriptor." alt="" coords="517,1069,596,1096"/>
+<area shape="rect" id="node2" href="$ad4110_8h.html#a82503a6f416e5e58d61fe8405f516277" title=" " alt="" coords="317,5,430,32"/>
+<area shape="rect" id="node3" href="$ad525x_8h.html#ad7ec79dd130985fa7ae0c14a069bf77a" title="Initialize SPI and Initial Values for AD5172 Board." alt="" coords="324,56,423,83"/>
+<area shape="rect" id="node4" href="$ad5421_8h.html#a1a8f05a31b53b4db7b508d0b31522188" title="Initialize SPI and Initial Values for AD5421 Board." alt="" coords="324,107,423,133"/>
+<area shape="rect" id="node5" href="$ad5446_8h.html#ad1ce1d4933e9ea5ff735ec58bfc31805" title="Initialize SPI and Initial Values for AD5446 Board." alt="" coords="324,157,423,184"/>
+<area shape="rect" id="node6" href="$ad5449_8h.html#a14e962c5ae4576ef28a4fa7f6d38df91" title="Initialize SPI and Initial Values for AD5449 Board." alt="" coords="324,208,423,235"/>
+<area shape="rect" id="node7" href="$ad5629r_8h.html#a5d5c52f8a3f5513e169a235da42c0552" title="Initializes the communication with the device." alt="" coords="322,259,425,285"/>
+<area shape="rect" id="node8" href="$ad5686_8h.html#aa4a4256f0190f9e81f6e77d6711b27b8" title="Initializes the communication peripheral and the initial Values for AD5686 Board." alt="" coords="324,309,423,336"/>
+<area shape="rect" id="node9" href="$ad5755_8h.html#aa2876383215b9a110b42a3d7441e9e79" title="Initializes the device and powers&#45;up all channels. The device is initialized with the values held by ..." alt="" coords="324,360,423,387"/>
+<area shape="rect" id="node10" href="$ad5761r_8h.html#a8668797449079dfd1f144d788da3c56f" title=" " alt="" coords="322,411,425,437"/>
+<area shape="rect" id="node11" href="$ad5766_8h.html#a8b7d37992de990b4b0cb0891125ac2c7" title=" " alt="" coords="324,461,423,488"/>
+<area shape="rect" id="node13" href="$ad5791_8h.html#aa00cbd7e11c90460836b91319f4bb2d7" title="Initializes the communication with the device." alt="" coords="324,512,423,539"/>
+<area shape="rect" id="node16" href="$ad6676__ebz_8c.html#a6723322afe86a8b8c3af90d9ffe1a3d6" title="ad6676_gpio_config" alt="" coords="298,613,449,640"/>
+<area shape="rect" id="node17" href="$ad6676__ebz_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="141,588,196,615"/>
+<area shape="rect" id="node18" href="$ad7193_8h.html#a7903bde75edfce48163cd9395915b18a" title="Initializes the communication peripheral and the initial Values for AD7193 Board and resets the devic..." alt="" coords="324,664,423,691"/>
+<area shape="rect" id="node19" href="$ad7280a_8h.html#aeb50a4ae4b1901013b76be2eb169f517" title=" " alt="" coords="320,715,427,741"/>
+<area shape="rect" id="node20" href="$ad74xx_8h.html#a801c932b945f228ca72e599ed2d6601e" title="Initializes the communication peripheral and the initial Values for AD74xx Board." alt="" coords="324,765,423,792"/>
+<area shape="rect" id="node21" href="$ad7768__evb_8c.html#a95d82bb2eb48d09994b61b5dcdebc661" title="ad7768evb_clear_status" alt="" coords="280,816,467,843"/>
+<area shape="rect" id="node22" href="$ad7768__evb_8c.html#ac58fafc30e663c4d7e2f794abb31ac22" title="ad7768evb_verify_status" alt="" coords="277,867,469,893"/>
+<area shape="rect" id="node23" href="$ad7768_8h.html#aedad7966a7f57f13de96bd8a2167721f" title=" " alt="" coords="317,917,430,944"/>
+<area shape="rect" id="node24" href="$ad7779_8h.html#a31804dfd077713c30d7f54932233c576" title=" " alt="" coords="324,968,423,995"/>
+<area shape="rect" id="node25" href="$ad7780_8h.html#a99d2f22538499f3f242a5c1a52febbd0" title="Initializes the communication peripheral and the initial Values for AD7780 Board and checks if the de..." alt="" coords="324,1019,423,1045"/>
+<area shape="rect" id="node26" href="$ad7980_8h.html#acc05980452ce5bacb5b8102b10777a53" title="Initializes the communication peripheral." alt="" coords="324,1069,423,1096"/>
+<area shape="rect" id="node27" href="$ad9081_8h.html#a9e5da84ba8bb2b3cce0c6a237ec0ee86" title=" " alt="" coords="324,1373,423,1400"/>
+<area shape="rect" id="node29" href="$ad9172_8h.html#a70fc0c3bf90da142e1a112a49ed17bf4" title=" " alt="" coords="324,1120,423,1147"/>
+<area shape="rect" id="node31" href="$ad9208_8h.html#a3f89bec09654f4ad9f037d47c33deba4" title=" " alt="" coords="307,1171,440,1197"/>
+<area shape="rect" id="node33" href="$ad9361__api_8h.html#ab58f5f1831cfcb6bf7a34d14de1edc1f" title=" " alt="" coords="324,1221,423,1248"/>
+<area shape="rect" id="node35" href="$ad9833_8h.html#aaf7b32900432e682c63e548c4a7236ce" title="Initialize the SPI communication with the device." alt="" coords="324,1323,423,1349"/>
+<area shape="rect" id="node36" href="$ada4250_8h.html#afcaeb14f57346669b660ba6004853ef8" title="Initialize the ADA4250 device." alt="" coords="320,1272,427,1299"/>
+<area shape="rect" id="node38" href="$adf4106_8h.html#a0114bdab2ee87166e4c059f2fad79239" title="Initialize SPI and Initial Values for ADF4106 Board." alt="" coords="322,1424,425,1451"/>
+<area shape="rect" id="node39" href="$adf4153_8h.html#a47bf87eef52c8574144cef9967f2e828" title="Initialize SPI and Initial Values for ADF4106 Board." alt="" coords="322,1475,425,1501"/>
+<area shape="rect" id="node40" href="$adf4156_8h.html#a06c4562cd42e5989c5564a1b1d478c1c" title="Initialize the SPI communication with the device." alt="" coords="322,1525,425,1552"/>
+<area shape="rect" id="node41" href="$adf4157_8h.html#a7166c1fa79928c9361383dcc4ce71fb5" title="Initialize the SPI communication with the device." alt="" coords="322,1576,425,1603"/>
+<area shape="rect" id="node42" href="$adf7023_8h.html#a8c05c851064bebafdbc2e810ce6a1cc2" title="Initializes the ADF7023." alt="" coords="322,1627,425,1653"/>
+<area shape="rect" id="node43" href="$no__os__hal_8c.html#ae26d11e9cb579ae12e20c1a8ae8cc5e5" title="Performs a platform hardware initialization for the ADI Device." alt="" coords="308,1677,439,1704"/>
+<area shape="rect" id="node44" href="$adpd188_8h.html#ad498aa08ccb8f2c328fcc761f391738d" title="Initialize the ADPD188 driver." alt="" coords="320,1728,427,1755"/>
+<area shape="rect" id="node45" href="$adpd410x_8h.html#a8c47ad8226f8c0882232750616b4ac6d" title="Setup the device and the driver." alt="" coords="309,1779,438,1805"/>
+<area shape="rect" id="node46" href="$adxl372_8h.html#a30746b358cf0ef10cbdb0a8d49d37d49" title=" " alt="" coords="322,1829,425,1856"/>
+<area shape="rect" id="node47" href="$adxrs290_8h.html#a577b03b60bb2ad4cd1713c1bf712368c" title=" " alt="" coords="318,1880,429,1907"/>
+<area shape="rect" id="node48" href="$altera_2gpio__extra_8h.html#a215485d52f48d41f546d324076a9844f" title="Get the value of an optional GPIO." alt="" coords="282,1931,465,1957"/>
+<area shape="rect" id="node49" href="$app__clock_8h.html#a53fec5c740e401eafeba8ce9863a89e7" title="Application clock setup." alt="" coords="316,1981,431,2008"/>
+<area shape="rect" id="node50" href="$no__os__platform_8c.html#a55b8539c1c405dde8992f3cf508a798d" title="Opens all neccessary files and device drivers for a specific device." alt="" coords="311,2032,436,2059"/>
+<area shape="rect" id="node51" href="$common_8c.html#a25f5e0cdfaa3a50ff228d1418a523dfd" title="Initialize the power controller and set the core and peripherals clock divider." alt="" coords="320,2083,427,2109"/>
+<area shape="rect" id="node52" href="$stm32__spi_8h.html#a30e79d65127a7259c3226de1a6f45d37" title="Initialize the SPI communication peripheral." alt="" coords="315,2133,432,2160"/>
+<area shape="rect" id="node12" href="$ad5766__sdz_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="141,461,196,488"/>
+<area shape="rect" id="node14" href="$iio__ad5791_8h.html#afad979732e25d7ee76cc7f0d366b52f6" title="Initialize the AD5791 IIO driver." alt="" coords="108,512,229,539"/>
+<area shape="rect" id="node15" href="$cn0531_2src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="5,512,60,539"/>
+<area shape="rect" id="node28" href="$ad9081_2src_2app_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="141,1677,196,1704"/>
+<area shape="rect" id="node30" href="$ad9172_2src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="141,1120,196,1147"/>
+<area shape="rect" id="node32" href="$ad9208_2src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="141,1171,196,1197"/>
+<area shape="rect" id="node34" href="$ad9361_2src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="141,1221,196,1248"/>
+<area shape="rect" id="node37" href="$ada4250__ardz_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="141,1272,196,1299"/>
+</map>

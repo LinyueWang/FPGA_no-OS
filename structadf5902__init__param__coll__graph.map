@@ -1,0 +1,8 @@
+<map id="adf5902_init_param" name="adf5902_init_param">
+<area shape="rect" id="node1" title=" " alt="" coords="74,184,226,211"/>
+<area shape="rect" id="node2" href="$structslope.html" title=" " alt="" coords="5,95,63,121"/>
+<area shape="rect" id="node3" href="$structgpio__init__param.html" title="Structure holding the parameters for GPIO initialization." alt="" coords="87,95,213,121"/>
+<area shape="rect" id="node4" href="$structgpio__platform__ops.html" title="Structure holding gpio function pointers that point to the platform specific function." alt="" coords="75,5,217,32"/>
+<area shape="rect" id="node5" href="$structspi__init__param.html" title="Structure holding the parameters for SPI initialization." alt="" coords="245,95,364,121"/>
+<area shape="rect" id="node6" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="241,5,376,32"/>
+</map>

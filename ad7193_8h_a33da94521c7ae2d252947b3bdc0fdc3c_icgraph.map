@@ -1,0 +1,11 @@
+<map id="ad7193_get_register_value" name="ad7193_get_register_value">
+<area shape="rect" id="node1" title="Reads the value of a register." alt="" coords="511,139,665,180"/>
+<area shape="rect" id="node2" href="$ad7193_8h.html#a4f3be9ee2e79642188ad5a8aed6167a8" title="Performs the given calibration to the specified channel." alt="" coords="35,20,170,46"/>
+<area shape="rect" id="node3" href="$ad7193_8h.html#aa8d8bcec75181d42d9625cae482380be" title="Selects the channel to be enabled." alt="" coords="268,45,443,72"/>
+<area shape="rect" id="node5" href="$ad7193_8h.html#ac537f4c3f7ec047d1b4c53a7406fa15c" title="Returns the average of several conversion results." alt="" coords="248,96,463,122"/>
+<area shape="rect" id="node6" href="$ad7193_8h.html#a7903bde75edfce48163cd9395915b18a" title="Initializes the communication peripheral and the initial Values for AD7193 Board and resets the devic..." alt="" coords="306,146,405,173"/>
+<area shape="rect" id="node7" href="$ad7193_8h.html#ac1d8c818c2c32f47eb78b7adc0a0d461" title="Selects the polarity of the conversion and the ADC input range." alt="" coords="277,197,434,224"/>
+<area shape="rect" id="node8" href="$ad7193_8h.html#aa3651f3aa9fcc7a8a4f1fe54d55e5498" title="Set device to idle or power&#45;down." alt="" coords="283,248,427,274"/>
+<area shape="rect" id="node9" href="$ad7193_8h.html#a5f76b4d843ad4a6858a0ed4c9d7a43ec" title="Returns the result of a single conversion." alt="" coords="258,298,453,325"/>
+<area shape="rect" id="node4" href="$ad7193_8h.html#abee68b09ba2dbc9f05cb2c006ce1679a" title="Read data from temperature sensor and converts it to Celsius degrees." alt="" coords="5,197,200,224"/>
+</map>

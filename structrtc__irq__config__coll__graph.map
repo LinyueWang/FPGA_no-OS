@@ -1,0 +1,4 @@
+<map id="rtc_irq_config" name="rtc_irq_config">
+<area shape="rect" id="node1" title="RTC interrupt configuration routine." alt="" coords="5,95,115,121"/>
+<area shape="rect" id="node2" href="$structrtc__desc.html" title="Structure holding RTC descriptor." alt="" coords="22,5,98,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="drivers/adc/ad7124/ad7124_regs.h" name="drivers/adc/ad7124/ad7124_regs.h">
+<area shape="rect" id="node1" title="AD7124 register file. Devices: AD7124&#45;4, AD7124&#45;8." alt="" coords="87,5,219,47"/>
+<area shape="rect" id="node2" href="$ad7124__regs_8c.html" title="AD7124 register file. Devices: AD7124&#45;4, AD7124&#45;8." alt="" coords="5,95,137,136"/>
+<area shape="rect" id="node3" href="$ad7124-4sdz_8c.html" title="ad7124 application example." alt="" coords="162,95,309,136"/>
+</map>

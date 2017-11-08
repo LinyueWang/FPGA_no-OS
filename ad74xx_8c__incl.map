@@ -1,0 +1,8 @@
+<map id="drivers/adc/ad74xx/ad74xx.c" name="drivers/adc/ad74xx/ad74xx.c">
+<area shape="rect" id="node1" title="Implementation of AD74xx Driver." alt="" coords="18,5,165,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,76,121"/>
+<area shape="rect" id="node3" href="$ad74xx_8h.html" title="Header file of AD74xx Driver." alt="" coords="101,95,183,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="107,244,177,271"/>
+<area shape="rect" id="node5" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="115,169,169,196"/>
+<area shape="rect" id="node6" href="$gpio_8h.html" title="Header file of GPIO Interface." alt="" coords="193,169,256,196"/>
+</map>

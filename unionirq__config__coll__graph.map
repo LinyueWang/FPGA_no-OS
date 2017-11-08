@@ -1,0 +1,9 @@
+<map id="irq_config" name="irq_config">
+<area shape="rect" id="node1" title="Configuration for the callback." alt="" coords="127,273,212,300"/>
+<area shape="rect" id="node2" href="$structuart__desc.html" title="Stucture holding the UART descriptor." alt="" coords="5,184,91,211"/>
+<area shape="rect" id="node3" href="$structrtc__irq__config.html" title="RTC interrupt configuration routine." alt="" coords="115,184,224,211"/>
+<area shape="rect" id="node4" href="$structrtc__desc.html" title="Structure holding RTC descriptor." alt="" coords="131,95,207,121"/>
+<area shape="rect" id="node5" href="$structgpio__irq__config.html" title="GPIO group interrupt configuration routine." alt="" coords="248,184,368,211"/>
+<area shape="rect" id="node6" href="$structgpio__desc.html" title="Structure holding the GPIO descriptor." alt="" coords="265,95,351,121"/>
+<area shape="rect" id="node7" href="$structgpio__platform__ops.html" title="Structure holding gpio function pointers that point to the platform specific function." alt="" coords="237,5,379,32"/>
+</map>

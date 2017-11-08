@@ -1,0 +1,11 @@
+<map id="drivers/adc/ad9656/ad9656.c" name="drivers/adc/ad9656/ad9656.c">
+<area shape="rect" id="node1" title="Implementation of AD9656 Driver." alt="" coords="125,5,272,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="299,244,370,271"/>
+<area shape="rect" id="node3" title=" " alt="" coords="26,95,96,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="121,95,188,121"/>
+<area shape="rect" id="node5" href="$error_8h.html" title="Error codes definition." alt="" coords="212,95,276,121"/>
+<area shape="rect" id="node7" href="$ad9656_8h.html" title="Header file of AD9656 Driver." alt="" coords="300,95,382,121"/>
+<area shape="rect" id="node9" href="$delay_8h.html" title="Header file of Delay functions." alt="" coords="386,169,454,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="210,169,278,196"/>
+<area shape="rect" id="node8" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="308,169,361,196"/>
+</map>

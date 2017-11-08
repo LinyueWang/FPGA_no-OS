@@ -1,0 +1,10 @@
+<map id="hweight8" name="hweight8">
+<area shape="rect" id="node1" title=" " alt="" coords="241,157,324,184"/>
+<area shape="rect" id="node2" href="$ad469x_8h.html#a51eef171f98e1bc8c25d8dbf9b05952b" title="Configure standard sequencer channels." alt="" coords="5,5,193,32"/>
+<area shape="rect" id="node3" href="$ad5592r_8h.html#a84eb5c0ee68ab812bf4c0bf7c380f114" title=" " alt="" coords="8,56,191,83"/>
+<area shape="rect" id="node4" href="$ad5593r_8h.html#ad2ffdbcc3244bea57c95c127078f667c" title=" " alt="" coords="8,107,191,133"/>
+<area shape="rect" id="node5" href="$adc_8h.html#a4af7379d1fc099dae34fbdb5c9d67d13" title="Read adc data. aducm3029_adc_update_active_channels should be called in order to enable channeles." alt="" coords="17,157,181,184"/>
+<area shape="rect" id="node6" href="$iio__axi__adc_8c.html#aca23a80aa2cbb5c102d031473a0d9189" title="Update active channels." alt="" coords="18,208,181,235"/>
+<area shape="rect" id="node7" href="$iio__axi__dac_8c.html#a5391d278882dec3aab5b3caccbb8fdc7" title="Update active channels." alt="" coords="14,259,185,285"/>
+<area shape="rect" id="node8" href="$ad9371_2src_2app_2headless_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="72,309,127,336"/>
+</map>

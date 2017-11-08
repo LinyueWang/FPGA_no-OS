@@ -1,0 +1,7 @@
+<map id="drivers/gyro/adxrs453/adxrs453.c" name="drivers/gyro/adxrs453/adxrs453.c">
+<area shape="rect" id="node1" title="Implementation of ADXRS453 Driver." alt="" coords="12,5,176,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,76,121"/>
+<area shape="rect" id="node3" href="$adxrs453_8h.html" title="Header file of ADXRS453 Driver." alt="" coords="100,95,195,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="112,244,183,271"/>
+<area shape="rect" id="node5" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="153,169,206,196"/>
+</map>

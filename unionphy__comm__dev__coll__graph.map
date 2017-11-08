@@ -1,0 +1,7 @@
+<map id="phy_comm_dev" name="phy_comm_dev">
+<area shape="rect" id="node1" title="Contains physical communication handler." alt="" coords="99,184,225,211"/>
+<area shape="rect" id="node2" href="$structi2c__desc.html" title="Structure holding I2C descriptor." alt="" coords="55,95,133,121"/>
+<area shape="rect" id="node3" href="$structi2c__platform__ops.html" title="Structure holding I2C function pointers that point to the platform specific function." alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node4" href="$structspi__desc.html" title="Structure holding SPI descriptor." alt="" coords="189,95,268,121"/>
+<area shape="rect" id="node5" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="164,5,299,32"/>
+</map>

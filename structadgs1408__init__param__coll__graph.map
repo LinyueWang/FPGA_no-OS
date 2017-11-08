@@ -1,0 +1,6 @@
+<map id="adgs1408_init_param" name="adgs1408_init_param">
+<area shape="rect" id="node1" title=" " alt="" coords="84,184,247,211"/>
+<area shape="rect" id="node2" href="$structadgs1408__rrobin__config.html" title=" " alt="" coords="5,95,181,121"/>
+<area shape="rect" id="node3" href="$structspi__init__param.html" title="Structure holding the parameters for SPI initialization." alt="" coords="206,95,325,121"/>
+<area shape="rect" id="node4" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="198,5,333,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="ad5449_daisy_chain_setup" name="ad5449_daisy_chain_setup">
+<area shape="rect" id="node1" title="Enable/disable the Daisy&#45;Chain mode." alt="" coords="152,5,307,47"/>
+<area shape="rect" id="node2" href="$ad5449_8h.html#a14e962c5ae4576ef28a4fa7f6d38df91" title="Initialize SPI and Initial Values for AD5449 Board." alt="" coords="5,13,104,39"/>
+</map>

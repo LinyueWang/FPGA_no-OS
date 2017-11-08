@@ -1,0 +1,4 @@
+<map id="no_os_LogLevelGet" name="no_os_LogLevelGet">
+<area shape="rect" id="node1" title="Gets the currently set log level: the mask of different types of log events that are currently enable..." alt="" coords="223,5,371,32"/>
+<area shape="rect" id="node2" href="$no__os__platform_8c.html#aaeb48388fae629816d07a1bcd6ab6237" title="Platform setup." alt="" coords="5,5,175,32"/>
+</map>

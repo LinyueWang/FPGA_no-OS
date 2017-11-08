@@ -1,0 +1,13 @@
+<map id="drivers/platform/stm32/stm32_spi.c" name="drivers/platform/stm32/stm32_spi.c">
+<area shape="rect" id="node1" title="Implementation of stm32 spi driver." alt="" coords="251,5,423,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,169,76,196"/>
+<area shape="rect" id="node3" title=" " alt="" coords="593,95,661,121"/>
+<area shape="rect" id="node4" href="$util_8h.html" title="Implementation of utility functions." alt="" coords="200,95,255,121"/>
+<area shape="rect" id="node7" href="$gpio_8h.html" title="Header file of GPIO Interface." alt="" coords="100,169,163,196"/>
+<area shape="rect" id="node8" href="$stm32__gpio_8h.html" title="Header file for stm32 gpio specifics." alt="" coords="281,95,392,121"/>
+<area shape="rect" id="node10" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="574,169,627,196"/>
+<area shape="rect" id="node11" href="$stm32__spi_8h.html" title="Header file for the stm32 spi driver." alt="" coords="417,95,518,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="323,244,393,271"/>
+<area shape="rect" id="node6" title=" " alt="" coords="238,169,321,196"/>
+<area shape="rect" id="node9" title=" " alt="" coords="396,169,499,196"/>
+</map>

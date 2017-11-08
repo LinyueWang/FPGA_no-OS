@@ -1,0 +1,4 @@
+<map id="adpd188_slot_setup" name="adpd188_slot_setup">
+<area shape="rect" id="node1" title="Enable slot and setup its FIFO interaction." alt="" coords="229,13,381,39"/>
+<area shape="rect" id="node2" href="$adpd188_8h.html#ab8a0efa4cbeda4444394df7c4c327938" title="Do initial configuration of the device to use as a smoke detector. The configuration is described in ..." alt="" coords="5,5,181,47"/>
+</map>

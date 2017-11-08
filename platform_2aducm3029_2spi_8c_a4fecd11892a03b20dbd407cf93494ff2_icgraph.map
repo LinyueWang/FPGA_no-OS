@@ -1,0 +1,4 @@
+<map id="spi_write_and_read" name="spi_write_and_read">
+<area shape="rect" id="node1" title="Write and read data to/from SPI. If bytes number is 0 the function will return failure." alt="" coords="152,5,300,32"/>
+<area shape="rect" id="node2" href="$spi_2spi_8c.html#ad9a4fa7908b412d841c8f43441a45cf9" title="Iterate over head list and send all spi messages." alt="" coords="5,5,104,32"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="ad5791_iio_desc" name="ad5791_iio_desc">
+<area shape="rect" id="node1" title="D5791 IIO driver handler." alt="" coords="257,320,388,347"/>
+<area shape="rect" id="node2" href="$structiio__device.html" title="Structure holding channels and attributes of a device." alt="" coords="189,231,277,257"/>
+<area shape="rect" id="node3" href="$structiio__channel.html" title="Struct describing the scan type." alt="" coords="185,103,281,130"/>
+<area shape="rect" id="node4" href="$structiio__attribute.html" title="Structure holding pointers to show and store functions." alt="" coords="5,5,107,32"/>
+<area shape="rect" id="node5" href="$structiio__chan__type.html" title="IIO channel types." alt="" coords="133,5,245,32"/>
+<area shape="rect" id="node6" href="$structscan__type.html" title=" " alt="" coords="269,5,357,32"/>
+<area shape="rect" id="node7" href="$structad5791__dev.html" title=" " alt="" coords="403,231,504,257"/>
+<area shape="rect" id="node8" href="$structgpio__desc.html" title="Structure holding the GPIO descriptor." alt="" coords="410,103,497,130"/>
+<area shape="rect" id="node9" href="$structgpio__platform__ops.html" title="Structure holding gpio function pointers that point to the platform specific function." alt="" coords="382,5,525,32"/>
+<area shape="rect" id="node10" href="$structspi__desc.html" title="Structure holding SPI descriptor." alt="" coords="549,103,627,130"/>
+<area shape="rect" id="node11" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="549,5,683,32"/>
+</map>

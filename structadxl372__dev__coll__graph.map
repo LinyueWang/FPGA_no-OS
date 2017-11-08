@@ -1,0 +1,10 @@
+<map id="adxl372_dev" name="adxl372_dev">
+<area shape="rect" id="node1" title=" " alt="" coords="208,207,313,234"/>
+<area shape="rect" id="node2" href="$structi2c__desc.html" title="Structure holding I2C descriptor." alt="" coords="33,95,112,121"/>
+<area shape="rect" id="node3" href="$structi2c__platform__ops.html" title="Structure holding I2C function pointers that point to the platform specific function." alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node4" href="$structadxl372__fifo__config.html" title=" " alt="" coords="136,95,284,121"/>
+<area shape="rect" id="node5" href="$structgpio__desc.html" title="Structure holding the GPIO descriptor." alt="" coords="308,95,395,121"/>
+<area shape="rect" id="node6" href="$structgpio__platform__ops.html" title="Structure holding gpio function pointers that point to the platform specific function." alt="" coords="265,5,408,32"/>
+<area shape="rect" id="node7" href="$structspi__desc.html" title="Structure holding SPI descriptor." alt="" coords="447,95,525,121"/>
+<area shape="rect" id="node8" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="432,5,567,32"/>
+</map>

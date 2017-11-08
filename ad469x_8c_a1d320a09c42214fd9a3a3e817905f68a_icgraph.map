@@ -1,0 +1,12 @@
+<map id="ad469x_spi_write_mask" name="ad469x_spi_write_mask">
+<area shape="rect" id="node1" title=" " alt="" coords="288,224,467,251"/>
+<area shape="rect" id="node2" href="$ad469x_8h.html#a6a54b9f28e37a2c3013a2fa29aebea2d" title="Configure over sampling ratio in advanced sequencer mode." alt="" coords="43,5,202,32"/>
+<area shape="rect" id="node3" href="$ad469x_8h.html#aef0ac4841f289df5fbdf1814444af477" title="Configure advanced sequencer number of slots, temp channel not included." alt="" coords="37,57,208,98"/>
+<area shape="rect" id="node4" href="$ad469x_8h.html#a9d0b903c127a29bfdbe2f48cb7e085f7" title="Enter conversion mode. To exit conversion mode send a 5 bit conversion mode command AD469x_CMD_REG_CO..." alt="" coords="6,123,239,149"/>
+<area shape="rect" id="node5" href="$ad469x_8h.html#a8b72a2fecde49c1b9b24d68208ea5564" title="Disable temperature read at the end of the sequence, for standard and advanced sequencer." alt="" coords="5,173,240,200"/>
+<area shape="rect" id="node6" href="$ad469x_8h.html#a80ed0cdb13565e54690ef469ce3bc7fe" title="Enable temperature read at the end of the sequence, for standard and advanced sequencer." alt="" coords="7,224,238,251"/>
+<area shape="rect" id="node7" href="$ad469x_8c.html#abdc7812a777bfc86481f0514b2c3ac15" title="Configure converter busy indicator to the output of the specified port." alt="" coords="55,275,190,301"/>
+<area shape="rect" id="node8" href="$ad469x_8h.html#a98894c2703a93e32ac8939521cf05198" title="Set channel sequence." alt="" coords="45,326,200,367"/>
+<area shape="rect" id="node9" href="$ad469x_8c.html#a7378e364d2508802118c9c41c986f4d1" title="Configure register access mode." alt="" coords="13,392,233,419"/>
+<area shape="rect" id="node10" href="$ad469x_8h.html#a6785c64a2085f2cbc35baeb76b0aaa54" title="Configure over sampling ratio in standard sequencer mode." alt="" coords="45,443,200,469"/>
+</map>

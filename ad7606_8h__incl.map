@@ -1,0 +1,10 @@
+<map id="drivers/adc/ad7606/ad7606.h" name="drivers/adc/ad7606/ad7606.h">
+<area shape="rect" id="node1" title="Header file for the ad7606 Driver." alt="" coords="146,5,293,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="148,169,219,196"/>
+<area shape="rect" id="node3" title=" " alt="" coords="365,169,447,196"/>
+<area shape="rect" id="node4" href="$delay_8h.html" title="Header file of Delay functions." alt="" coords="221,95,289,121"/>
+<area shape="rect" id="node5" href="$gpio_8h.html" title="Header file of GPIO Interface." alt="" coords="5,95,68,121"/>
+<area shape="rect" id="node6" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="93,95,146,121"/>
+<area shape="rect" id="node7" href="$util_8h.html" title="Implementation of utility functions." alt="" coords="313,95,368,121"/>
+<area shape="rect" id="node8" title=" " alt="" coords="269,169,340,196"/>
+</map>

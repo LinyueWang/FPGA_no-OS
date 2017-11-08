@@ -1,0 +1,8 @@
+<map id="ad7124_read_register2" name="ad7124_read_register2">
+<area shape="rect" id="node1" title="Wrap the read register function to give it a modern signature." alt="" coords="419,79,589,106"/>
+<area shape="rect" id="node2" href="$ad7124_8h.html#a9fbea736223fec1e93b202c56dbb5a3b" title="Get the AD7124 reference clock." alt="" coords="211,79,340,106"/>
+<area shape="rect" id="node3" href="$ad7124_8h.html#a05375c928a9b39188f69ad5fb69d6cc9" title="Calculate ODR of the device." alt="" coords="5,29,132,55"/>
+<area shape="rect" id="node4" href="$ad7124_8h.html#af913208f4c24beac2dc537ca6d879d34" title="Set ODR of the device." alt="" coords="6,79,131,106"/>
+<area shape="rect" id="node5" href="$ad7124_8h.html#a6be1d929bcbca7f0cdf9c021472b192e" title="Get the filter coefficient for the sample rate." alt="" coords="204,29,347,55"/>
+<area shape="rect" id="node6" href="$ad7124_8h.html#a7635176c42e792c5d22874a11714eac3" title="Get the ID of the channel of the latest conversion." alt="" coords="180,181,371,207"/>
+</map>

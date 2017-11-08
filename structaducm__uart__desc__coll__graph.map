@@ -1,0 +1,4 @@
+<map id="aducm_uart_desc" name="aducm_uart_desc">
+<area shape="rect" id="node1" title="Stores specific parameter needed by the UART driver for internal operations." alt="" coords="5,109,141,136"/>
+<area shape="rect" id="node2" href="$structop__desc.html" title="It stores the state of a operation." alt="" coords="36,5,111,32"/>
+</map>

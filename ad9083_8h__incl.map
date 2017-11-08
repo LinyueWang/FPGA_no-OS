@@ -1,0 +1,7 @@
+<map id="drivers/adc/ad9083/ad9083.h" name="drivers/adc/ad9083/ad9083.h">
+<area shape="rect" id="node1" title="Header file of ad9083 Driver." alt="" coords="46,5,193,47"/>
+<area shape="rect" id="node2" href="$gpio_8h.html" title="Header file of GPIO Interface." alt="" coords="5,95,68,121"/>
+<area shape="rect" id="node4" href="$spi_8h.html" title="Header file of SPI Interface." alt="" coords="93,95,146,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="170,95,279,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="43,169,113,196"/>
+</map>

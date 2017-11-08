@@ -1,0 +1,6 @@
+<map id="ad7124_init_param" name="ad7124_init_param">
+<area shape="rect" id="node1" title=" " alt="" coords="41,184,188,211"/>
+<area shape="rect" id="node2" href="$structad7124__st__reg.html" title=" " alt="" coords="5,95,123,121"/>
+<area shape="rect" id="node3" href="$structspi__init__param.html" title="Structure holding the parameters for SPI initialization." alt="" coords="146,95,265,121"/>
+<area shape="rect" id="node4" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="138,5,273,32"/>
+</map>

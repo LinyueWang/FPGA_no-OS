@@ -1,0 +1,7 @@
+<map id="ad7779_dev" name="ad7779_dev">
+<area shape="rect" id="node1" title=" " alt="" coords="110,331,211,357"/>
+<area shape="rect" id="node2" href="$structgpio__desc.html" title="Structure holding the GPIO descriptor." alt="" coords="36,95,123,121"/>
+<area shape="rect" id="node3" href="$structgpio__platform__ops.html" title="Structure holding gpio function pointers that point to the platform specific function." alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node4" href="$structspi__desc.html" title="Structure holding SPI descriptor." alt="" coords="197,95,276,121"/>
+<area shape="rect" id="node5" href="$structspi__platform__ops.html" title="Structure holding SPI function pointers that point to the platform specific function." alt="" coords="172,5,307,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="pwm_get_period" name="pwm_get_period">
+<area shape="rect" id="node1" title="Get period of PWM generator device." alt="" coords="165,5,296,32"/>
+<area shape="rect" id="node2" href="$iio__aducm3029_8h.html#a9f070c9f88d788efcf267d1aaac7ccc3" title=" " alt="" coords="5,5,117,32"/>
+</map>
