@@ -45,6 +45,7 @@
 /******************************************************************************/
 
 #include <stdint.h>
+#include "util.h"
 
 /******************************************************************************/
 /********************** Macros and Constants Definitions **********************/
@@ -52,6 +53,8 @@
 
 #define	SPI_CPHA	0x01
 #define	SPI_CPOL	0x02
+#define	SPI_CS_LOW	0
+#define	SPI_CS_HIGH	1
 
 /******************************************************************************/
 /*************************** Types Declarations *******************************/
@@ -71,6 +74,16 @@ typedef enum spi_mode {
 	/** Data on rising, shift out on falling */
 	SPI_MODE_3 = (SPI_CPOL | SPI_CPHA)
 } spi_mode;
+
+/**
+ * @enum spi_delay_unit
+ * @brief Time unit used by the spi_delay structure.
+ */
+enum spi_delay_unit {
+	SPI_DELAY_UNIT_NS = 1000000,
+	SPI_DELAY_UNIT_US = 1000,
+	SPI_DELAY_UNIT_MS = 1
+};
 
 /**
  * @struct spi_init_param
@@ -102,6 +115,55 @@ typedef struct spi_desc {
 	void		*extra;
 } spi_desc;
 
+/**
+ * @struct spi_delay
+ * @brief Delay structure containing the amount of time
+ * 	the SPI interface has to hang among with it's
+ * 	measurement unit.
+ */
+struct spi_delay {
+	uint32_t		value;
+	enum spi_delay_unit	unit;
+};
+
+/**
+ * @struct spi_transfer
+ * @brief An spi transfer represents a whole (or a part of an)
+ * 	SPI transaction.
+ */
+struct spi_transfer {
+	/** Address of the MOSI data buffer */
+	void 			*tx_buff;
+	/** Address of the MISO data buffer */
+	void			*rx_buff;
+	/** Amount of time to hang a spi transfer */
+	struct spi_delay	delay;
+	/** The width of one transfer WORD represented in bits */
+	uint8_t			num_bits;
+	/** Number of WORDS to transfer */
+	uint32_t		length;
+	/** Toggle or not the CHIP SELECT */
+	bool			cs;
+	/** Pointer to the next transfer in case of a transfer queue */
+	struct spi_transfer	*next_transfer;
+};
+
+/**
+ * @struct spi_message
+ * @brief An spi message contains a queue of spi transfers, ready
+ * 	to be sent over the SPI interface.
+ */
+struct spi_message {
+	/** List of spi transfers */
+	struct spi_transfer	*transfer_head;
+	/** DMAC used to memory map the MOSI data */
+	void			*tx_dma_baseaddr;
+	/** DMAC used to memory map the MISO data */
+	void			*rx_dma_baseaddr;
+	/** Specify if the transfer is memory mapped */
+	bool			is_memory_mapped;
+};
+
 /******************************************************************************/
 /************************ Functions Declarations ******************************/
 /******************************************************************************/
@@ -118,4 +180,15 @@ int32_t spi_write_and_read(struct spi_desc *desc,
 			   uint8_t *data,
 			   uint16_t bytes_number);
 
+/* Initialize the spi message and add a spi transfer to it */
+int32_t spi_message_init(struct spi_message **msg,
+			 struct spi_transfer *xfer);
+
+/* Add a spi transfer to the spi message's transfer queue */
+int32_t spi_message_add_transfer(struct spi_message *msg,
+				 struct spi_transfer *xfer);
+
+/* Transfer the spi message using the specified device descriptor */
+int32_t spi_message_exec(struct spi_desc *desc,
+			 struct spi_message *msg);
 #endif // SPI_H_

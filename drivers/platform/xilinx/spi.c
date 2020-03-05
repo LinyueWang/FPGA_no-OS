@@ -452,3 +452,81 @@ error:
 
 	return ret;
 }
+
+int32_t spi_message_init(struct spi_message **msg,
+			 struct spi_transfer *xfer)
+{
+	struct spi_transfer *xfer_copy;
+
+	xfer_copy = (struct spi_transfer *)malloc(sizeof(*xfer_copy));
+	if (!xfer_copy)
+		return FAILURE;
+
+	*msg = (struct spi_message *)malloc(sizeof(**msg));
+	if (!msg)
+		return FAILURE;
+
+	memcpy(xfer_copy, xfer, sizeof(*xfer));
+	xfer_copy->next_transfer = NULL;
+	(*msg)->transfer_head = xfer_copy;
+
+	return SUCCESS;
+}
+
+int32_t spi_message_add_transfer(struct spi_message *msg,
+				 struct spi_transfer *xfer)
+{
+	struct spi_transfer *pivot;
+	struct spi_transfer *xfer_copy;
+
+	if (!msg || !xfer)
+		return FAILURE;
+
+	xfer_copy = (struct spi_transfer *)malloc(sizeof(*xfer_copy));
+	if (!xfer_copy)
+		return FAILURE;
+
+	memcpy(xfer_copy, xfer, sizeof(*xfer));
+
+	pivot = msg->transfer_head;
+	while(pivot->next_transfer != NULL)
+		pivot = pivot->next_transfer;
+	xfer_copy->next_transfer = NULL;
+	pivot->next_transfer = xfer_copy;
+
+
+	return SUCCESS;
+}
+
+int32_t spi_message_exec(struct spi_desc *desc,
+			 struct spi_message *msg)
+{
+	int32_t			ret;
+	enum xil_spi_type	*spi_type;
+
+	spi_type = desc->extra;
+
+	if(!spi_type)
+		return FAILURE;
+
+	switch (*spi_type) {
+	case SPI_PL:
+#ifdef XSPI_H
+#endif
+		break;
+	case SPI_PS:
+#ifdef XSPIPS_H
+#endif
+		break;
+	case SPI_ENGINE:
+#ifdef SPI_ENGINE_H
+#endif
+		break;
+exec_error:
+	default:
+		return FAILURE;
+		break;
+	}
+
+	return ret;
+}
