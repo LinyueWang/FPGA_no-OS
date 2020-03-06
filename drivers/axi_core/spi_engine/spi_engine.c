@@ -616,7 +616,8 @@ int32_t spi_engine_init(struct spi_desc *desc,
 	eng_desc->spi_engine_baseaddr = spi_engine_init->spi_engine_baseaddr;
 	eng_desc->type = spi_engine_init->type;
 	eng_desc->cs_delay = spi_engine_init->cs_delay;
-	eng_desc->clk_div =  SPI_ENGINE_AXI_SPEED_HZ /
+	eng_desc->axi_clk_hz = spi_engine_init->axi_clk_hz;
+	eng_desc->clk_div =  eng_desc->axi_clk_hz /
 			     (2 * param->max_speed_hz) - 1;
 
 	/* Perform a reset */
