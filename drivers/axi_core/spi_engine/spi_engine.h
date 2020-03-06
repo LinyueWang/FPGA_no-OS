@@ -92,8 +92,6 @@ struct spi_engine_init_param {
 	uint32_t		axi_clk_hz;
 	/** Base address where the HDL core is situated */
 	uint32_t 		spi_engine_baseaddr;
-	/** Data with of one SPI transfer ( in bits ) */
-	uint8_t			data_width;
 };
 
 

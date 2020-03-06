@@ -576,7 +576,6 @@ static int32_t spi_engine_transfer_message(struct spi_desc *desc,
 int32_t spi_engine_init(struct spi_desc *desc,
 			const struct spi_init_param *param)
 {
-	uint32_t			data_width;
 	uint32_t			spi_engine_version;
 	struct spi_engine_desc		*eng_desc;
 	struct spi_engine_init_param	*spi_engine_init;
@@ -608,13 +607,11 @@ int32_t spi_engine_init(struct spi_desc *desc,
 	usleep(1000);
 	spi_engine_write(eng_desc, SPI_ENGINE_REG_RESET, 0x00);
 
-	/* Get current data width */
-	spi_engine_read(eng_desc, SPI_ENGINE_REG_DATA_WIDTH, &data_width);
-	eng_desc->max_data_width = data_width;
+	/* Set the default data width to one byte */
+	spi_engine_set_transfer_width(desc, 8);
+	eng_desc->max_data_width = 32;
 
-	spi_engine_set_transfer_width(desc, spi_engine_init->data_width);
-
-	/* Get current data width */
+	/* Get spi engine version */
 	spi_engine_read(eng_desc, SPI_ENGINE_REG_VERSION, &spi_engine_version);
 
 	printf("Spi engine v%u.%u.%u succesfully initialized.",
