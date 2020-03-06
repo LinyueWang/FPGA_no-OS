@@ -165,36 +165,6 @@ static uint8_t spi_get_word_lenght(struct spi_engine_desc *desc)
 }
 
 /**
- * @brief Compute the prescaler used to set the sleep period.
- *
- * @param desc Decriptor containing SPI interface parameters
- * @param sleep_time_ns The amount of time where the transfer hangs
- * @param sleep_div Clock prescaler
- * @return int32_t This function allways returns SUCCESS
- */
-static int32_t spi_get_sleep_div(struct spi_desc *desc,
-				 uint32_t sleep_time_ns,
-				 uint32_t *sleep_div)
-{
-	struct spi_engine_desc	*eng_desc;
-
-	eng_desc = desc->extra;
-
-	/*
-	 * Engine Wiki:
-	 *
-	 * The frequency of the SCLK signal is derived from the
-	 * module clock frequency using the following formula:
-	 * f_sclk = f_clk / ((div + 1) * 2)
-	 */
-
-	*sleep_div = (desc->max_speed_hz / 1000000 * sleep_time_ns / 1000) /
-		     ((eng_desc->clk_div + 1) * 2) - 1;
-
-	return SUCCESS;
-}
-
-/**
  * @brief Create a new commands queue used in a spi transfer
  *
  * @param fifo Command buffer, usualy used in fifo mode
@@ -390,27 +360,41 @@ static void spi_engine_set_cs(struct spi_desc *desc,
 		mask ^= BIT(desc->chip_select);
 
 	spi_engine_write_cmd_reg(eng_desc,
-				 SPI_ENGINE_CMD_ASSERT(eng_desc->cs_delay,
-						 mask));
+				 SPI_ENGINE_CMD_ASSERT(0, mask));
 }
 
-/**
- * @brief Add a delay bewtheen the engine commands
- *
- * @param desc Decriptor containing SPI interface parameters
- * @param sleep_time_ns Number of nanoseconds to sleep between commands
- */
-static void spi_gen_sleep_ns(struct spi_desc *desc,
-			     uint32_t sleep_time_ns)
+static void spi_engine_delay_exec(struct spi_desc *desc,
+				  struct spi_delay *delay)
 {
-	uint32_t 		sleep_div;
+	uint32_t 		div;
+	uint32_t 		init_div;
 	struct spi_engine_desc	*eng_desc;
 
 	eng_desc = desc->extra;
 
-	spi_get_sleep_div(desc, sleep_time_ns, &sleep_div);
+	/*
+	 * Engine Wiki:
+	 *
+	 * The frequency of the SCLK signal is derived from the
+	 * module clock frequency using the following formula:
+	 * f_sclk = f_clk / ((div + 1) * 2)
+	 */
 
-	spi_engine_write_cmd_reg(eng_desc, SPI_ENGINE_CMD_SLEEP(sleep_div));
+	init_div = eng_desc->clk_div;
+	div = (delay->value * desc->max_speed_hz / 4 / delay->unit) - 1;
+
+	/* Set the new prescaler */
+	spi_engine_write_cmd_reg(eng_desc, SPI_ENGINE_CMD_CONFIG(
+						SPI_ENGINE_CMD_REG_CLK_DIV,
+						div));
+
+	/* Wait the given amount of time */
+	spi_engine_write_cmd_reg(eng_desc, SPI_ENGINE_CMD_SLEEP(div));
+
+	/* Set back the prescaler */
+	spi_engine_write_cmd_reg(eng_desc, SPI_ENGINE_CMD_CONFIG(
+						SPI_ENGINE_CMD_REG_CLK_DIV,
+						init_div));
 }
 
 /**
@@ -457,7 +441,7 @@ static int32_t spi_engine_write_cmd(struct spi_desc *desc,
 		if(modifier == 0x00) {
 			spi_engine_write_cmd_reg(desc_extra, cmd);
 		} else if(modifier == 0x01) {
-			spi_gen_sleep_ns(desc, parameter);
+
 		}
 		break;
 	case SPI_ENGINE_INST_CONFIG:
@@ -615,7 +599,6 @@ int32_t spi_engine_init(struct spi_desc *desc,
 	eng_desc->offload_config = OFFLOAD_DISABLED;
 	eng_desc->spi_engine_baseaddr = spi_engine_init->spi_engine_baseaddr;
 	eng_desc->type = spi_engine_init->type;
-	eng_desc->cs_delay = spi_engine_init->cs_delay;
 	eng_desc->axi_clk_hz = spi_engine_init->axi_clk_hz;
 	eng_desc->clk_div =  eng_desc->axi_clk_hz /
 			     (2 * param->max_speed_hz) - 1;

@@ -92,8 +92,6 @@ struct spi_engine_init_param {
 	uint32_t		axi_clk_hz;
 	/** Base address where the HDL core is situated */
 	uint32_t 		spi_engine_baseaddr;
-	/** Delay between the CS toggle and the start of SCLK */
-	uint32_t		cs_delay;
 	/** Data with of one SPI transfer ( in bits ) */
 	uint8_t			data_width;
 };
@@ -124,8 +122,6 @@ struct spi_engine_desc {
 	uint32_t		rx_dma_baseaddr;
 	/** Base address where the TX DMAC core is situated */
 	uint32_t		tx_dma_baseaddr;
-	/** Delay between the CS toggle and the start of SCLK */
-	uint8_t			cs_delay;
 	/** Clock divider used in transmission delays */
 	uint32_t		clk_div;
 	/** Data with of one SPI transfer ( in bits ) */
