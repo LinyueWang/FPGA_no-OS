@@ -41,10 +41,6 @@
 /***************************** Include Files **********************************/
 /******************************************************************************/
 
-/* In debug mode the printf function used in displaying the messages is causing
-significant delays */
-//#define DEBUG_LEVEL 2
-
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
