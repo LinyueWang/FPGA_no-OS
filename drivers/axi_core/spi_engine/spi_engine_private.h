@@ -152,7 +152,9 @@ typedef struct spi_engine_cmd_queue {
 typedef struct spi_engine_msg {
 	uint32_t			*tx_buf;
 	uint32_t			*rx_buf;
-	uint32_t			length;
+	uint32_t			tx_len;
+	uint32_t			rx_len;
+	uint32_t			num_bits;
 	struct spi_engine_cmd_queue	*cmds;
 } spi_engine_msg;
 

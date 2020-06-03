@@ -453,53 +453,54 @@ error:
 	return ret;
 }
 
-int32_t spi_message_init(struct spi_message **msg,
-			 struct spi_transfer *xfer)
+int32_t spi_transfer_prepare(struct spi_transfer **xfer,
+			     struct spi_sequence *seq)
 {
-	struct spi_transfer *xfer_copy;
+	struct spi_sequence *seq_copy;
 
-	xfer_copy = (struct spi_transfer *)malloc(sizeof(*xfer_copy));
-	if (!xfer_copy)
+	seq_copy = (struct spi_sequence *)malloc(sizeof(*seq_copy));
+	if (!seq_copy)
 		return FAILURE;
 
-	*msg = (struct spi_message *)malloc(sizeof(**msg));
-	if (!msg)
+	*xfer = (struct spi_transfer *)calloc(1, sizeof(**xfer));
+	if (!xfer)
 		return FAILURE;
 
-	memcpy(xfer_copy, xfer, sizeof(*xfer));
-	xfer_copy->next_transfer = NULL;
-	(*msg)->transfer_head = xfer_copy;
+	memcpy(seq_copy, seq, sizeof(*seq));
+	seq_copy->next_sequence = NULL;
+	(*xfer)->sequence_list = seq_copy;
 
 	return SUCCESS;
 }
 
-int32_t spi_message_add_transfer(struct spi_message *msg,
-				 struct spi_transfer *xfer)
+int32_t spi_add_sequence(struct spi_transfer *xfer,
+			 struct spi_sequence *seq)
 {
-	struct spi_transfer *pivot;
-	struct spi_transfer *xfer_copy;
+	struct spi_sequence *pivot;
+	struct spi_sequence *seq_copy;
 
-	if (!msg || !xfer)
+	if (!seq || !xfer)
 		return FAILURE;
 
-	xfer_copy = (struct spi_transfer *)malloc(sizeof(*xfer_copy));
-	if (!xfer_copy)
+	seq_copy = (struct spi_sequence *)malloc(sizeof(*seq_copy));
+	if (!seq_copy)
 		return FAILURE;
 
-	memcpy(xfer_copy, xfer, sizeof(*xfer));
+	memcpy(seq_copy, seq, sizeof(*seq));
 
-	pivot = msg->transfer_head;
-	while(pivot->next_transfer != NULL)
-		pivot = pivot->next_transfer;
-	xfer_copy->next_transfer = NULL;
-	pivot->next_transfer = xfer_copy;
+	pivot = xfer->sequence_list;
+	while(pivot->next_sequence != NULL)
+		pivot = pivot->next_sequence;
+	seq_copy->next_sequence = NULL;
+	pivot->next_sequence = seq_copy;
 
 
 	return SUCCESS;
 }
 
 int32_t spi_message_exec(struct spi_desc *desc,
-			 struct spi_message *msg)
+			 struct spi_message *msg,
+			 uint32_t no_msg)
 {
 	int32_t			ret;
 	enum xil_spi_type	*spi_type;
@@ -520,9 +521,10 @@ int32_t spi_message_exec(struct spi_desc *desc,
 		break;
 	case SPI_ENGINE:
 #ifdef SPI_ENGINE_H
+		spi_engine_message_exec(desc, msg, no_msg);
 #endif
 		break;
-exec_error:
+//exec_error:
 	default:
 		return FAILURE;
 		break;

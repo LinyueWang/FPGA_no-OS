@@ -53,16 +53,6 @@
 #include "spi_engine.h"
 
 /******************************************************************************/
-/***************************** Static variables *******************************/
-/******************************************************************************/
-
-/**
- * @brief Static variable used to sync transfers
- *
- */
-static uint8_t _sync_id = 0x01;
-
-/******************************************************************************/
 /************************** Functions Implementation **************************/
 /******************************************************************************/
 
@@ -155,14 +145,14 @@ static uint8_t spi_get_words_number(struct spi_engine_desc *desc,
  * @param desc Decriptor containing SPI Engine's parameters
  * @return uint8_t Number of bytes that fit in one word
  */
-static uint8_t spi_get_word_lenght(struct spi_engine_desc *desc)
-{
-	uint8_t word_lenght;
+// static uint8_t spi_get_word_lenght(struct spi_engine_desc *desc)
+// {
+// 	uint8_t word_lenght;
 
-	word_lenght = desc->data_width / 8;
+// 	word_lenght = desc->data_width / 8;
 
-	return word_lenght;
-}
+// 	return word_lenght;
+// }
 
 /**
  * @brief Create a new commands queue used in a spi transfer
@@ -218,17 +208,17 @@ static void spi_engine_queue_add_cmd(struct spi_engine_cmd_queue **fifo,
  * @param fifo Command buffer, usualy used in fifo mode
  * @param cmd Command to be added
  */
-static void spi_engine_queue_append_cmd(struct spi_engine_cmd_queue **fifo,
-					uint32_t cmd)
-{
-	struct spi_engine_cmd_queue *to_add = NULL;
+// static void spi_engine_queue_append_cmd(struct spi_engine_cmd_queue **fifo,
+// 					uint32_t cmd)
+// {
+// 	struct spi_engine_cmd_queue *to_add = NULL;
 
-	// Create a new element
-	spi_engine_queue_new_cmd(&to_add, cmd);
-	// Interchange the addresses
-	to_add->next = *fifo;
-	*fifo = to_add;
-}
+// 	// Create a new element
+// 	spi_engine_queue_new_cmd(&to_add, cmd);
+// 	// Interchange the addresses
+// 	to_add->next = *fifo;
+// 	*fifo = to_add;
+// }
 
 
 /**
@@ -265,17 +255,17 @@ static int32_t spi_engine_queue_get_cmd(struct spi_engine_cmd_queue **fifo,
  * @param fifo The queue that needs it's memory freed
  * @return int32_t This function allways return SUCCESS
  */
-static int32_t spi_engine_queue_free(struct spi_engine_cmd_queue **fifo)
-{
-	if(*fifo && (*fifo)->next)
-		spi_engine_queue_free(&(*fifo)->next);
-	if((*fifo) != NULL) {
-		free(*fifo);
-		*fifo = NULL;
-	}
+// static int32_t spi_engine_queue_free(struct spi_engine_cmd_queue **fifo)
+// {
+// 	if(*fifo && (*fifo)->next)
+// 		spi_engine_queue_free(&(*fifo)->next);
+// 	if((*fifo) != NULL) {
+// 		free(*fifo);
+// 		*fifo = NULL;
+// 	}
 
-	return SUCCESS;
-}
+// 	return SUCCESS;
+// }
 
 /**
  * @brief Write the SPI engine's command fifo
@@ -320,21 +310,21 @@ static int32_t spi_engine_transfer(struct spi_engine_desc *desc,
 
 	words_number = spi_get_words_number(desc, bytes_number);
 
-	desc->offload_tx_len += words_number;
+	// desc->offload_tx_len += words_number;
 
-	/*
-	 * Engine Wiki:
-	 *
-	 * https://wiki.analog.com/resources/fpga/peripherals/spi_engine
-	 *
-	 * The words number is zero based
-	 */
+	// /*
+	//  * Engine Wiki:
+	//  *
+	//  * https://wiki.analog.com/resources/fpga/peripherals/spi_engine
+	//  *
+	//  * The words number is zero based
+	//  */
 
-	spi_engine_write_cmd_reg(desc,
-				 SPI_ENGINE_CMD_TRANSFER(read_write,
-						 words_number  - 1));
+	 spi_engine_write_cmd_reg(desc,
+	 			 SPI_ENGINE_CMD_TRANSFER(read_write,
+	 					 words_number  - 1));
 
-	return SUCCESS;
+	return words_number;
 }
 
 /**
@@ -347,7 +337,7 @@ static int32_t spi_engine_transfer(struct spi_engine_desc *desc,
  * 			-false (LOW)
  */
 static void spi_engine_set_cs(struct spi_desc *desc,
-			      bool assert)
+			      uint8_t assert)
 {
 	uint8_t			mask;
 	struct spi_engine_desc	*eng_desc;
@@ -363,39 +353,39 @@ static void spi_engine_set_cs(struct spi_desc *desc,
 				 SPI_ENGINE_CMD_ASSERT(0, mask));
 }
 
-static void spi_engine_delay_exec(struct spi_desc *desc,
-				  struct spi_delay *delay)
-{
-	uint32_t 		div;
-	uint32_t 		init_div;
-	struct spi_engine_desc	*eng_desc;
+// static void spi_engine_delay_exec(struct spi_desc *desc,
+// 				  struct spi_delay *delay)
+// {
+// 	uint32_t 		div;
+// 	uint32_t 		init_div;
+// 	struct spi_engine_desc	*eng_desc;
 
-	eng_desc = desc->extra;
+// 	eng_desc = desc->extra;
 
-	/*
-	 * Engine Wiki:
-	 *
-	 * The frequency of the SCLK signal is derived from the
-	 * module clock frequency using the following formula:
-	 * f_sclk = f_clk / ((div + 1) * 2)
-	 */
+// 	/*
+// 	 * Engine Wiki:
+// 	 *
+// 	 * The frequency of the SCLK signal is derived from the
+// 	 * module clock frequency using the following formula:
+// 	 * f_sclk = f_clk / ((div + 1) * 2)
+// 	 */
 
-	init_div = eng_desc->clk_div;
-	div = (delay->value * desc->max_speed_hz / 4 / delay->unit) - 1;
+// 	init_div = eng_desc->clk_div;
+// 	div = (delay->value * desc->max_speed_hz / 4 / delay->unit) - 1;
 
-	/* Set the new prescaler */
-	spi_engine_write_cmd_reg(eng_desc, SPI_ENGINE_CMD_CONFIG(
-						SPI_ENGINE_CMD_REG_CLK_DIV,
-						div));
+// 	/* Set the new prescaler */
+// 	spi_engine_write_cmd_reg(eng_desc, SPI_ENGINE_CMD_CONFIG(
+// 						SPI_ENGINE_CMD_REG_CLK_DIV,
+// 						div));
 
-	/* Wait the given amount of time */
-	spi_engine_write_cmd_reg(eng_desc, SPI_ENGINE_CMD_SLEEP(div));
+// 	/* Wait the given amount of time */
+// 	spi_engine_write_cmd_reg(eng_desc, SPI_ENGINE_CMD_SLEEP(div));
 
-	/* Set back the prescaler */
-	spi_engine_write_cmd_reg(eng_desc, SPI_ENGINE_CMD_CONFIG(
-						SPI_ENGINE_CMD_REG_CLK_DIV,
-						init_div));
-}
+// 	/* Set back the prescaler */
+// 	spi_engine_write_cmd_reg(eng_desc, SPI_ENGINE_CMD_CONFIG(
+// 						SPI_ENGINE_CMD_REG_CLK_DIV,
+// 						init_div));
+// }
 
 /**
  * @brief Spi engine command interpreter
@@ -425,13 +415,8 @@ static int32_t spi_engine_write_cmd(struct spi_desc *desc,
 		break;
 
 	case SPI_ENGINE_INST_ASSERT:
-		if(parameter == 0xFF) {
-			/* Set the CS HIGH */
-			spi_engine_set_cs(desc, true);
-		} else if(parameter == 0x00) {
-			/* Set the CS LOW */
-			spi_engine_set_cs(desc, false);
-		}
+		spi_engine_write_cmd_reg(desc_extra,
+					 SPI_ENGINE_CMD_ASSERT(modifier, parameter));
 		break;
 
 	/* The SYNC and SLEEP commands got the same value but different
@@ -458,6 +443,7 @@ static int32_t spi_engine_write_cmd(struct spi_desc *desc,
 	return SUCCESS;
 }
 
+
 /**
  * @brief Prepare the command queue before sending it to the engine
  *
@@ -465,37 +451,37 @@ static int32_t spi_engine_write_cmd(struct spi_desc *desc,
  * @param msg Structure used to store the transfer messages
  * @return int32_t This function allways returns SUCCESS
  */
-static int32_t spi_engine_compile_message(struct spi_desc *desc,
-		struct spi_engine_msg *msg)
+static int32_t spi_engine_prepare_message(struct spi_desc *desc,
+					  struct spi_engine_msg **msg)
 {
 	struct spi_engine_desc	*desc_extra;
 
+	*msg = (struct spi_engine_msg *)calloc(1, sizeof(**msg));
+	if (!msg)
+		return FAILURE;
+
+	(*msg)->cmds = (struct spi_engine_cmd_queue *)malloc(sizeof((*msg)->cmds));
+	if (!(*msg)->cmds)
+		return FAILURE;
+
 	desc_extra = desc->extra;
 
-	/* Set the data transfer length */
-	spi_engine_queue_append_cmd(&msg->cmds,
-				    SPI_ENGINE_CMD_CONFIG(
-					    SPI_ENGINE_CMD_DATA_TRANSFER_LEN,
-					    desc_extra->data_width));
 	/*
 	 * Configure the spi mode :
 	 *	- 3 wire
 	 *	- CPOL
 	 *	- CPHA
 	 */
-	spi_engine_queue_append_cmd(&msg->cmds,
+	spi_engine_queue_new_cmd(&(*msg)->cmds,
 				    SPI_ENGINE_CMD_CONFIG(
 					    SPI_ENGINE_CMD_REG_CONFIG,
 					    desc->mode));
 
 	/* Configure the prescaler */
-	spi_engine_queue_append_cmd(&msg->cmds,
+	spi_engine_queue_add_cmd(&(*msg)->cmds,
 				    SPI_ENGINE_CMD_CONFIG(
 					    SPI_ENGINE_CMD_REG_CLK_DIV,
 					    desc_extra->clk_div));
-
-	/* Add a sync command to signal that the transfer has finished */
-	spi_engine_queue_add_cmd(&msg->cmds, SPI_ENGINE_CMD_SYNC(_sync_id));
 
 	return SUCCESS;
 }
@@ -508,58 +494,17 @@ static int32_t spi_engine_compile_message(struct spi_desc *desc,
  * @return int32_t - SUCCESS if the transfer finished
  *		   - FAILURE if the memory allocation failed
  */
-static int32_t spi_engine_transfer_message(struct spi_desc *desc,
-		struct spi_engine_msg *msg)
+static int32_t spi_engine_write_command_mem(struct spi_desc *desc,
+					    struct spi_engine_msg *msg)
 {
-	uint32_t		i;
 	uint32_t		data;
-	uint32_t		sync_id;
-	bool 			offload_en;
 	struct spi_engine_desc	*desc_extra;
-
 	desc_extra = desc->extra;
-
-	spi_engine_compile_message(desc, msg);
-
-	offload_en = (desc_extra->offload_config & OFFLOAD_TX_EN) |
-		     (desc_extra->offload_config & OFFLOAD_RX_EN);
 
 	/* Write the command fifo buffer */
 	while(msg->cmds != NULL) {
 		spi_engine_queue_get_cmd(&msg->cmds, &data);
 		spi_engine_write_cmd(desc, data);
-	}
-
-	/* Write a number of tx_length WORDS on the SDO line */
-
-	if(offload_en) {
-		for(i = 0; i < desc_extra->offload_tx_len; i++)
-			spi_engine_write(desc_extra,
-					 SPI_ENGINE_REG_OFFLOAD_SDO_MEM(0),
-					 bswap_constant_32(msg->tx_buf[i]));
-
-	} else {
-		for(i = 0; i < msg->length; i++)
-			spi_engine_write(desc_extra,
-					 SPI_ENGINE_REG_SDO_DATA_FIFO,
-					 msg->tx_buf[i]);
-		do {
-			spi_engine_read(desc_extra,
-					SPI_ENGINE_REG_SYNC_ID,
-					&sync_id);
-		}
-		/* Wait for the end sync signal */
-		while(sync_id != _sync_id);
-		_sync_id++;
-
-		/* Read a number of rx_length WORDS from the SDI line and store
-		them */
-		for(i = 0; i < msg->length; i++) {
-			spi_engine_read(desc_extra,
-					SPI_ENGINE_REG_SDI_DATA_FIFO,
-					&data);
-			msg->rx_buf[i] = data;
-		}
 	}
 
 	return SUCCESS;
@@ -607,9 +552,9 @@ int32_t spi_engine_init(struct spi_desc *desc,
 	usleep(1000);
 	spi_engine_write(eng_desc, SPI_ENGINE_REG_RESET, 0x00);
 
+	eng_desc->max_data_width = 32;
 	/* Set the default data width to one byte */
 	spi_engine_set_transfer_width(desc, 8);
-	eng_desc->max_data_width = 32;
 
 	/* Get spi engine version */
 	spi_engine_read(eng_desc, SPI_ENGINE_REG_VERSION, &spi_engine_version);
@@ -635,162 +580,290 @@ int32_t spi_engine_write_and_read(struct spi_desc *desc,
 				  uint8_t *data,
 				  uint8_t bytes_number)
 {
-	uint8_t 		i;
-	uint8_t 		word_len;
-	uint8_t 		words_number;
-	int32_t 		ret;
-	struct spi_engine_msg	msg;
-	struct spi_engine_desc	*desc_extra;
+	int32_t			ret;
+	uint32_t			*rx_buf;
+	struct spi_transfer	*m = NULL;
+	struct spi_sequence	t;
+	/* Write 1 byte (read adc data command) */
 
-	desc_extra = desc->extra;
+	rx_buf = (uint32_t*)calloc(bytes_number, sizeof(*data));
+	t = (struct spi_sequence) {
+		.tx_buff = (void *)data,
+		.rx_buff = (void *)rx_buf,
+		.word_width_bits = 8,
+		.length = bytes_number,
+		.cs = SPI_CS_LOW
+	};
 
-	words_number = spi_get_words_number(desc_extra, bytes_number);
+	ret = spi_message_init(&m, &t);
+	if(ret < 0)
+		return ret;
 
-	msg.cmds = (spi_engine_cmd_queue*)malloc(sizeof(*msg.cmds));
-	if (!msg.cmds)
-		return FAILURE;
+	t = (struct spi_sequence) {
+		.cs = SPI_CS_HIGH
+	};
 
-	msg.tx_buf =(uint32_t*)calloc(words_number, sizeof(msg.tx_buf[0]));
-	msg.rx_buf =(uint32_t*)calloc(words_number, sizeof(msg.rx_buf[0]));
-	msg.length = words_number;
+	ret = spi_message_add_transfer(m, &t);
+	if(ret < 0)
+		return ret;
 
-	/* Get the length of transfered word */
-	word_len = spi_get_word_lenght(desc_extra);
+	m->is_memory_mapped = false;
 
-	/* Make sure the CS is HIGH before starting a transaction */
-	msg.cmds->next = NULL;
-	msg.cmds->cmd = CS_HIGH;
-	spi_engine_queue_add_cmd(&msg.cmds, CS_LOW);
-	spi_engine_queue_add_cmd(&msg.cmds, WRITE_READ(bytes_number));
-	spi_engine_queue_add_cmd(&msg.cmds, CS_HIGH);
+	ret = spi_engine_message_exec(desc, m, 1);
+	if(ret < 0)
+		return ret;
 
-	/* Pack the bytes into engine WORDS */
-	for (i = 0; i < bytes_number; i++)
-		msg.tx_buf[i / word_len] |= data[i] << (desc_extra->data_width-
-							(i % word_len + 1) * 8);
+	memcpy(data, rx_buf,bytes_number * sizeof(*rx_buf));
+	free(rx_buf);
 
-	ret = spi_engine_transfer_message(desc, &msg);
+	return SUCCESS;
 
-	/* Skip the first byte ( dummy read byte ) */
-	for (i = 1; i < bytes_number; i++)
-		data[i - 1] = msg.rx_buf[(i) / word_len] >>
-			      (desc_extra->data_width -
-			       ((i) % word_len + 1) * 8);
+	// uint8_t 		i;
+	// uint8_t 		word_len;
+	// uint8_t 		words_number;
+	// int32_t 		ret;
+	// struct spi_engine_msg	msg;
+	// struct spi_engine_desc	*desc_extra;
 
-	spi_engine_queue_free(&msg.cmds);
-	free(msg.tx_buf);
-	free(msg.rx_buf);
+	// desc_extra = desc->extra;
 
-	return ret;
+	// words_number = spi_get_words_number(desc_extra, bytes_number);
+
+	// msg.cmds = (spi_engine_cmd_queue*)malloc(sizeof(*msg.cmds));
+	// if (!msg.cmds)
+	// 	return FAILURE;
+
+	// msg.tx_buf =(uint32_t*)calloc(words_number, sizeof(msg.tx_buf[0]));
+	// msg.rx_buf =(uint32_t*)calloc(words_number, sizeof(msg.rx_buf[0]));
+	// msg.length = words_number;
+
+	// /* Get the length of transfered word */
+	// word_len = spi_get_word_lenght(desc_extra);
+
+	// /* Make sure the CS is HIGH before starting a transaction */
+	// msg.cmds->next = NULL;
+	// msg.cmds->cmd = CS_HIGH;
+	// spi_engine_queue_add_cmd(&msg.cmds, CS_LOW);
+	// spi_engine_queue_add_cmd(&msg.cmds, WRITE_READ(bytes_number));
+	// spi_engine_queue_add_cmd(&msg.cmds, CS_HIGH);
+
+	// /* Pack the bytes into engine WORDS */
+	// for (i = 0; i < bytes_number; i++)
+	// 	msg.tx_buf[i / word_len] |= data[i] << (desc_extra->data_width-
+	// 						(i % word_len + 1) * 8);
+
+	// ret = spi_engine_transfer_message(desc, &msg);
+
+	// /* Skip the first byte ( dummy read byte ) */
+	// for (i = 1; i < bytes_number; i++)
+	// 	data[i - 1] = msg.rx_buf[(i) / word_len] >>
+	// 		      (desc_extra->data_width -
+	// 		       ((i) % word_len + 1) * 8);
+
+	// spi_engine_queue_free(&msg.cmds);
+	// free(msg.tx_buf);
+	// free(msg.rx_buf);
+
+	// return ret;
+	return 0;
 }
 
-/**
- * @brief Initialize the SPI engine's offload module
- *
- * @param desc Decriptor containing SPI interface parameters
- * @param param Structure containing the offload init parameters
- * @return int32_t This function allways returns SUCCESS
- */
-int32_t spi_engine_offload_init(struct spi_desc *desc,
-				const struct spi_engine_offload_init_param *param)
+static int32_t spi_engine_offload_init(struct spi_desc *desc,
+				       struct spi_transfer *msg)
 {
+	int32_t			status;
 	struct spi_engine_desc	*eng_desc;
 	struct axi_dmac_init	dmac_init;
 
+	if(!desc || !msg)
+		return FAILURE;
+
 	eng_desc = desc->extra;
-
-	eng_desc->offload_config = param->offload_config;
-
-	if(param->offload_config & OFFLOAD_TX_EN) {
-		dmac_init.name = "DAC DMAC";
-		dmac_init.base = param->tx_dma_baseaddr;
-		dmac_init.direction = DMA_MEM_TO_DEV;
-		dmac_init.flags = DMA_CYCLIC;
-		axi_dmac_init(&eng_desc->offload_tx_dma, &dmac_init);
-		if(!eng_desc->offload_tx_dma)
-			return FAILURE;
-	}
-	if(param->offload_config & OFFLOAD_RX_EN) {
-		dmac_init.name = "ADC DMAC";
-		dmac_init.base = param->rx_dma_baseaddr;
-		dmac_init.direction = DMA_DEV_TO_MEM;
-		dmac_init.flags = DMA_CYCLIC;
-		axi_dmac_init(&eng_desc->offload_rx_dma, &dmac_init);
-		if(!eng_desc->offload_rx_dma)
-			return FAILURE;
+	if(msg->tx_dma_baseaddr){
+		dmac_init = (struct axi_dmac_init) {
+			.name = "TX",
+			.base = (uint32_t)msg->tx_dma_baseaddr,
+			.direction = DMA_MEM_TO_DEV,
+			.flags = DMA_CYCLIC
+		};
+		status = axi_dmac_init(&eng_desc->offload_tx_dma, &dmac_init);
+		if(status < 0)
+			return status;
+		eng_desc->offload_config |= OFFLOAD_RX_EN;
 	}
 
-	spi_engine_set_transfer_width(desc,32);
+	if(msg->rx_dma_baseaddr){
+		dmac_init = (struct axi_dmac_init) {
+			.name = "RX",
+			.base = (uint32_t)msg->rx_dma_baseaddr,
+			.direction = DMA_DEV_TO_MEM,
+			.flags = DMA_CYCLIC
+		};
+		status = axi_dmac_init(&eng_desc->offload_rx_dma, &dmac_init);
+		if(status < 0)
+			return status;
+		eng_desc->offload_config |= OFFLOAD_RX_EN;
+	}
+
+	/* Set the transfer width to be alligned with DMA transfer width */
+	spi_engine_set_transfer_width(desc, 32);
 
 	return SUCCESS;
 }
 
-/**
- * @brief Initiate a SPI transfer in offload mode
- *
- * @param desc Decriptor containing SPI interface parameters
- * @param msg Offload message that get's to be transferred
- * @param no_samples Number of time the messages will be transferred
- * @return int32_t This function allways returns SUCCESS
- */
-int32_t spi_engine_offload_transfer(struct spi_desc *desc,
-				    struct spi_engine_offload_message msg,
-				    uint32_t no_samples)
+int32_t spi_start_transfer(struct spi_desc *desc,
+			   struct spi_transfer *msg)
 {
-	struct spi_engine_msg	transfer;
 	struct spi_engine_desc	*eng_desc;
-	uint32_t 		i;
-	uint8_t 		word_length;
+	struct spi_engine_msg	*eng_msg;
+	struct spi_sequence	*transfer;
+	int32_t			ret;
+	uint32_t		*tx_buff;
+	uint32_t		*rx_buff;
+	uint32_t		sync_id;
+	uint32_t		data;
+	uint8_t			word_size;
+	uint8_t			mask;
+	uint8_t			i;
+	uint8_t			readwrite;
 
 	eng_desc = desc->extra;
 
-	/* Check if offload is disabled */
-	if(!((eng_desc->offload_config & OFFLOAD_TX_EN) |
-	     (eng_desc->offload_config & OFFLOAD_RX_EN)))
+	eng_desc->offload_config = OFFLOAD_DISABLED;
+	if (msg->is_memory_mapped)
+		spi_engine_offload_init(desc, msg);
+
+	ret = spi_engine_prepare_message(desc, &eng_msg);
+	if(ret < 0)
+		return ret;
+
+	transfer = msg->sequence_list;
+	if (!transfer)
 		return FAILURE;
 
-	eng_desc->offload_tx_len = 0;
-	eng_desc->offload_rx_len = 0;
+	sync_id = 1;
+	while(transfer)
+	{
+		readwrite = 0;
+		if(transfer->rx_buff) {
+			readwrite |= SPI_ENGINE_INSTRUCTION_TRANSFER_R;
+			eng_msg->rx_buf = (uint32_t *)transfer->rx_buff;
+		}
+		if(transfer->tx_buff) {
+			readwrite |= SPI_ENGINE_INSTRUCTION_TRANSFER_W;
+			eng_msg->tx_buf = (uint32_t *)transfer->tx_buff;
+		}
+		if(transfer->num_bits) {
+			spi_engine_queue_add_cmd(&eng_msg->cmds,
+				SPI_ENGINE_CMD_CONFIG(
+					SPI_ENGINE_CMD_DATA_TRANSFER_LEN,
+					transfer->num_bits));
+		}
+		if(transfer->cs) {
 
-	transfer.cmds = (spi_engine_cmd_queue*)malloc(sizeof(*transfer.cmds));
+			mask = 0xFF;
+			/* Switch the state only of the selected chip select */
+			if (transfer->cs == SPI_CS_LOW)
+				mask ^= BIT(desc->chip_select);
 
-	if (!transfer.cmds)
-		return FAILURE;
+			spi_engine_queue_add_cmd(&eng_msg->cmds,
+					SPI_ENGINE_CMD_ASSERT(0, mask));
+		}
+		if(transfer->delay.value) {
 
-	transfer.tx_buf = (uint32_t *)msg.commands_data;
+		}
+		if(transfer->length) {
+			if(readwrite & SPI_ENGINE_INSTRUCTION_TRANSFER_W) {
+				eng_msg->tx_len += transfer->length;
+			}
+			if(readwrite & SPI_ENGINE_INSTRUCTION_TRANSFER_R)
+				eng_msg->rx_len += transfer->length;
 
-	/* Load the commands into the message */
-	transfer.cmds->next = NULL;
-	transfer.cmds->cmd = msg.commands[0];
-	i = 1;
-	while(i < msg.no_commands) {
-		spi_engine_queue_add_cmd(&transfer.cmds, msg.commands[i++]);
+			spi_engine_queue_add_cmd(&eng_msg->cmds,
+					SPI_ENGINE_CMD_TRANSFER(readwrite,
+						transfer->length));
+		}
+		transfer = transfer->next_transfer;
 
+		/* Add a sync cmd to signal that the transfer has finished */
+		spi_engine_queue_add_cmd(&eng_msg->cmds,
+					 SPI_ENGINE_CMD_SYNC(sync_id++));
 	}
 
-	spi_engine_transfer_message(desc, &transfer);
 
-	word_length = spi_get_word_lenght(eng_desc);
-	if(eng_desc->offload_config & OFFLOAD_TX_EN) {
-		axi_dmac_transfer(eng_desc->offload_tx_dma,
-				  msg.tx_addr,
-				  word_length * eng_desc->offload_tx_len *
-				  no_samples);
+	spi_engine_write_command_mem(desc, eng_msg);
+
+	bool offload_en;
+	offload_en = (eng_desc->offload_config & OFFLOAD_TX_EN) |
+		     (eng_desc->offload_config & OFFLOAD_RX_EN);
+
+	transfer = msg->sequence_list;
+	sync_id = 1;
+	while(transfer)
+	{
+		word_size = DIV_ROUND_UP(transfer->num_bits, 8);
+		/* Write a number of tx_length WORDS on the SDO line */
+		if(offload_en) {
+			for(i = 0; i < transfer->length; i++)
+				spi_engine_write(eng_desc,
+						SPI_ENGINE_REG_OFFLOAD_SDO_MEM(0),
+						tx_buff[i]);
+						//msg->tx_buf[i]);
+						//bswap_constant_32(msg->tx_buf[i]));
+
+		} else {
+			tx_buff = transfer->tx_buff;
+			for(i = 0; i < transfer->length; i++)
+				spi_engine_write(eng_desc,
+						SPI_ENGINE_REG_SDO_DATA_FIFO,
+						tx_buff[i]);
+			do {
+				spi_engine_read(eng_desc,
+						SPI_ENGINE_REG_SYNC_ID,
+						&data);
+			}
+			/* Wait for the end sync signal */
+			while(sync_id != data && sync_id > data);
+			sync_id++;
+
+			/* Read a number of rx_length WORDS from the SDI line and store
+			them */
+			if(transfer->rx_buff)
+			{
+				rx_buff = transfer->rx_buff;
+				for(i = 0; i < transfer->length; i++) {
+					spi_engine_read(eng_desc,
+							SPI_ENGINE_REG_SDI_DATA_FIFO,
+							rx_buff+i);
+				}
+			}
+		}
+		transfer = transfer->next_transfer;
 	}
 
-	if(eng_desc->offload_config & OFFLOAD_RX_EN) {
-		axi_dmac_transfer(eng_desc->offload_rx_dma,
-				  msg.rx_addr,
-				  word_length * eng_desc->offload_tx_len *
-				  no_samples);
+	if (msg->is_memory_mapped){
+		if(eng_desc->offload_config & OFFLOAD_RX_EN) {
+			axi_dmac_transfer(eng_desc->offload_rx_dma,
+					(uint32_t)eng_msg->rx_buf,
+					DIV_ROUND_UP(eng_msg->rx_len,
+						     4) * 4 * no_msg);
+		}
+
+		if(eng_desc->offload_config & OFFLOAD_TX_EN) {
+			axi_dmac_transfer(eng_desc->offload_tx_dma,
+					(uint32_t)eng_msg->tx_buf,
+					DIV_ROUND_UP(eng_msg->tx_len,
+						     4) * 4 * no_msg);
+		}
+
+		usleep(1000);
+
+		spi_engine_write(eng_desc,
+				 SPI_ENGINE_REG_OFFLOAD_CTRL(0),
+				 0x0001);
+
+		//spi_engine_queue_free(&transfer.cmds);
 	}
-
-	usleep(1000);
-
-	/* Start transfer */
-	spi_engine_write(eng_desc, SPI_ENGINE_REG_OFFLOAD_CTRL(0), 0x0001);
-
-	spi_engine_queue_free(&transfer.cmds);
 
 	return SUCCESS;
 }

@@ -94,7 +94,6 @@ struct spi_engine_init_param {
 	uint32_t 		spi_engine_baseaddr;
 };
 
-
 /**
  * @struct spi_engine_desc
  * @brief  Structure representing an SPI engine device
@@ -102,64 +101,22 @@ struct spi_engine_init_param {
 struct spi_engine_desc {
 	/** Type of implementation */
 	enum xil_spi_type	type;
-	/** Axi clock of the SPI Engine core */
-	uint32_t		axi_clk_hz;
 	/** Pointer to a DMAC used in transmission */
 	struct axi_dmac		*offload_tx_dma;
 	/** Pointer to a DMAC used in reception */
 	struct axi_dmac		*offload_rx_dma;
+	/** Axi clock of the SPI Engine core */
+	uint32_t		axi_clk_hz;
 	/** Offload's module transfer direction : TX, RX or both */
 	uint8_t			offload_config;
-	/** Number of words that the module has to send */
-	uint8_t			offload_tx_len;
-	/** Number of words that the module has to receive */
-	uint8_t			offload_rx_len;
 	/** Base address where the HDL core is situated */
 	uint32_t		spi_engine_baseaddr;
-	/** Base address where the RX DMAC core is situated */
-	uint32_t		rx_dma_baseaddr;
-	/** Base address where the TX DMAC core is situated */
-	uint32_t		tx_dma_baseaddr;
 	/** Clock divider used in transmission delays */
 	uint32_t		clk_div;
 	/** Data with of one SPI transfer ( in bits ) */
 	uint8_t			data_width;
 	/** The maximum data width supported by the engine */
 	uint8_t 		max_data_width;
-};
-
-
-/**
- * @struct spi_engine_offload_init_param
- * @brief  Structure containing the init parameters needed by the offload module
- */
-struct spi_engine_offload_init_param {
-	/** Base address where the RX DMAC core is situated */
-	uint32_t	rx_dma_baseaddr;
-	/** Base address where the TX DMAC core is situated */
-	uint32_t	tx_dma_baseaddr;
-	/** Offload's module transfer direction : TX, RX or both */
-	uint8_t		offload_config;
-};
-
-/**
- * @struct spi_engine_offload_message
- * @brief  Structure representing an offload message
- */
-struct spi_engine_offload_message {
-	/** Pointer to the SPI engine commands buffer that will be sent.
-	 * The available commands can be found at:
-	 * https://wiki.analog.com/resources/fpga/peripherals/spi_engine/
-	*/
-	uint32_t *commands;
-	/** Length of the SPI engine commands buffer */
-	uint32_t no_commands;
-	/** Pointer of the data that will be sent over spi */
-	uint8_t *commands_data;
-	/** The address where the data that will be transmitted is situated */
-	uint32_t tx_addr;
-	/** The address where the data that will be received is situated */
-	uint32_t rx_addr;
 };
 
 /******************************************************************************/
@@ -170,6 +127,10 @@ struct spi_engine_offload_message {
 int32_t spi_engine_init(struct spi_desc *desc,
 			const struct spi_init_param *param);
 
+int32_t spi_engine_message_exec(struct spi_desc *desc,
+				struct spi_message *msg,
+				uint32_t no_msg);
+				
 /* Write and read data over SPI using the SPI engine */
 int32_t spi_engine_write_and_read(struct spi_desc *desc,
 				  uint8_t *data,
@@ -177,14 +138,5 @@ int32_t spi_engine_write_and_read(struct spi_desc *desc,
 
 /* Free the resources used by the SPI engine device */
 int32_t spi_engine_remove(struct spi_desc *desc);
-
-/* Initialize the SPI engine offload module */
-int32_t spi_engine_offload_init(struct spi_desc *desc,
-				const struct spi_engine_offload_init_param *param);
-
-/* Write and read data over SPI using the offload module */
-int32_t spi_engine_offload_transfer(struct spi_desc *desc,
-				    struct spi_engine_offload_message msg,
-				    uint32_t no_samples);
 
 #endif // SPI_ENGINE_H

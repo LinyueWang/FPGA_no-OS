@@ -53,8 +53,8 @@
 
 #define	SPI_CPHA	0x01
 #define	SPI_CPOL	0x02
-#define	SPI_CS_LOW	0
-#define	SPI_CS_HIGH	1
+#define	SPI_CS_LOW	1
+#define	SPI_CS_HIGH	2
 
 /******************************************************************************/
 /*************************** Types Declarations *******************************/
@@ -127,35 +127,35 @@ struct spi_delay {
 };
 
 /**
- * @struct spi_transfer
- * @brief An spi transfer represents a whole (or a part of an)
+ * @struct spi_sequence
+ * @brief An spi sequence represents a whole (or a part of an)
  * 	SPI transaction.
  */
-struct spi_transfer {
+struct spi_sequence {
+	/** Amount of time to hang a spi transfer */
+	struct spi_delay	delay;
 	/** Address of the MOSI data buffer */
 	void 			*tx_buff;
 	/** Address of the MISO data buffer */
 	void			*rx_buff;
-	/** Amount of time to hang a spi transfer */
-	struct spi_delay	delay;
 	/** The width of one transfer WORD represented in bits */
-	uint8_t			num_bits;
+	uint8_t			word_width_bits;
 	/** Number of WORDS to transfer */
 	uint32_t		length;
 	/** Toggle or not the CHIP SELECT */
-	bool			cs;
-	/** Pointer to the next transfer in case of a transfer queue */
-	struct spi_transfer	*next_transfer;
+	uint32_t		cs;
+	/** Pointer to the next sequence in case of a transfer queue */
+	struct spi_sequence	*next_sequence;
 };
 
 /**
- * @struct spi_message
- * @brief An spi message contains a queue of spi transfers, ready
+ * @struct spi_transfer
+ * @brief An spi transfer contains a queue of spi sequences, ready
  * 	to be sent over the SPI interface.
  */
-struct spi_message {
-	/** List of spi transfers */
-	struct spi_transfer	*transfer_head;
+struct spi_transfer {
+	/** List of spi sequences */
+	struct spi_sequence	*sequence_list;
 	/** DMAC used to memory map the MOSI data */
 	void			*tx_dma_baseaddr;
 	/** DMAC used to memory map the MISO data */
@@ -181,14 +181,14 @@ int32_t spi_write_and_read(struct spi_desc *desc,
 			   uint16_t bytes_number);
 
 /* Initialize the spi message and add a spi transfer to it */
-int32_t spi_message_init(struct spi_message **msg,
-			 struct spi_transfer *xfer);
+int32_t spi_prepare_transfer(struct spi_transfer **xfer,
+			     struct spi_sequence *seq);
 
 /* Add a spi transfer to the spi message's transfer queue */
-int32_t spi_message_add_transfer(struct spi_message *msg,
-				 struct spi_transfer *xfer);
+int32_t spi_add_sequence(struct spi_transfer *xfer,
+			 struct spi_sequence *seq);
 
 /* Transfer the spi message using the specified device descriptor */
-int32_t spi_message_exec(struct spi_desc *desc,
-			 struct spi_message *msg);
+int32_t spi_start_transfer(struct spi_desc *desc,
+			   struct spi_transfer *xfer);
 #endif // SPI_H_
