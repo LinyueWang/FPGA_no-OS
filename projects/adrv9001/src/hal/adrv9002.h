@@ -1,19 +1,8 @@
-/* SPDX-License-Identifier: GPL-2.0 */
-/*
- * ADRV9002
- *
- * Copyright 2019 Analog Devices Inc.
- *
- * Licensed under the GPL-2.
- */
-
 #ifndef IIO_TRX_ADRV9002_H_
 #define IIO_TRX_ADRV9002_H_
 
-#include <linux/clk-provider.h>
-#include <linux/delay.h>
-#include <linux/gpio/consumer.h>
-#include <linux/types.h>
+#include "gpio.h"
+#include "delay.h"
 
 #include "adi_common_log.h"
 #include "adi_adrv9001_user.h"
@@ -94,7 +83,7 @@ enum adrv9002_tx_ext_info {
 };
 
 struct adrv9002_clock {
-	struct clk_hw		hw;
+	//struct clk_hw		hw;
 	struct spi_device	*spi;
 	struct adrv9002_rf_phy	*phy;
 	unsigned long		rate;
@@ -104,9 +93,9 @@ struct adrv9002_clock {
 struct adrv9002_chan {
 	adi_adrv9001_ChannelState_e cached_state;
 	adi_common_ChannelNumber_e number;
-	u32 power;
+	uint32_t power;
 	int nco_freq;
-	u8 enabled;
+	uint8_t enabled;
 };
 
 struct adrv9002_rx_chan {
@@ -122,7 +111,7 @@ struct adrv9002_rx_chan {
 struct adrv9002_tx_chan {
 	struct adrv9002_chan channel;
 	struct adi_adrv9001_TxAttenuationPinControlCfg *pin_cfg;
-	u8 dac_boost_en;
+	uint8_t dac_boost_en;
 #ifdef CONFIG_DEBUG_FS
 	struct adi_adrv9001_TxSsiTestModeCfg ssi_test;
 #endif
@@ -130,7 +119,7 @@ struct adrv9002_tx_chan {
 
 struct adrv9002_gpio {
 	struct adi_adrv9001_GpioCfg gpio;
-	u32 signal;
+	uint32_t signal;
 };
 
 #define to_clk_priv(_hw) container_of(_hw, struct adrv9002_clock, hw)
@@ -140,13 +129,7 @@ struct adrv9002_rf_phy {
 	struct iio_dev			*indio_dev;
 	struct gpio_desc		*reset_gpio;
 	struct gpio_desc		*ssi_sync;
-	/* Protect against concurrent accesses to the device */
-	struct mutex			lock;
-	struct clk			*clks[NUM_ADRV9002_CLKS];
 	struct adrv9002_clock		clk_priv[NUM_ADRV9002_CLKS];
-	struct clk_onecell_data		clk_data;
-	struct bin_attribute		bin;
-	char				*bin_attr_buf;
 	struct adrv9002_rx_chan		rx_channels[ADRV9002_CHANN_MAX];
 	struct adrv9002_tx_chan		tx_channels[ADRV9002_CHANN_MAX];
 	struct adrv9002_gpio 		*adrv9002_gpios;
@@ -158,7 +141,7 @@ struct adrv9002_rf_phy {
 	struct adi_adrv9001_InitCals	init_cals;
 	int				spi_device_id;
 	int				ngpios;
-	u8				rx2tx2;
+	uint8_t				rx2tx2;
 #ifdef CONFIG_DEBUG_FS
 	struct adi_adrv9001_SsiCalibrationCfg ssi_delays;
 #endif
@@ -166,17 +149,17 @@ struct adrv9002_rf_phy {
 
 int adrv9002_hdl_loopback(struct adrv9002_rf_phy *phy, bool enable);
 int adrv9002_register_axi_converter(struct adrv9002_rf_phy *phy);
-int adrv9002_axi_interface_set(struct adrv9002_rf_phy *phy, const u8 n_lanes,
-			       const u8 ssi_intf, const bool cmos_ddr,
+int adrv9002_axi_interface_set(struct adrv9002_rf_phy *phy, const uint8_t n_lanes,
+			       const uint8_t ssi_intf, const bool cmos_ddr,
 			       const int channel);
 struct adrv9002_rf_phy *adrv9002_spi_to_phy(struct spi_device *spi);
 int adrv9002_axi_intf_tune(struct adrv9002_rf_phy *phy, const bool tx, const int chann,
-			   const adi_adrv9001_SsiType_e ssi_type, u8 *clk_delay, u8 *data_delay);
+			   const adi_adrv9001_SsiType_e ssi_type, uint8_t *clk_delay, uint8_t *data_delay);
 void adrv9002_axi_interface_enable(struct adrv9002_rf_phy *phy, const int chan, const bool en);
-int adrv9002_spi_read(struct spi_device *spi, u32 reg);
-int adrv9002_spi_write(struct spi_device *spi, u32 reg, u32 val);
+int adrv9002_spi_read(struct spi_device *spi, uint32_t reg);
+int adrv9002_spi_write(struct spi_device *spi, uint32_t reg, uint32_t val);
 void adrv9002_get_ssi_interface(struct adrv9002_rf_phy *phy, const int channel,
-				u8 *ssi_intf, u8 *n_lanes, bool *cmos_ddr_en);
+				uint8_t *ssi_intf, uint8_t *n_lanes, bool *cmos_ddr_en);
 int adrv9002_ssi_configure(struct adrv9002_rf_phy *phy);
 int adrv9002_post_init(struct adrv9002_rf_phy *phy);
 void adrv9002_cmos_default_set(void);
@@ -185,8 +168,8 @@ int adrv9002_intf_test_cfg(struct adrv9002_rf_phy *phy, const int chann, const b
 			   const bool stop, const adi_adrv9001_SsiType_e ssi_type);
 int adrv9002_check_tx_test_pattern(struct adrv9002_rf_phy *phy, const int chann,
 				   const adi_adrv9001_SsiType_e ssi_type);
-int adrv9002_intf_change_delay(struct adrv9002_rf_phy *phy, const int channel, u8 clk_delay,
-			       u8 data_delay, const bool tx,
+int adrv9002_intf_change_delay(struct adrv9002_rf_phy *phy, const int channel, uint8_t clk_delay,
+			       uint8_t data_delay, const bool tx,
 			       const adi_adrv9001_SsiType_e ssi_type);
 adi_adrv9001_SsiType_e adrv9002_axi_ssi_type_get(struct adrv9002_rf_phy *phy);
 /* get init structs */
@@ -199,9 +182,9 @@ static inline void adrv9002_sync_gpio_toogle(const struct adrv9002_rf_phy *phy)
 {
 	if (phy->rx2tx2) {
 		/* toogle ssi sync gpio */
-		gpiod_set_value_cansleep(phy->ssi_sync, 1);
-		usleep_range(5000, 5005);
-		gpiod_set_value_cansleep(phy->ssi_sync, 0);
+		gpio_set_value(phy->ssi_sync, 1);
+		udelay(5000);
+		gpio_set_value(phy->ssi_sync, 0);
 	}
 }
 #endif

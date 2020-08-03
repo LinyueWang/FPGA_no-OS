@@ -37,6 +37,7 @@ extern "C" {
 #endif
 
 struct adi_hal {
+	adi_hal_Cfg_t		halCfg; /* This has to be the first member. */
 	struct gpio_desc	*gpio_reset;
 };
 

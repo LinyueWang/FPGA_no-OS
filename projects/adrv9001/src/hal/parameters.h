@@ -47,9 +47,15 @@
 /******************************************************************************/
 /********************** Macros and Constants Definitions **********************/
 /******************************************************************************/
+#if defined(PLATFORM_MB)
+#define GPIO_OFFSET			54
+#else
+#define GPIO_OFFSET			78
+#endif
+
 /* GPIO */
 #define GPIO_DEVICE_ID			XPAR_PSU_GPIO_0_DEVICE_ID
-#define GPIO_RESET			124
+#define GPIO_RESET			(46 + GPIO_OFFSET)
 
 /* UART */
 #define UART_DEVICE_ID			XPAR_XUARTPS_0_DEVICE_ID
