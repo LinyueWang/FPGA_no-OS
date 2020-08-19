@@ -9,12 +9,13 @@
 #									       #
 ################################################################################
 # app
-SRCS += $(DRIVERS)/platform/xilinx/gpio.c
 SRCS += $(PROJECT)/src/hal/no_os_platform.c \
 	$(PROJECT)/src/app/adrv9002_init_data.c \
 	$(PROJECT)/src/app/headless.c
 # no-OS drivers
 SRCS += $(PLATFORM_DRIVERS)/gpio.c \
+	$(DRIVERS)/spi/spi.c \
+	$(PLATFORM_DRIVERS)/xilinx_spi.c \
 	$(PLATFORM_DRIVERS)/delay.c \
 	$(PLATFORM_DRIVERS)/xilinx_spi.c
 INCS +=	$(INCLUDE)/spi.h \

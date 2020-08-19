@@ -43,6 +43,8 @@
 #include "parameters.h"
 #include "gpio.h"
 #include "gpio_extra.h"
+#include "spi.h"
+#include "spi_extra.h"
 #include "error.h"
 #include "delay.h"
 #include "adi_common_error.h"
@@ -69,6 +71,15 @@ int32_t no_os_HwOpen(void *devHalCfg)
 #endif
 		.device_id = GPIO_DEVICE_ID
 	};
+	struct xil_spi_init_param sip_extra = {
+#ifdef PLATFORM_MB
+	.type = SPI_PL,
+#else
+	.type = SPI_PS,
+#endif
+	.device_id = SPI_DEVICE_ID,
+	.flags = 0
+};
 
 	/* Reset GPIO configuration */
 	gip_gpio_reset.number = GPIO_RESET;
@@ -79,6 +90,17 @@ int32_t no_os_HwOpen(void *devHalCfg)
 
 	ret = gpio_set_value(phal->gpio_reset, GPIO_HIGH);
 	if (ret < 0)
+		return ret;
+
+	struct spi_init_param sip = {
+		.max_speed_hz = 20000000,
+		.mode = SPI_MODE_0,
+		.chip_select = SPI_CS,
+		.platform_ops = &xil_platform_ops,
+		.extra = &sip_extra
+	};
+	ret = spi_init(&phal->spi, &sip);
+	if (ret)
 		return ret;
 
 	return ADI_HAL_OK;
@@ -95,8 +117,16 @@ int32_t no_os_HwOpen(void *devHalCfg)
  */
 int32_t no_os_HwClose(void *devHalCfg)
 {
+	int32_t ret;
 	struct adi_hal *phal = (struct adi_hal *)devHalCfg;
-	gpio_remove(phal->gpio_reset);
+	ret = gpio_remove(phal->gpio_reset);
+	if (ret)
+		return ret;
+
+	ret = spi_remove(phal->spi);
+	if (ret)
+		return ret;
+
 	return ADI_HAL_OK;
 }
 
