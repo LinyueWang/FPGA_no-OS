@@ -36,12 +36,6 @@
 extern "C" {
 #endif
 
-struct adi_hal {
-	adi_hal_Cfg_t		halCfg; /* This has to be the first member. */
-	struct gpio_desc	*gpio_reset;
-	struct spi_desc		*spi;
-};
-
 #ifndef CLIENT_IGNORE
 /**
  * BBIC Init, Open, Close functions

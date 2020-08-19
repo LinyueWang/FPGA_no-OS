@@ -10,6 +10,8 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdarg.h>
+#include "gpio.h"
+#include "spi.h"
 
 #define ADI_HAL_STRING_LENGTH 64
 #define ADI_HAL_MAX_LOG_LINE 1000
@@ -186,6 +188,10 @@ typedef struct adi_hal_Cfg
     adi_hal_HwResetCfg_t hwResetCfg;
     adi_hal_I2cCfg_t i2cCfg;
     adi_hal_TimerCfg_t timerCfg;
+
+    /* no-OS specifics */
+    struct gpio_desc *gpio_reset;
+    struct spi_desc *spi;
 } adi_hal_Cfg_t;
 
 #ifdef __cplusplus

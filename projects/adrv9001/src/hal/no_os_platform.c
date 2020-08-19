@@ -61,7 +61,7 @@
 int32_t no_os_HwOpen(void *devHalCfg)
 {
 	int32_t ret;
-	struct adi_hal *phal = (struct adi_hal *)devHalCfg;
+	adi_hal_Cfg_t *phal = (adi_hal_Cfg_t *)devHalCfg;
 	struct gpio_init_param gip_gpio_reset;
 	struct xil_gpio_init_param gip_extra = {
 #ifdef PLATFORM_MB
@@ -118,7 +118,7 @@ int32_t no_os_HwOpen(void *devHalCfg)
 int32_t no_os_HwClose(void *devHalCfg)
 {
 	int32_t ret;
-	struct adi_hal *phal = (struct adi_hal *)devHalCfg;
+	adi_hal_Cfg_t *phal = (adi_hal_Cfg_t *)devHalCfg;
 	ret = gpio_remove(phal->gpio_reset);
 	if (ret)
 		return ret;
@@ -145,7 +145,7 @@ int32_t no_os_HwClose(void *devHalCfg)
  */
 int32_t no_os_HwReset(void *devHalCfg, uint8_t pinLevel)
 {
-	struct adi_hal *phal = (struct adi_hal *)devHalCfg;
+	adi_hal_Cfg_t  *phal = (adi_hal_Cfg_t *)devHalCfg;
 
 	if (!devHalCfg)
 		return ADI_HAL_NULL_PTR;
@@ -159,6 +159,108 @@ int32_t no_os_HwReset(void *devHalCfg, uint8_t pinLevel)
 	gpio_set_value(phal->gpio_reset, !pinLevel);
 
 	return ADI_HAL_OK;
+}
+
+/**
+ * \brief Write an array of 8-bit data to a SPI device
+ *
+ * The function will write numTxBytes number of bytes to the SPI device
+ * selected in the devHalCfg structure.
+ *
+ * \param devHalCfg Pointer to device instance specific platform settings
+ * \param txData Pointer to byte array txData buffer that has numTxBytes number of bytes
+ * \param numTxBytes The length of txData array
+ *
+ * \retval ADI_HAL_OK function completed successfully, no action required
+ * \retval ADI_HAL_NULL_PTR the function has been called with a null pointer
+ * \retval ADI_HAL_SPI_FAIL the data was not written successfully
+ */
+int32_t no_os_SpiWrite(void *devHalCfg, const uint8_t txData[], uint32_t numTxBytes)
+{
+	static const int32_t MAX_SIZE = 4096;
+	uint32_t toWrite = 0;
+	int32_t remaining = numTxBytes;
+	int32_t halError = (int32_t)ADI_HAL_OK;
+	adi_hal_Cfg_t *halCfg = NULL;
+
+	if (devHalCfg == NULL)
+	{
+		halError = (int32_t)ADI_HAL_NULL_PTR;
+		return halError;
+	}
+
+	halCfg = (adi_hal_Cfg_t *)devHalCfg;
+
+	if (halCfg->spiCfg.spiActionDisable == 0)
+	{
+		int32_t result = 0;
+		do
+		{
+			toWrite = (remaining > MAX_SIZE) ? MAX_SIZE : remaining;
+			result = spi_write_and_read(halCfg->spi, &txData[numTxBytes - remaining], toWrite);
+			if (result < 0)
+				return ADI_HAL_SPI_FAIL;
+
+			remaining -= toWrite;
+		} while (remaining > 0);
+	}
+
+	return halError;
+}
+
+/**
+ * \brief Read one or more bytes from the device specified by the devHalCfg structure
+ *
+ * The function will read numTxRxBytes number of bytes from the SPI device selected in
+ * the devHalCfg parameter and store the resulting data sent by the device in the rxData
+ * data buffer.
+ *
+ * For each byte in txData written to the device, a byte is read and returned by this
+ * function at the pointer provided by the rxData parameter.
+ *
+ * \param devHalCfg Pointer to device instance specific platform settings
+ * \param txData Pointer to byte array that has numTxRxBytes number of bytes
+ * \param rxData Pointer to byte array where read back data will be returned, that is at least numTxRxBytes in size.
+ * \param numTxBytes The length of txData and rxData arrays
+ *
+ * \retval ADI_HAL_OK function completed successfully, no action required
+ * \retval ADI_HAL_NULL_PTR the function has been called with a null pointer
+ * \retval ADI_HAL_SPI_FAIL the data was not read successfully
+ */
+int32_t no_os_SpiRead(void *devHalCfg, const uint8_t txData[], uint8_t rxData[],
+			  uint32_t numTxRxBytes)
+{
+	static const int32_t MAX_SIZE = 4096;
+	uint32_t toWrite = 0;
+	int32_t remaining = numTxRxBytes;
+	int32_t halError = (int32_t)ADI_HAL_OK;
+	adi_hal_Cfg_t *halCfg = NULL;
+
+	if (devHalCfg == NULL)
+	{
+		halError = (int32_t)ADI_HAL_NULL_PTR;
+		return halError;
+	}
+
+	memcpy(rxData, txData, numTxRxBytes);
+
+	halCfg = (adi_hal_Cfg_t *)devHalCfg;
+
+	if (halCfg->spiCfg.spiActionDisable == 0)
+	{
+		int32_t result = 0;
+		do
+		{
+			toWrite = (remaining > MAX_SIZE) ? MAX_SIZE : remaining;
+			result = spi_write_and_read(halCfg->spi, &rxData[numTxRxBytes - remaining], toWrite);
+			if (result < 0)
+				return ADI_HAL_SPI_FAIL;
+
+			remaining -= toWrite;
+		} while (remaining > 0);
+	}
+
+	return halError;
 }
 
 /**
@@ -415,8 +517,8 @@ int32_t (*adi_hal_HwClose)(void *devHalCfg) = no_os_HwClose;
 int32_t (*adi_hal_HwReset)(void *devHalCfg, uint8_t pinLevel) = no_os_HwReset;
 
 /* SPI Interface */
-int32_t (*adi_hal_SpiWrite)(void *devHalCfg, const uint8_t txData[], uint32_t numTxBytes) = NULL;
-int32_t (*adi_hal_SpiRead)(void *devHalCfg, const uint8_t txData[], uint8_t rxData[], uint32_t numRxBytes) = NULL;
+int32_t (*adi_hal_SpiWrite)(void *devHalCfg, const uint8_t txData[], uint32_t numTxBytes) = no_os_SpiWrite;
+int32_t (*adi_hal_SpiRead)(void *devHalCfg, const uint8_t txData[], uint8_t rxData[], uint32_t numRxBytes) = no_os_SpiRead;
 
 /* Logging interface */
 int32_t (*adi_hal_LogFileOpen)(void *devHalCfg, const char *filename) = no_os_LogFileOpen;
@@ -460,8 +562,8 @@ int32_t adi_hal_PlatformSetup(void *devHalInfo, adi_hal_Platforms_e platform)
 	adi_hal_HwClose = no_os_HwClose;
 	adi_hal_HwReset = no_os_HwReset;
 
-	adi_hal_SpiWrite = NULL;
-	adi_hal_SpiRead = NULL;
+	adi_hal_SpiWrite = no_os_SpiWrite;
+	adi_hal_SpiRead = no_os_SpiRead;
 
 	adi_hal_LogFileOpen = no_os_LogFileOpen;
 	adi_hal_LogLevelSet = no_os_LogLevelSet;
