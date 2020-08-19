@@ -59,11 +59,11 @@ static int adrv9002_setup(struct adrv9002_rf_phy *phy,
 			  adi_adrv9001_Init_t *adrv9002_init)
 {
 	int ret;
-	struct adi_adrv9001_Device *adrv9001_device = phy->adrv9001;
 
 	phy->adrv9001 = &phy->adrv9001_device;
+	phy->adrv9001->common.devHalInfo = &phy->hal;
 
-	ret = adi_adrv9001_HwOpen(adrv9001_device, adrv9002_spi_settings_get());
+	ret = adi_adrv9001_HwOpen(phy->adrv9001, adrv9002_spi_settings_get());
 	if (ret)
 		return ret;
 
