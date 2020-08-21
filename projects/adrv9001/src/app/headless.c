@@ -140,22 +140,6 @@ static int __adrv9002_dev_err(const struct adrv9002_rf_phy *phy,
 
 #define adrv9002_dev_err(phy)	__adrv9002_dev_err(phy, __func__, __LINE__)
 
-static void adrv9002_cleanup(struct adrv9002_rf_phy *phy)
-{
-	int i;
-
-	for (i = 0; i < ADRV9002_CHANN_MAX; i++) {
-		memset(&phy->rx_channels[i].channel, 0,
-		       sizeof(struct adrv9002_chan));
-
-		memset(&phy->tx_channels[i].channel, 0,
-		       sizeof(struct adrv9002_chan));
-	}
-
-	memset(&phy->adrv9001->devStateInfo, 0,
-	       sizeof(phy->adrv9001->devStateInfo));
-}
-
 static int adrv9001_rx_path_config(struct adrv9002_rf_phy *phy,
 				   const adi_adrv9001_ChannelState_e state)
 {
@@ -363,7 +347,7 @@ static int adrv9002_compute_init_cals(struct adrv9002_rf_phy *phy)
 static int adrv9002_setup(struct adrv9002_rf_phy *phy,
 			  adi_adrv9001_Init_t *adrv9002_init)
 {
-	struct adi_adrv9001_Device *adrv9001_device = phy->adrv9001;
+	struct adi_adrv9001_Device *adrv9001_device;
 	struct adi_adrv9001_RadioCtrlInit *adrv9002_radio_init =
 						adrv9002_radio_ctrl_init_get();
 	struct adi_adrv9001_ResourceCfg adrv9001_resource_cfg = {
@@ -389,13 +373,14 @@ static int adrv9002_setup(struct adrv9002_rf_phy *phy,
 		init_state = ADI_ADRV9001_CHANNEL_RF_ENABLED;
 
 	phy->adrv9001 = &phy->adrv9001_device;
+	adrv9001_device = phy->adrv9001;
 	phy->adrv9001->common.devHalInfo = &phy->hal;
 
 	ret = adrv9002_compute_init_cals(phy);
 	if (ret)
 		return ret;
 
-	ret = adi_adrv9001_HwOpen(phy->adrv9001, adrv9002_spi_settings_get());
+	ret = adi_adrv9001_HwOpen(adrv9001_device, adrv9002_spi_settings_get());
 	if (ret)
 		return adrv9002_dev_err(phy);
 
@@ -451,7 +436,8 @@ int main(void)
 	struct adrv9002_rf_phy phy;
 	printf("Hello\n");
 
-	adrv9002_cleanup(&phy);
+	memset(&phy, 0, sizeof(struct adrv9002_rf_phy));
+
 	ret = adrv9002_setup(&phy, adrv9002_init_get());
 	if (ret)
 		return ret;
