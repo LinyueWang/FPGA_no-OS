@@ -601,8 +601,8 @@ int32_t(*adi_hal_LogWrite)(void *devHalCfg, int32_t logLevel, const char *commen
 int32_t(*adi_hal_LogFileClose)(void *devHalCfg) = no_os_LogFileClose;
 
 /* Timer interface */
-int32_t (*adi_hal_Wait_ms)(void *devHalCfg, uint32_t time_ms) = no_os_TimerWait_us;
-int32_t (*adi_hal_Wait_us)(void *devHalCfg, uint32_t time_us) = no_os_TimerWait_ms;
+int32_t (*adi_hal_Wait_ms)(void *devHalCfg, uint32_t time_ms) = no_os_TimerWait_ms;
+int32_t (*adi_hal_Wait_us)(void *devHalCfg, uint32_t time_us) = no_os_TimerWait_us;
 
 /* Mcs interface */
 int32_t(*adi_hal_Mcs_Pulse)(void *devHalCfg, uint8_t numberOfPulses) = no_os_Mcs_Pulse;
