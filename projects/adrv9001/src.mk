@@ -29,7 +29,11 @@ INCS +=	$(INCLUDE)/spi.h \
 INCS += $(PROJECT)/src/hal/adrv9002.h \
 	$(PROJECT)/src/hal/parameters.h \
 	$(PROJECT)/src/hal/adi_platform.h \
-	$(PROJECT)/src/hal/adi_platform_types.h
+	$(PROJECT)/src/hal/adi_platform_types.h \
+	$(PROJECT)/src/hal/Navassa_EvaluationFw.h \
+	$(PROJECT)/src/hal/ORxGainTable.h \
+	$(PROJECT)/src/hal/RxGainTable.h \
+	$(PROJECT)/src/hal/TxAttenTable.h
 # third_party
 SRCS += $(DRIVERS)/rf-transceiver/navassa/third_party/jsmn/jsmn.c
 INCS += $(DRIVERS)/rf-transceiver/navassa/third_party/adi_pmag_macros/adi_pmag_macros.h \

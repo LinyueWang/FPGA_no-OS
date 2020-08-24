@@ -39,6 +39,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <errno.h>
 #include "adi_platform.h"
 #include "parameters.h"
 #include "gpio.h"
@@ -48,6 +49,10 @@
 #include "error.h"
 #include "delay.h"
 #include "adi_common_error.h"
+#include "Navassa_EvaluationFw.h"
+#include "ORxGainTable.h"
+#include "RxGainTable.h"
+#include "TxAttenTable.h"
 
 /**
  * \brief Opens all neccessary files and device drivers for a specific device
@@ -507,6 +512,74 @@ int32_t no_os_TimerWait_ms(void *devHalCfg, uint32_t time_ms)
 	return halError;
 }
 
+/* Not supported yet */
+int32_t no_os_Mcs_Pulse(void* devHalCfg, uint8_t numberOfPulses)
+{
+    return ADI_HAL_FUNCTION_NOT_IMP;
+}
+
+/* Not supported yet */
+int32_t no_os_ssi_Reset(void* devHalCfg)
+{
+    return ADI_HAL_FUNCTION_NOT_IMP;
+}
+
+int32_t no_os_ImagePageGet(void *devHalCfg, const char *ImagePath,
+			   uint32_t pageIndex, uint32_t pageSize, uint8_t *rdBuff)
+{
+    if ((pageIndex * pageSize) > sizeof(Navassa_EvaluationFw_bin))
+	return -EINVAL;
+
+    memcpy(rdBuff, &Navassa_EvaluationFw_bin[pageIndex * pageSize], pageSize);
+
+    return ADI_HAL_OK;
+}
+
+int32_t no_os_RxGainTableEntryGet(void *devHalCfg, const char *rxGainTablePath, uint16_t lineCount, uint8_t *gainIndex, uint8_t *rxFeGain,
+				  uint8_t *tiaControl, uint8_t *adcControl, uint8_t *extControl, uint16_t *phaseOffset, int16_t *digGain)
+{
+	if (!strcmp(rxGainTablePath, "RxGainTable.csv")) {
+		if (lineCount > sizeof(RxGainTable) / sizeof(struct RxGainTableEntry))
+			return -EINVAL;
+
+		*gainIndex = RxGainTable[lineCount].gainIndex;
+		*rxFeGain = RxGainTable[lineCount].rxFeGain;
+		*tiaControl = RxGainTable[lineCount].tiaControl;
+		*adcControl = RxGainTable[lineCount].adcControl;
+		*extControl = RxGainTable[lineCount].extControl;
+		*phaseOffset = RxGainTable[lineCount].phaseOffset;
+		*digGain = RxGainTable[lineCount].digGain;
+	} else if (!strcmp(rxGainTablePath, "ORxGainTable.csv")) {
+		if (lineCount > sizeof(ORxGainTable) / sizeof(struct ORxGainTableEntry))
+			return -EINVAL;
+
+		*gainIndex = ORxGainTable[lineCount].gainIndex;
+		*rxFeGain = ORxGainTable[lineCount].rxFeGain;
+		*tiaControl = ORxGainTable[lineCount].tiaControl;
+		*adcControl = ORxGainTable[lineCount].adcControl;
+		*extControl = ORxGainTable[lineCount].extControl;
+		*phaseOffset = ORxGainTable[lineCount].phaseOffset;
+		*digGain = ORxGainTable[lineCount].digGain;
+	}
+	else
+		return -EINVAL;
+
+	return 7; /* return the number of filled elements (emulate sscanf return value) */
+}
+
+int32_t no_os_TxAttenTableEntryGet(void *devHalCfg, const char *txAttenTablePath, uint16_t lineCount, uint16_t *attenIndex,
+				   uint8_t *txAttenHp, uint16_t *txAttenMult)
+{
+	if (lineCount > sizeof(TxAttenTable) / sizeof(struct TxAttenTableEntry))
+		return -EINVAL;
+
+	*attenIndex = TxAttenTable[lineCount].attenIndex;
+	*txAttenHp = TxAttenTable[lineCount].txAttenHp;
+	*txAttenMult = TxAttenTable[lineCount].txAttenMult;
+
+	return 3; /* return the number of filled elements (emulate sscanf return value) */
+}
+
 /*
  * Function pointer assignemt for default configuration
  */
@@ -532,18 +605,18 @@ int32_t (*adi_hal_Wait_ms)(void *devHalCfg, uint32_t time_ms) = no_os_TimerWait_
 int32_t (*adi_hal_Wait_us)(void *devHalCfg, uint32_t time_us) = no_os_TimerWait_ms;
 
 /* Mcs interface */
-int32_t(*adi_hal_Mcs_Pulse)(void *devHalCfg, uint8_t numberOfPulses) = NULL;
+int32_t(*adi_hal_Mcs_Pulse)(void *devHalCfg, uint8_t numberOfPulses) = no_os_Mcs_Pulse;
 
 /* ssi */
-int32_t(*adi_hal_ssi_Reset)(void *devHalCfg) = NULL;
+int32_t(*adi_hal_ssi_Reset)(void *devHalCfg) = no_os_ssi_Reset;
 
 /* File IO abstraction */
-int32_t(*adi_hal_ArmImagePageGet)(void *devHalCfg, const char *ImagePath, uint32_t pageIndex, uint32_t pageSize, uint8_t *rdBuff) = NULL;
-int32_t(*adi_hal_StreamImagePageGet)(void *devHalCfg, const char *ImagePath, uint32_t pageIndex, uint32_t pageSize, uint8_t *rdBuff) = NULL;
+int32_t(*adi_hal_ArmImagePageGet)(void *devHalCfg, const char *ImagePath, uint32_t pageIndex, uint32_t pageSize, uint8_t *rdBuff) = no_os_ImagePageGet;
+int32_t(*adi_hal_StreamImagePageGet)(void *devHalCfg, const char *ImagePath, uint32_t pageIndex, uint32_t pageSize, uint8_t *rdBuff) = no_os_ImagePageGet;
 int32_t(*adi_hal_RxGainTableEntryGet)(void *devHalCfg, const char *rxGainTablePath, uint16_t lineCount, uint8_t *gainIndex, uint8_t *rxFeGain,
-				       uint8_t *tiaControl, uint8_t *adcControl, uint8_t *extControl, uint16_t *phaseOffset, int16_t *digGain) = NULL;
+				       uint8_t *tiaControl, uint8_t *adcControl, uint8_t *extControl, uint16_t *phaseOffset, int16_t *digGain) = no_os_RxGainTableEntryGet;
 int32_t(*adi_hal_TxAttenTableEntryGet)(void *devHalCfg, const char *txAttenTablePath, uint16_t lineCount, uint16_t *attenIndex, uint8_t *txAttenHp,
-				       uint16_t *txAttenMult) = NULL;
+				       uint16_t *txAttenMult) = no_os_TxAttenTableEntryGet;
 
 /**
  * \brief Platform setup
@@ -574,14 +647,14 @@ int32_t adi_hal_PlatformSetup(void *devHalInfo, adi_hal_Platforms_e platform)
 	adi_hal_Wait_us = no_os_TimerWait_us;
 	adi_hal_Wait_ms = no_os_TimerWait_ms;
 
-	adi_hal_Mcs_Pulse = NULL;
+	adi_hal_Mcs_Pulse = no_os_Mcs_Pulse;
 
-	adi_hal_ssi_Reset = NULL;
+	adi_hal_ssi_Reset = no_os_ssi_Reset;
 
-	adi_hal_ArmImagePageGet = NULL;
-	adi_hal_StreamImagePageGet = NULL;
-	adi_hal_RxGainTableEntryGet = NULL;
-	adi_hal_TxAttenTableEntryGet = NULL;
+	adi_hal_ArmImagePageGet = no_os_ImagePageGet;
+	adi_hal_StreamImagePageGet = no_os_ImagePageGet;
+	adi_hal_RxGainTableEntryGet = no_os_RxGainTableEntryGet;
+	adi_hal_TxAttenTableEntryGet = no_os_TxAttenTableEntryGet;
 
 	return error;
 }
