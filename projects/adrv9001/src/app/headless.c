@@ -344,6 +344,26 @@ static int adrv9002_compute_init_cals(struct adrv9002_rf_phy *phy)
 	return 0;
 }
 
+static int adrv9002_dgpio_config(struct adrv9002_rf_phy *phy)
+{
+	struct adrv9002_gpio *dgpio = phy->adrv9002_gpios;
+	int i, ret;
+
+	for (i = 0; i < phy->ngpios; i++) {
+		/* printf("Set dpgio: %d, signal: %d\n",
+			dgpio[i].gpio.pin, dgpio[i].signal);
+		*/
+
+		ret = adi_adrv9001_gpio_Configure(phy->adrv9001,
+						  dgpio[i].signal,
+						  &dgpio[i].gpio);
+		if (ret)
+			return adrv9002_dev_err(phy);
+	}
+
+	return 0;
+}
+
 static int adrv9002_setup(struct adrv9002_rf_phy *phy,
 			  adi_adrv9001_Init_t *adrv9002_init)
 {
@@ -427,12 +447,15 @@ static int adrv9002_setup(struct adrv9002_rf_phy *phy,
 	if (ret)
 		return adrv9002_dev_err(phy);
 
-	return ret;
+	return adrv9002_dgpio_config(phy);
 }
 
 int main(void)
 {
 	int ret;
+	struct adi_common_ApiVersion api_version;
+	struct adi_adrv9001_ArmVersion arm_version;
+	struct adi_adrv9001_SiliconVersion silicon_version;
 	struct adrv9002_rf_phy phy;
 	printf("Hello\n");
 
@@ -441,6 +464,17 @@ int main(void)
 	ret = adrv9002_setup(&phy, adrv9002_init_get());
 	if (ret)
 		return ret;
+
+	adi_adrv9001_ApiVersion_Get(phy.adrv9001, &api_version);
+	adi_adrv9001_arm_Version(phy.adrv9001, &arm_version);
+	adi_adrv9001_SiliconVersion_Get(phy.adrv9001, &silicon_version);
+
+	printf("%s Rev %d.%d, Firmware %u.%u.%u.%u API version: %u.%u.%u successfully initialized\n",
+		"ADRV9002", silicon_version.major, silicon_version.minor,
+		arm_version.majorVer, arm_version.minorVer,
+		arm_version.maintVer, arm_version.rcVer, api_version.major,
+		api_version.minor, api_version.patch);
+
 
 	printf("Bye\n");
 	return SUCCESS;

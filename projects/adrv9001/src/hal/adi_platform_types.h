@@ -191,6 +191,7 @@ typedef struct adi_hal_Cfg
 
     /* no-OS specifics */
     struct gpio_desc *gpio_reset;
+    struct gpio_desc *gpio_ssi_sync;
     struct spi_desc *spi;
 } adi_hal_Cfg_t;
 

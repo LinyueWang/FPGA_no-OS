@@ -68,6 +68,7 @@ int32_t no_os_HwOpen(void *devHalCfg)
 	int32_t ret;
 	adi_hal_Cfg_t *phal = (adi_hal_Cfg_t *)devHalCfg;
 	struct gpio_init_param gip_gpio_reset;
+	struct gpio_init_param gip_gpio_ssi_sync;
 	struct xil_gpio_init_param gip_extra = {
 #ifdef PLATFORM_MB
 		.type = GPIO_PL,
@@ -97,6 +98,18 @@ int32_t no_os_HwOpen(void *devHalCfg)
 	if (ret < 0)
 		return ret;
 
+#if defined(ADRV9002_RX2TX2)
+	/* SSI Sync GPIO configuration */
+	gip_gpio_ssi_sync.number = GPIO_SSI_SYNC;
+	gip_gpio_ssi_sync.extra = &gip_extra;
+	ret = gpio_get(&phal->gpio_ssi_sync, &gip_gpio_ssi_sync);
+	if (ret < 0)
+		return ret;
+
+	ret = gpio_set_value(phal->gpio_ssi_sync, GPIO_LOW);
+	if (ret < 0)
+		return ret;
+#endif
 	struct spi_init_param sip = {
 		.max_speed_hz = 20000000,
 		.mode = SPI_MODE_0,

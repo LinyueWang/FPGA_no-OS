@@ -56,6 +56,7 @@
 /* GPIO */
 #define GPIO_DEVICE_ID			XPAR_PSU_GPIO_0_DEVICE_ID
 #define GPIO_RESET			(46 + GPIO_OFFSET)
+#define GPIO_SSI_SYNC			(54 + GPIO_OFFSET)
 
 /* SPI */
 #define SPI_CS				0
