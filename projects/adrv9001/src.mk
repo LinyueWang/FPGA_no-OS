@@ -17,14 +17,21 @@ SRCS += $(PLATFORM_DRIVERS)/gpio.c \
 	$(DRIVERS)/spi/spi.c \
 	$(PLATFORM_DRIVERS)/xilinx_spi.c \
 	$(PLATFORM_DRIVERS)/delay.c \
-	$(PLATFORM_DRIVERS)/xilinx_spi.c
+	$(NO-OS)/util/util.c \
+	$(PLATFORM_DRIVERS)/xilinx_spi.c \
+	$(DRIVERS)/axi_core/axi_adc_core/axi_adc_core.c \
+	$(DRIVERS)/axi_core/axi_dac_core/axi_dac_core.c \
+	$(PLATFORM_DRIVERS)/axi_io.c
 INCS +=	$(INCLUDE)/spi.h \
 	$(PLATFORM_DRIVERS)/spi_extra.h \
 	$(INCLUDE)/gpio.h \
 	$(PLATFORM_DRIVERS)/gpio_extra.h \
 	$(INCLUDE)/error.h \
 	$(INCLUDE)/delay.h \
-	$(INCLUDE)/util.h
+	$(INCLUDE)/util.h \
+	$(DRIVERS)/axi_core/axi_adc_core/axi_adc_core.h \
+	$(DRIVERS)/axi_core/axi_dac_core/axi_dac_core.h \
+	$(INCLUDE)/axi_io.h
 # hal
 INCS += $(PROJECT)/src/hal/adrv9002.h \
 	$(PROJECT)/src/hal/parameters.h \

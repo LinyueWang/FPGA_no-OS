@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
+
 #include "error.h"
 #include "util.h"
 #include "spi.h"
@@ -32,6 +33,11 @@
 #include "adi_adrv9001_version.h"
 #include "adi_common_error_types.h"
 #include "adi_platform_types.h"
+
+#include "axi_adc_core.h"
+#include "axi_dac_core.h"
+
+#include "parameters.h"
 
 /* gpio0 starts at 1 in the API enum */
 #define ADRV9002_DGPIO_MIN	(ADI_ADRV9001_GPIO_DIGITAL_00 - 1)
@@ -457,6 +463,21 @@ int main(void)
 	struct adi_adrv9001_ArmVersion arm_version;
 	struct adi_adrv9001_SiliconVersion silicon_version;
 	struct adrv9002_rf_phy phy;
+	struct axi_adc_init rx1_adc_init = {
+		"rx_adc",
+		RX1_ADC_BASEADDR,
+		2,
+	};
+	struct axi_adc *rx1_adc;
+
+	struct axi_dac_init tx1_dac_init = {
+		"tx_dac",
+		TX1_DAC_BASEADDR,
+		2,
+		NULL
+	};
+	struct axi_dac *tx1_dac;
+
 	printf("Hello\n");
 
 	memset(&phy, 0, sizeof(struct adrv9002_rf_phy));
@@ -475,7 +496,23 @@ int main(void)
 		arm_version.maintVer, arm_version.rcVer, api_version.major,
 		api_version.minor, api_version.patch);
 
+		/* Initialize the DAC core */
+	ret = axi_dac_init(&tx1_dac, &tx1_dac_init);
+	if (ret) {
+		printf("axi_dac_init() failed with status %d\n", ret);
+		goto error;
+	}
+
+	/* Initialize the ADC core */
+	ret = axi_adc_init(&rx1_adc, &rx1_adc_init);
+	if (ret) {
+		printf("axi_adc_init() failed with status %d\n", ret);
+		goto error;
+	}
 
 	printf("Bye\n");
 	return SUCCESS;
+error:
+	adi_adrv9001_HwClose(phy.adrv9001);
+	return FAILURE;
 }
