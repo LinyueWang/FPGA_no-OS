@@ -115,7 +115,7 @@ extern void adrv9002_cmos_default_set(void);
 extern adi_adrv9001_Init_t adrv9002_init_lvds;
 extern adi_adrv9001_Init_t adrv9002_init_cmos;
 
-static int __adrv9002_dev_err(const struct adrv9002_rf_phy *phy,
+int __adrv9002_dev_err(const struct adrv9002_rf_phy *phy,
 			      const char *function, const int line)
 {
 	int ret;
@@ -143,8 +143,6 @@ static int __adrv9002_dev_err(const struct adrv9002_rf_phy *phy,
 
 	return ret;
 }
-
-#define adrv9002_dev_err(phy)	__adrv9002_dev_err(phy, __func__, __LINE__)
 
 static int adrv9001_rx_path_config(struct adrv9002_rf_phy *phy,
 				   const adi_adrv9001_ChannelState_e state)
@@ -307,7 +305,9 @@ static int adrv9002_compute_init_cals(struct adrv9002_rf_phy *phy)
 
 		if (ADRV9001_BF_EQUAL(phy->curr_profile->rx.rxInitChannelMask,
 				      rx_channels[i])) {
-			/* printf("RX%d enabled\n", i); */
+#ifdef DEBUG
+			printf("RX%d enabled\n", i);
+#endif
 			pos |= ADRV9002_RX_EN(i);
 			rx->channel.power = true;
 			rx->channel.enabled = true;
@@ -329,7 +329,9 @@ static int adrv9002_compute_init_cals(struct adrv9002_rf_phy *phy)
 					i + 1, i + 1);
 				return -EINVAL;
 			}
-			/* printf("TX%d enabled\n", i); */
+#ifdef DEBUG
+			printf("TX%d enabled\n", i);
+#endif
 			pos |= ADRV9002_TX_EN(i);
 			tx->channel.power = true;
 			tx->channel.enabled = true;
@@ -341,11 +343,11 @@ static int adrv9002_compute_init_cals(struct adrv9002_rf_phy *phy)
 	phy->init_cals.chanInitCalMask[0] = adrv9002_init_cals_mask[pos][0];
 	phy->init_cals.chanInitCalMask[1] = adrv9002_init_cals_mask[pos][1];
 
-	/*
+#ifdef DEBUG
 	printf("pos: %u, Chan1:%X, Chan2:%X", pos,
 		phy->init_cals.chanInitCalMask[0],
 		phy->init_cals.chanInitCalMask[1]);
-	*/
+#endif
 
 	return 0;
 }
@@ -508,9 +510,17 @@ int main(void)
 		goto error;
 	}
 
+	/* Post AXI DAC/ADC setup, digital interface tuning */
+	ret = adrv9002_post_setup(&phy);
+	if (ret) {
+		printf("adrv9002_post_setup() failed with status %d\n", ret);
+		goto error;
+	}
+
 	printf("Bye\n");
-	return SUCCESS;
 error:
 	adi_adrv9001_HwClose(phy.adrv9001);
-	return FAILURE;
+	axi_adc_remove(phy.rx1_adc);
+	axi_dac_remove(phy.tx1_dac);
+	return ret;
 }

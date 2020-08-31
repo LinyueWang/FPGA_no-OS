@@ -5,7 +5,8 @@ CFLAGS = -DSI_REV_B0 \
 	-DADI_COMMON_VERBOSE=1 \
 	-DADI_ADRV9001_ARM_VERBOSE \
 	-DADI_VALIDATE_PARAMS \
-	-DADRV9002_RX2TX2
+	-DADRV9002_RX2TX2 \
+	-DEBUG
 ifeq ($(OS), Windows_NT)
 include ../../tools/scripts/windows.mk
 else
