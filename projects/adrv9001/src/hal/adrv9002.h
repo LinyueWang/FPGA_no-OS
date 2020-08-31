@@ -145,6 +145,8 @@ struct adrv9002_rf_phy {
 #ifdef CONFIG_DEBUG_FS
 	struct adi_adrv9001_SsiCalibrationCfg ssi_delays;
 #endif
+	struct axi_adc			*rx1_adc;
+	struct axi_dac			*tx1_dac;
 };
 
 int adrv9002_hdl_loopback(struct adrv9002_rf_phy *phy, bool enable);

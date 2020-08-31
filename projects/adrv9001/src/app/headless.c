@@ -464,19 +464,17 @@ int main(void)
 	struct adi_adrv9001_SiliconVersion silicon_version;
 	struct adrv9002_rf_phy phy;
 	struct axi_adc_init rx1_adc_init = {
-		"rx_adc",
+		"rx1_adc",
 		RX1_ADC_BASEADDR,
 		2,
 	};
-	struct axi_adc *rx1_adc;
 
 	struct axi_dac_init tx1_dac_init = {
-		"tx_dac",
+		"tx1_dac",
 		TX1_DAC_BASEADDR,
 		2,
 		NULL
 	};
-	struct axi_dac *tx1_dac;
 
 	printf("Hello\n");
 
@@ -496,17 +494,17 @@ int main(void)
 		arm_version.maintVer, arm_version.rcVer, api_version.major,
 		api_version.minor, api_version.patch);
 
-		/* Initialize the DAC core */
-	ret = axi_dac_init(&tx1_dac, &tx1_dac_init);
+	/* Initialize the ADC core */
+	ret = axi_adc_init(&phy.rx1_adc, &rx1_adc_init);
 	if (ret) {
-		printf("axi_dac_init() failed with status %d\n", ret);
+		printf("axi_adc_init() failed with status %d\n", ret);
 		goto error;
 	}
 
-	/* Initialize the ADC core */
-	ret = axi_adc_init(&rx1_adc, &rx1_adc_init);
+	/* Initialize the DAC core */
+	ret = axi_dac_init(&phy.tx1_dac, &tx1_dac_init);
 	if (ret) {
-		printf("axi_adc_init() failed with status %d\n", ret);
+		printf("axi_dac_init() failed with status %d\n", ret);
 		goto error;
 	}
 
