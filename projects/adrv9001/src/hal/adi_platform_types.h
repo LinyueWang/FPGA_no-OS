@@ -190,7 +190,7 @@ typedef struct adi_hal_Cfg
     adi_hal_TimerCfg_t timerCfg;
 
     /* no-OS specifics */
-    struct gpio_desc *gpio_reset;
+    struct gpio_desc *gpio_reset_n;
     struct gpio_desc *gpio_ssi_sync;
     struct spi_desc *spi;
 } adi_hal_Cfg_t;

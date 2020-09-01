@@ -90,12 +90,12 @@ int32_t no_os_HwOpen(void *devHalCfg)
 	/* Reset GPIO configuration */
 	gip_gpio_reset.number = GPIO_RESET;
 	gip_gpio_reset.extra = &gip_extra;
-	ret = gpio_get(&phal->gpio_reset, &gip_gpio_reset);
-	if (ret < 0)
+	ret = gpio_get(&phal->gpio_reset_n, &gip_gpio_reset);
+	if (ret)
 		return ret;
 
-	ret = gpio_set_value(phal->gpio_reset, GPIO_HIGH);
-	if (ret < 0)
+	ret = gpio_direction_output(phal->gpio_reset_n, GPIO_HIGH);
+	if (ret)
 		return ret;
 
 #if defined(ADRV9002_RX2TX2)
@@ -106,8 +106,8 @@ int32_t no_os_HwOpen(void *devHalCfg)
 	if (ret < 0)
 		return ret;
 
-	ret = gpio_set_value(phal->gpio_ssi_sync, GPIO_LOW);
-	if (ret < 0)
+	ret = gpio_direction_output(phal->gpio_ssi_sync, GPIO_LOW);
+	if (ret)
 		return ret;
 #endif
 	struct spi_init_param sip = {
@@ -137,7 +137,7 @@ int32_t no_os_HwClose(void *devHalCfg)
 {
 	int32_t ret;
 	adi_hal_Cfg_t *phal = (adi_hal_Cfg_t *)devHalCfg;
-	ret = gpio_remove(phal->gpio_reset);
+	ret = gpio_remove(phal->gpio_reset_n);
 	if (ret)
 		return ret;
 
@@ -168,13 +168,7 @@ int32_t no_os_HwReset(void *devHalCfg, uint8_t pinLevel)
 	if (!devHalCfg)
 		return ADI_HAL_NULL_PTR;
 
-	/*
-	 * The API just passes @pinLevel with the desired level. However,
-	 * the pin is active low, so the logic must be inverted before calling
-	 * the gpio API's. Hence if we receive 0 from the API, we want to pass
-	 * 1 to the GPIO API since we want our pin to be active!
-	 */
-	gpio_set_value(phal->gpio_reset, !pinLevel);
+	gpio_set_value(phal->gpio_reset_n, pinLevel);
 
 	return ADI_HAL_OK;
 }
