@@ -645,8 +645,9 @@ int adrv9002_intf_tuning(struct adrv9002_rf_phy *phy)
 		ret = adrv9002_axi_intf_tune(phy, true, i, ssi_type, &clk_delay, &data_delay);
 		if (ret)
 			return ret;
-
+#ifdef DEBUG
 		printf("TX: Got clk: %u, data: %u\n", clk_delay, data_delay);
+#endif
 		delays.txClkDelay[i] = clk_delay;
 		delays.txIDataDelay[i] = data_delay;
 		delays.txQDataDelay[i] = data_delay;
