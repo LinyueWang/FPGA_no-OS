@@ -2,6 +2,8 @@
 #include <string.h>
 #include <errno.h>
 
+#include "xil_cache.h"
+
 #include "error.h"
 #include "util.h"
 #include "spi.h"
@@ -36,6 +38,7 @@
 
 #include "axi_adc_core.h"
 #include "axi_dac_core.h"
+#include "axi_dmac.h"
 
 #include "parameters.h"
 
@@ -114,6 +117,10 @@ extern struct adi_adrv9001_PlatformFiles *adrv9002_platform_files_get(void);
 extern void adrv9002_cmos_default_set(void);
 extern adi_adrv9001_Init_t adrv9002_init_lvds;
 extern adi_adrv9001_Init_t adrv9002_init_cmos;
+
+#ifdef DAC_DMA_EXAMPLE
+extern const uint32_t sine_lut_iq[1024];
+#endif
 
 int __adrv9002_dev_err(const struct adrv9002_rf_phy *phy,
 			      const char *function, const int line)
@@ -471,13 +478,31 @@ int main(void)
 		2,
 	};
 
+	struct axi_dac_channel  tx1_dac_channels[2];
+	tx1_dac_channels[0].sel = AXI_DAC_DATA_SEL_DMA;
+	tx1_dac_channels[1].sel = AXI_DAC_DATA_SEL_DMA;
+
 	struct axi_dac_init tx1_dac_init = {
 		"tx1_dac",
 		TX1_DAC_BASEADDR,
 		2,
-		NULL
+		tx1_dac_channels,
+	};
+#ifdef DAC_DMA_EXAMPLE
+	struct axi_dmac_init rx1_dmac_init = {
+		"rx_dmac",
+		RX1_DMA_BASEADDR,
+		DMA_DEV_TO_MEM,
+		0
 	};
 
+	struct axi_dmac_init tx1_dmac_init = {
+		"tx_dmac",
+		TX1_DMA_BASEADDR,
+		DMA_MEM_TO_DEV,
+		DMA_CYCLIC,
+	};
+#endif
 	printf("Hello\n");
 
 	memset(&phy, 0, sizeof(struct adrv9002_rf_phy));
@@ -517,10 +542,48 @@ int main(void)
 		goto error;
 	}
 
+#ifdef DAC_DMA_EXAMPLE
+	axi_dac_load_custom_data(phy.tx1_dac, sine_lut_iq,
+				 ARRAY_SIZE(sine_lut_iq),
+				 DAC_DDR_BASEADDR);
+	Xil_DCacheFlush();
+
+	ret = axi_dmac_init(&phy.tx1_dmac, &tx1_dmac_init);
+	if (ret) {
+		printf("axi_dmac_init() failed with status %d\n", ret);
+		goto error;
+	}
+
+	ret = axi_dmac_init(&phy.rx1_dmac, &rx1_dmac_init);
+	if (ret) {
+		printf("axi_dmac_init() failed with status %d\n", ret);
+		goto error;
+	}
+
+	axi_dmac_transfer(phy.tx1_dmac, DAC_DDR_BASEADDR, sizeof(sine_lut_iq));
+
+	mdelay(1000);
+
+	/* Transfer 16384 samples from ADC to MEM */
+	axi_dmac_transfer(phy.rx1_dmac,
+			  ADC_DDR_BASEADDR,
+			  16384 * /* nr of samples */
+			  2 * /* nr of channels */
+			  2 /* bytes per sample */);
+	Xil_DCacheInvalidateRange(ADC_DDR_BASEADDR,
+				  16384 * /* nr of samples */
+				  2 * /* nr of channels */
+				  2 /* bytes per sample */);
+#endif
+
 	printf("Bye\n");
 error:
 	adi_adrv9001_HwClose(phy.adrv9001);
 	axi_adc_remove(phy.rx1_adc);
 	axi_dac_remove(phy.tx1_dac);
+#ifdef DAC_DMA_EXAMPLE
+	axi_dmac_remove(phy.rx1_dmac);
+	axi_dmac_remove(phy.tx1_dmac);
+#endif
 	return ret;
 }

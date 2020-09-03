@@ -147,6 +147,8 @@ struct adrv9002_rf_phy {
 #endif
 	struct axi_adc			*rx1_adc;
 	struct axi_dac			*tx1_dac;
+	struct axi_dmac			*rx1_dmac;
+	struct axi_dmac			*tx1_dmac;
 };
 
 int adrv9002_hdl_loopback(struct adrv9002_rf_phy *phy, bool enable);
