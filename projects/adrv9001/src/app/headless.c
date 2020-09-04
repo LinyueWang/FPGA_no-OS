@@ -542,6 +542,12 @@ int main(void)
 		goto error;
 	}
 
+	/* TODO: investigate why this is needed, it shouldn't be needed. */
+	ret = adi_adrv9001_Radio_Channel_ToState(phy.adrv9001, ADI_RX,
+						 ADI_CHANNEL_1, ADI_ADRV9001_CHANNEL_PRIMED);
+	ret = adi_adrv9001_Radio_Channel_ToState(phy.adrv9001, ADI_RX,
+						 ADI_CHANNEL_1, ADI_ADRV9001_CHANNEL_RF_ENABLED);
+
 #ifdef DAC_DMA_EXAMPLE
 	axi_dac_load_custom_data(phy.tx1_dac, sine_lut_iq,
 				 ARRAY_SIZE(sine_lut_iq),
