@@ -488,20 +488,56 @@ int main(void)
 		2,
 		tx1_dac_channels,
 	};
+
+#ifndef ADRV9002_RX2TX2
+	struct axi_adc_init rx2_adc_init = {
+		"rx2_adc",
+		RX2_ADC_BASEADDR,
+		2,
+	};
+
+	struct axi_dac_channel  tx2_dac_channels[2];
+	tx2_dac_channels[0].sel = AXI_DAC_DATA_SEL_DMA;
+	tx2_dac_channels[1].sel = AXI_DAC_DATA_SEL_DMA;
+
+	struct axi_dac_init tx2_dac_init = {
+		"tx2_dac",
+		TX2_DAC_BASEADDR,
+		2,
+		tx2_dac_channels,
+	};
+#endif
+
 #ifdef DAC_DMA_EXAMPLE
 	struct axi_dmac_init rx1_dmac_init = {
-		"rx_dmac",
+		"rx1_dmac",
 		RX1_DMA_BASEADDR,
 		DMA_DEV_TO_MEM,
 		0
 	};
 
 	struct axi_dmac_init tx1_dmac_init = {
-		"tx_dmac",
+		"tx1_dmac",
 		TX1_DMA_BASEADDR,
 		DMA_MEM_TO_DEV,
 		DMA_CYCLIC,
 	};
+
+#ifndef ADRV9002_RX2TX2
+	struct axi_dmac_init rx2_dmac_init = {
+		"rx2_dmac",
+		RX2_DMA_BASEADDR,
+		DMA_DEV_TO_MEM,
+		0
+	};
+
+	struct axi_dmac_init tx2_dmac_init = {
+		"tx2_dmac",
+		TX2_DMA_BASEADDR,
+		DMA_MEM_TO_DEV,
+		DMA_CYCLIC,
+	};
+#endif
 #endif
 	printf("Hello\n");
 
@@ -525,19 +561,32 @@ int main(void)
 		arm_version.maintVer, arm_version.rcVer, api_version.major,
 		api_version.minor, api_version.patch);
 
-	/* Initialize the ADC core */
+	/* Initialize the ADC/DAC cores */
 	ret = axi_adc_init(&phy.rx1_adc, &rx1_adc_init);
 	if (ret) {
 		printf("axi_adc_init() failed with status %d\n", ret);
 		goto error;
 	}
 
-	/* Initialize the DAC core */
 	ret = axi_dac_init(&phy.tx1_dac, &tx1_dac_init);
 	if (ret) {
 		printf("axi_dac_init() failed with status %d\n", ret);
 		goto error;
 	}
+
+#ifndef ADRV9002_RX2TX2
+	ret = axi_adc_init(&phy.rx2_adc, &rx2_adc_init);
+	if (ret) {
+		printf("axi_adc_init() failed with status %d\n", ret);
+		goto error;
+	}
+
+	ret = axi_dac_init(&phy.tx2_dac, &tx2_dac_init);
+	if (ret) {
+		printf("axi_dac_init() failed with status %d\n", ret);
+		goto error;
+	}
+#endif
 
 	/* Post AXI DAC/ADC setup, digital interface tuning */
 	ret = adrv9002_post_setup(&phy);
@@ -556,8 +605,14 @@ int main(void)
 	axi_dac_load_custom_data(phy.tx1_dac, sine_lut_iq,
 				 ARRAY_SIZE(sine_lut_iq),
 				 DAC_DDR_BASEADDR);
+#ifndef ADRV9002_RX2TX2
+	axi_dac_load_custom_data(phy.tx2_dac, sine_lut_iq,
+				 ARRAY_SIZE(sine_lut_iq),
+				 DAC_DDR_BASEADDR);
+#endif
 	Xil_DCacheFlush();
 
+	/* Initialize the AXI DMA Controller cores */
 	ret = axi_dmac_init(&phy.tx1_dmac, &tx1_dmac_init);
 	if (ret) {
 		printf("axi_dmac_init() failed with status %d\n", ret);
@@ -569,8 +624,24 @@ int main(void)
 		printf("axi_dmac_init() failed with status %d\n", ret);
 		goto error;
 	}
+#ifndef ADRV9002_RX2TX2
+	ret = axi_dmac_init(&phy.tx2_dmac, &tx2_dmac_init);
+	if (ret) {
+		printf("axi_dmac_init() failed with status %d\n", ret);
+		goto error;
+	}
+
+	ret = axi_dmac_init(&phy.rx2_dmac, &rx2_dmac_init);
+	if (ret) {
+		printf("axi_dmac_init() failed with status %d\n", ret);
+		goto error;
+	}
+#endif
 
 	axi_dmac_transfer(phy.tx1_dmac, DAC_DDR_BASEADDR, sizeof(sine_lut_iq));
+#ifndef ADRV9002_RX2TX2
+	axi_dmac_transfer(phy.tx2_dmac, DAC_DDR_BASEADDR, sizeof(sine_lut_iq));
+#endif
 
 	mdelay(1000);
 
@@ -584,6 +655,17 @@ int main(void)
 				  16384 * /* nr of samples */
 				  2 * /* nr of channels */
 				  2 /* bytes per sample */);
+#ifndef ADRV9002_RX2TX2
+	axi_dmac_transfer(phy.rx1_dmac,
+			  ADC_DDR_BASEADDR + 16384 * 2 * 2,
+			  16384 * /* nr of samples */
+			  2 * /* nr of channels */
+			  2 /* bytes per sample */);
+	Xil_DCacheInvalidateRange(ADC_DDR_BASEADDR + 16384 * 2 * 2,
+				  16384 * /* nr of samples */
+				  2 * /* nr of channels */
+				  2 /* bytes per sample */);
+#endif
 #endif
 
 	printf("Bye\n");
@@ -591,9 +673,13 @@ error:
 	adi_adrv9001_HwClose(phy.adrv9001);
 	axi_adc_remove(phy.rx1_adc);
 	axi_dac_remove(phy.tx1_dac);
+	axi_adc_remove(phy.rx2_adc);
+	axi_dac_remove(phy.tx2_dac);
 #ifdef DAC_DMA_EXAMPLE
 	axi_dmac_remove(phy.rx1_dmac);
 	axi_dmac_remove(phy.tx1_dmac);
+	axi_dmac_remove(phy.rx2_dmac);
+	axi_dmac_remove(phy.tx2_dmac);
 #endif
 	return ret;
 }
