@@ -507,6 +507,10 @@ int main(void)
 
 	memset(&phy, 0, sizeof(struct adrv9002_rf_phy));
 
+#if defined(ADRV9002_RX2TX2)
+	phy.rx2tx2 = true;
+#endif
+
 	ret = adrv9002_setup(&phy, adrv9002_init_get());
 	if (ret)
 		return ret;
