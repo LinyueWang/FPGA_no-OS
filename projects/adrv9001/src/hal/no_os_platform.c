@@ -68,7 +68,9 @@ int32_t no_os_HwOpen(void *devHalCfg)
 	int32_t ret;
 	adi_hal_Cfg_t *phal = (adi_hal_Cfg_t *)devHalCfg;
 	struct gpio_init_param gip_gpio_reset;
+#if defined(ADRV9002_RX2TX2)
 	struct gpio_init_param gip_gpio_ssi_sync;
+#endif
 	struct xil_gpio_init_param gip_extra = {
 #ifdef PLATFORM_MB
 		.type = GPIO_PL,
