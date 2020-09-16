@@ -465,6 +465,7 @@ static int adrv9002_setup(struct adrv9002_rf_phy *phy,
 	return adrv9002_dgpio_config(phy);
 }
 
+#define NUM_CHANNELS	4
 int main(void)
 {
 	int ret;
@@ -475,17 +476,21 @@ int main(void)
 	struct axi_adc_init rx1_adc_init = {
 		"rx1_adc",
 		RX1_ADC_BASEADDR,
-		2,
+		NUM_CHANNELS,
 	};
 
-	struct axi_dac_channel  tx1_dac_channels[2];
+	struct axi_dac_channel  tx1_dac_channels[NUM_CHANNELS];
 	tx1_dac_channels[0].sel = AXI_DAC_DATA_SEL_DMA;
 	tx1_dac_channels[1].sel = AXI_DAC_DATA_SEL_DMA;
+#ifndef ADRV9002_RX2TX2
+	tx1_dac_channels[2].sel = AXI_DAC_DATA_SEL_DMA;
+	tx1_dac_channels[3].sel = AXI_DAC_DATA_SEL_DMA;
+#endif
 
 	struct axi_dac_init tx1_dac_init = {
 		"tx1_dac",
 		TX1_DAC_BASEADDR,
-		2,
+		NUM_CHANNELS,
 		tx1_dac_channels,
 	};
 
@@ -493,7 +498,7 @@ int main(void)
 	struct axi_adc_init rx2_adc_init = {
 		"rx2_adc",
 		RX2_ADC_BASEADDR,
-		2,
+		NUM_CHANNELS,
 	};
 
 	struct axi_dac_channel  tx2_dac_channels[2];
@@ -503,7 +508,7 @@ int main(void)
 	struct axi_dac_init tx2_dac_init = {
 		"tx2_dac",
 		TX2_DAC_BASEADDR,
-		2,
+		NUM_CHANNELS,
 		tx2_dac_channels,
 	};
 #endif
@@ -649,21 +654,21 @@ int main(void)
 	axi_dmac_transfer(phy.rx1_dmac,
 			  ADC_DDR_BASEADDR,
 			  16384 * /* nr of samples */
-			  2 * /* nr of channels */
+			  NUM_CHANNELS * /* nr of channels */
 			  2 /* bytes per sample */);
 	Xil_DCacheInvalidateRange(ADC_DDR_BASEADDR,
 				  16384 * /* nr of samples */
-				  2 * /* nr of channels */
+				  NUM_CHANNELS * /* nr of channels */
 				  2 /* bytes per sample */);
 #ifndef ADRV9002_RX2TX2
 	axi_dmac_transfer(phy.rx1_dmac,
 			  ADC_DDR_BASEADDR + 16384 * 2 * 2,
 			  16384 * /* nr of samples */
-			  2 * /* nr of channels */
+			  NUM_CHANNELS * /* nr of channels */
 			  2 /* bytes per sample */);
 	Xil_DCacheInvalidateRange(ADC_DDR_BASEADDR + 16384 * 2 * 2,
 				  16384 * /* nr of samples */
-				  2 * /* nr of channels */
+				  NUM_CHANNELS * /* nr of channels */
 				  2 /* bytes per sample */);
 #endif
 #endif
