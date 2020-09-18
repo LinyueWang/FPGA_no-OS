@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <errno.h>
 
@@ -41,6 +42,16 @@
 #include "axi_dmac.h"
 
 #include "parameters.h"
+
+#ifdef IIO_SUPPORT
+#include "demo_dev.h"
+#include "iio_demo_dev.h"
+#include "iio.h"
+#include "irq.h"
+#include "irq_extra.h"
+#include "uart.h"
+#include "uart_extra.h"
+#endif
 
 /* gpio0 starts at 1 in the API enum */
 #define ADRV9002_DGPIO_MIN	(ADI_ADRV9001_GPIO_DIGITAL_00 - 1)
@@ -544,6 +555,85 @@ int main(void)
 	};
 #endif
 #endif
+
+#ifdef IIO_SUPPORT
+int32_t status;
+	char demo_device_output[] = "demo_device_output";
+	char demo_device_input[] = "demo_device_input";
+
+	/* iio demo configurations. */
+	struct iio_demo_init_param iio_demo_in_init_par;
+
+	/* iio demo configurations. */
+	struct iio_demo_init_param iio_demo_out_init_par;
+
+	/* iio descriptor. */
+	struct iio_desc  *iio_desc;
+
+	/* iio instance descriptor. */
+	struct iio_demo_desc *iio_demo_in_desc;
+
+	/* iio instance descriptor. */
+	struct iio_demo_desc *iio_demo_out_desc;
+
+	/* iio init param */
+	struct iio_init_param iio_init_param;
+
+	/* Initialization for UART. */
+	struct uart_init_param uart_init_par;
+
+	/* IRQ initial configuration. */
+	struct irq_init_param irq_init_param;
+
+	/* IRQ instance. */
+	struct irq_ctrl_desc *irq_desc;
+
+	/* Xilinx platform dependent initialization for IRQ. */
+	struct xil_irq_init_param platform_irq_init_par;
+
+	platform_irq_init_par = (struct xil_irq_init_param ) {
+#ifdef XPAR_INTC_SINGLE_DEVICE_ID
+		.type = IRQ_PL,
+#else
+		.type = IRQ_PS,
+#endif
+	};
+
+	irq_init_param = (struct irq_init_param ) {
+		.irq_ctrl_id = INTC_DEVICE_ID,
+		.extra = &platform_irq_init_par
+	};
+
+	status = irq_ctrl_init(&irq_desc, &irq_init_param);
+	if(status < 0)
+		return status;
+
+	/* Xilinx platform dependent initialization for UART. */
+	struct xil_uart_init_param platform_uart_init_par;
+
+	platform_uart_init_par = (struct xil_uart_init_param) {
+#ifdef XPAR_XUARTLITE_NUM_INSTANCES
+		.type = UART_PL,
+#else
+		.type = UART_PS,
+#endif
+		.irq_id = UART_IRQ_ID,
+		.irq_desc = irq_desc,
+	};
+
+	uart_init_par = (struct uart_init_param) {
+		.device_id = UART_DEVICE_ID,
+		.baud_rate = 921600,
+		.extra = &platform_uart_init_par
+	};
+
+	status = irq_global_enable(irq_desc);
+	if (status < 0)
+		return status;
+
+	iio_init_param.phy_type = USE_UART;
+	iio_init_param.uart_init_param = &uart_init_par;
+#endif
 	printf("Hello\n");
 
 	memset(&phy, 0, sizeof(struct adrv9002_rf_phy));
@@ -673,7 +763,48 @@ int main(void)
 #endif
 #endif
 
+#ifdef IIO_SUPPORT
+status = iio_init(&iio_desc, &iio_init_param);
+	if(status < 0)
+		return status;
+
+	iio_demo_out_init_par = (struct iio_demo_init_param) {
+		.dev_global_attr = 1100,
+		.dev_ch_attr = 1111,
+		.ddr_base_addr = DAC_DDR_BASEADDR,
+		.ddr_base_size = 3000
+	};
+	status = iio_demo_dev_init(&iio_demo_out_desc, &iio_demo_out_init_par);
+	if (status < 0)
+		return status;
+
+	iio_demo_in_init_par = (struct iio_demo_init_param) {
+		.dev_global_attr = 2200,
+		.dev_ch_attr = 2211,
+		.ddr_base_addr = ADC_DDR_BASEADDR,
+		.ddr_base_size = 3000
+	};
+
+	status = iio_demo_dev_init(&iio_demo_in_desc, &iio_demo_in_init_par);
+	if (status < 0)
+		return status;
+
+	status = iio_register(iio_desc, &iio_demo_dev_in_descriptor,
+			      demo_device_input, iio_demo_in_desc);
+	if (status < 0)
+		return status;
+
+	status = iio_register(iio_desc, &iio_demo_dev_out_descriptor,
+			      demo_device_output, iio_demo_out_desc);
+	if (status < 0)
+		return status;
+
+	do {
+		status = iio_step(iio_desc);
+	} while (true);
+#else
 	printf("Bye\n");
+#endif
 error:
 	adi_adrv9001_HwClose(phy.adrv9001);
 	axi_adc_remove(phy.rx1_adc);

@@ -14,12 +14,12 @@ SRCS += $(PROJECT)/src/hal/no_os_platform.c \
 	$(PROJECT)/src/app/adrv9002_conv.c \
 	$(PROJECT)/src/app/headless.c
 # no-OS drivers
-SRCS += $(PLATFORM_DRIVERS)/gpio.c \
+SRCS += $(PLATFORM_DRIVERS)/xilinx_gpio.c \
+	$(NO-OS)/drivers/gpio/gpio.c \
 	$(DRIVERS)/spi/spi.c \
 	$(PLATFORM_DRIVERS)/xilinx_spi.c \
 	$(PLATFORM_DRIVERS)/delay.c \
 	$(NO-OS)/util/util.c \
-	$(PLATFORM_DRIVERS)/xilinx_spi.c \
 	$(DRIVERS)/axi_core/axi_adc_core/axi_adc_core.c \
 	$(DRIVERS)/axi_core/axi_dac_core/axi_dac_core.c \
 	$(DRIVERS)/axi_core/axi_dmac/axi_dmac.c \
@@ -172,3 +172,20 @@ INCS += $(DRIVERS)/rf-transceiver/navassa/devices/adrv9001/public/include/adi_ad
 	$(DRIVERS)/rf-transceiver/navassa/devices/adrv9001/public/include/adi_adrv9001_utilities_types.h \
 	$(DRIVERS)/rf-transceiver/navassa/devices/adrv9001/public/include/adi_adrv9001_version.h \
 	$(DRIVERS)/rf-transceiver/navassa/devices/adrv9001/public/include/adrv9001_Init_t_parser.h
+
+SRC_DIRS += $(NO-OS)/iio/iio_demo
+
+LIBRARIES += iio
+
+SRCS += $(PLATFORM_DRIVERS)/uart.c \
+	$(PLATFORM_DRIVERS)/irq.c \
+	$(NO-OS)/util/xml.c \
+	$(NO-OS)/util/list.c \
+	$(NO-OS)/util/fifo.c
+INCS += $(INCLUDE)/xml.h \
+	$(INCLUDE)/fifo.h \
+	$(INCLUDE)/irq.h \
+	$(INCLUDE)/uart.h \
+	$(INCLUDE)/list.h \
+	$(PLATFORM_DRIVERS)/irq_extra.h \
+	$(PLATFORM_DRIVERS)/uart_extra.h
