@@ -127,8 +127,6 @@ struct adrv9002_gpio {
 struct adrv9002_rf_phy {
 	struct spi_device		*spi;
 	struct iio_dev			*indio_dev;
-	struct gpio_desc		*reset_gpio;
-	struct gpio_desc		*ssi_sync;
 	struct adrv9002_clock		clk_priv[NUM_ADRV9002_CLKS];
 	struct adrv9002_rx_chan		rx_channels[ADRV9002_CHANN_MAX];
 	struct adrv9002_tx_chan		tx_channels[ADRV9002_CHANN_MAX];
@@ -193,9 +191,9 @@ static inline void adrv9002_sync_gpio_toogle(const struct adrv9002_rf_phy *phy)
 {
 	if (phy->rx2tx2) {
 		/* toogle ssi sync gpio */
-		gpio_set_value(phy->ssi_sync, 1);
+		gpio_set_value(phy->hal.gpio_ssi_sync, 1);
 		udelay(5000);
-		gpio_set_value(phy->ssi_sync, 0);
+		gpio_set_value(phy->hal.gpio_ssi_sync, 0);
 	}
 }
 #endif

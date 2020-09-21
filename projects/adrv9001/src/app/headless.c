@@ -799,6 +799,8 @@ status = iio_init(&iio_desc, &iio_init_param);
 	if (status < 0)
 		return status;
 
+	printf("The board accepts libiio clients connections through the serial backend.\n");
+
 	do {
 		status = iio_step(iio_desc);
 	} while (true);
