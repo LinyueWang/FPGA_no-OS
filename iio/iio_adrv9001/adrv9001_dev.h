@@ -63,10 +63,6 @@ struct iio_adrv9001_desc {
 	uint32_t dummy_regs[MAX_REG_ADDR];
 	/** Active reg	 */
 	uint32_t active_reg_addr;
-	/** ADRV9001 global device attribute */
-	uint32_t dev_global_attr;
-	/** ADRV9001 device channel attribute */
-	uint32_t dev_ch_attr;
 	/** Address used by for reading/writing data to device */
 	uint32_t ddr_base_addr;
 	/** Size of memory to read/write data */
@@ -78,10 +74,6 @@ struct iio_adrv9001_desc {
  * @brief iio adrv9001 configuration.
  */
 struct iio_adrv9001_init_param {
-	/** ADRV9001 global device attribute */
-	uint32_t dev_global_attr;
-	/** ADRV9001 device channel attribute */
-	uint32_t dev_ch_attr;
 	/** Address used by for reading/writing data to device */
 	uint32_t ddr_base_addr;
 	/** Size of memory to read/write data */
@@ -91,15 +83,6 @@ struct iio_adrv9001_init_param {
 /******************************************************************************/
 /************************ Functions Declarations ******************************/
 /******************************************************************************/
-
-ssize_t get_adrv9001_channel_attr(void *device, char *buf, size_t len,
-			      const struct iio_ch_info *channel);
-ssize_t set_adrv9001_channel_attr(void *device, char *buf, size_t len,
-			      const struct iio_ch_info *channel);
-ssize_t get_adrv9001_global_attr(void *device, char *buf, size_t len,
-			     const struct iio_ch_info *channel);
-ssize_t set_adrv9001_global_attr(void *device, char *buf, size_t len,
-			     const struct iio_ch_info *channel);
 
 ssize_t get_adrv9001_reg_attr(void *device, char *buf, size_t len,
 			  const struct iio_ch_info *channel);

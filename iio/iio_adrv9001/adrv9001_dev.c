@@ -107,71 +107,6 @@ ssize_t set_adrv9001_reg_attr(void *device, char *buf, size_t len,
 }
 
 /**
- * @brief get_adrv9001_channel_attr().
- * @param device- Physical instance of a iio_adrv9001_device.
- * @param buf - Where value is stored.
- * @param len - Maximum length of value to be stored in buf.
- * @param channel - Channel properties.
- * @return Length of chars written in buf, or negative value on failure.
- */
-ssize_t get_adrv9001_channel_attr(void *device, char *buf, size_t len,
-			      const struct iio_ch_info *channel)
-{
-	struct iio_adrv9001_desc *desc = device;
-
-	return snprintf(buf, len, "%"PRIu32"", desc->dev_ch_attr);
-}
-
-/**
- * @brief set_adrv9001_channel_attr().
- * @param device - Physical instance of a iio_adrv9001_device.
- * @param buf - Value to be written to attribute.
- * @param len -	Length of the data in "buf".
- * @param channel - Channel properties.
- * @return: Number of bytes written to device, or negative value on failure.
- */
-ssize_t set_adrv9001_channel_attr(void *device, char *buf, size_t len,
-			      const struct iio_ch_info *channel)
-{
-	struct iio_adrv9001_desc *desc = device;
-	desc->dev_ch_attr = srt_to_uint32(buf);
-
-	return len;
-}
-
-/**
- * @brief get_adrv9001_global_attr().
- * @param device- Physical instance of a iio_adrv9001_device.
- * @param buf - Where value is stored.
- * @param len - Maximum length of value to be stored in buf.
- * @param channel - Channel properties.
- * @return Length of chars written in buf, or negative value on failure.
- */
-ssize_t get_adrv9001_global_attr(void *device, char *buf, size_t len,
-			     const struct iio_ch_info *channel)
-{
-	struct iio_adrv9001_desc *desc = device;
-	return snprintf(buf, len, "%"PRIu32"", desc->dev_global_attr);
-}
-
-/**
- * @brief set_adrv9001_global_attr().
- * @param device - Physical instance of a iio_adrv9001_device.
- * @param buf - Value to be written to attribute.
- * @param len -	Length of the data in "buf".
- * @param channel - Channel properties.
- * @return: Number of bytes written to device, or negative value on failure.
- */
-ssize_t set_adrv9001_global_attr(void *device, char *buf, size_t len,
-			     const struct iio_ch_info *channel)
-{
-	struct iio_adrv9001_desc *desc = device;
-	desc->dev_global_attr = srt_to_uint32(buf);
-
-	return len;
-}
-
-/**
  * @brief Transfer data from RAM to device.
  * @param iio_inst - Physical instance of a iio_adrv9001_dac device.
  * @param bytes_count - Number of bytes to transfer.
@@ -319,8 +254,6 @@ int32_t iio_adrv9001_dev_init(struct iio_adrv9001_desc **desc,
 	if (!ldesc)
 		return FAILURE;
 
-	ldesc->dev_global_attr = init->dev_global_attr;
-	ldesc->dev_ch_attr = init->dev_ch_attr;
 	ldesc->ddr_base_addr = init->ddr_base_addr;
 	ldesc->ddr_base_size = init->ddr_base_size;
 

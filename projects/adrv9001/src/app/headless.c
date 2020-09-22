@@ -769,8 +769,6 @@ status = iio_init(&iio_desc, &iio_init_param);
 		return status;
 
 	iio_adrv9001_out_init_par = (struct iio_adrv9001_init_param) {
-		.dev_global_attr = 1100,
-		.dev_ch_attr = 1111,
 		.ddr_base_addr = DAC_DDR_BASEADDR,
 		.ddr_base_size = 3000
 	};
@@ -779,8 +777,6 @@ status = iio_init(&iio_desc, &iio_init_param);
 		return status;
 
 	iio_adrv9001_in_init_par = (struct iio_adrv9001_init_param) {
-		.dev_global_attr = 2200,
-		.dev_ch_attr = 2211,
 		.ddr_base_addr = ADC_DDR_BASEADDR,
 		.ddr_base_size = 3000
 	};

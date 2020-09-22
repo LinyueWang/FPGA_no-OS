@@ -43,23 +43,6 @@
 #include <stdlib.h>
 #include "adrv9001_dev.h"
 
-static struct iio_attribute iio_attr_adrv9001_channel = {
-	.name = "adrv9001_channel_attr",
-	.show = get_adrv9001_channel_attr,
-	.store = set_adrv9001_channel_attr,
-};
-
-static struct iio_attribute iio_attr_adrv9001_global = {
-	.name = "adrv9001_global_attr",
-	.show = get_adrv9001_global_attr,
-	.store = set_adrv9001_global_attr,
-};
-
-static struct iio_attribute *adrv9001_channel_attributes[] = {
-	&iio_attr_adrv9001_channel,
-	NULL,
-};
-
 static struct iio_channel iio_adrv9001_channel_voltage0_in = {
 	.name = "voltage0",
 	.scan_index = 0,
@@ -70,7 +53,6 @@ static struct iio_channel iio_adrv9001_channel_voltage0_in = {
 		.shift = 0,
 		.is_big_endian = false
 	},
-	.attributes = adrv9001_channel_attributes,
 	.ch_out = false,
 };
 
@@ -84,7 +66,6 @@ static struct iio_channel iio_adrv9001_channel_voltage0_out = {
 		.shift = 0,
 		.is_big_endian = false
 	},
-	.attributes = adrv9001_channel_attributes,
 	.ch_out = true,
 };
 
@@ -95,11 +76,6 @@ static struct iio_channel *iio_adrv9001_channels_in[] = {
 
 static struct iio_channel *iio_adrv9001_channels_out[] = {
 	&iio_adrv9001_channel_voltage0_out,
-	NULL,
-};
-
-static struct iio_attribute *iio_adrv9001_global_attributes[] = {
-	&iio_attr_adrv9001_global,
 	NULL,
 };
 
@@ -117,7 +93,6 @@ static struct iio_attribute *iio_adrv9001_debug_attributes[] = {
 static struct iio_device iio_adrv9001_dev_in_descriptor = {
 	.num_ch = ADRV9001_NUM_CHANNELS,
 	.channels = iio_adrv9001_channels_in,
-	.attributes = iio_adrv9001_global_attributes,
 	.debug_attributes = iio_adrv9001_debug_attributes,
 	.buffer_attributes = NULL,
 	.transfer_dev_to_mem = iio_adrv9001_transfer_dev_to_mem,
@@ -129,7 +104,6 @@ static struct iio_device iio_adrv9001_dev_in_descriptor = {
 static struct iio_device iio_adrv9001_dev_out_descriptor = {
 	.num_ch = ADRV9001_NUM_CHANNELS,
 	.channels = iio_adrv9001_channels_out,
-	.attributes = iio_adrv9001_global_attributes,
 	.debug_attributes = iio_adrv9001_debug_attributes,
 	.buffer_attributes = NULL,
 	.transfer_dev_to_mem = iio_adrv9001_transfer_dev_to_mem,
