@@ -79,21 +79,10 @@ static struct iio_channel *iio_adrv9001_channels_out[] = {
 	NULL,
 };
 
-static struct iio_attribute iio_attr_debug = {
-	.name = "direct_reg_access",
-	.show = get_adrv9001_reg_attr,
-	.store = set_adrv9001_reg_attr,
-};
-
-static struct iio_attribute *iio_adrv9001_debug_attributes[] = {
-	&iio_attr_debug,
-	NULL,
-};
-
 static struct iio_device iio_adrv9001_dev_in_descriptor = {
 	.num_ch = ADRV9001_NUM_CHANNELS,
 	.channels = iio_adrv9001_channels_in,
-	.debug_attributes = iio_adrv9001_debug_attributes,
+	.debug_attributes = NULL,
 	.buffer_attributes = NULL,
 	.transfer_dev_to_mem = iio_adrv9001_transfer_dev_to_mem,
 	.transfer_mem_to_dev = iio_adrv9001_transfer_mem_to_dev,
@@ -104,7 +93,7 @@ static struct iio_device iio_adrv9001_dev_in_descriptor = {
 static struct iio_device iio_adrv9001_dev_out_descriptor = {
 	.num_ch = ADRV9001_NUM_CHANNELS,
 	.channels = iio_adrv9001_channels_out,
-	.debug_attributes = iio_adrv9001_debug_attributes,
+	.debug_attributes = NULL,
 	.buffer_attributes = NULL,
 	.transfer_dev_to_mem = iio_adrv9001_transfer_dev_to_mem,
 	.transfer_mem_to_dev = iio_adrv9001_transfer_mem_to_dev,

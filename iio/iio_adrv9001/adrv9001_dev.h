@@ -52,17 +52,12 @@
 /******************************************************************************/
 
 #define ADRV9001_NUM_CHANNELS	4
-#define MAX_REG_ADDR		10
 
 /**
  * @struct iio_adrv9001_desc
  * @brief Desciptor.
  */
 struct iio_adrv9001_desc {
-	/** Dummy registers of device for testing direct_reg_access attribute */
-	uint32_t dummy_regs[MAX_REG_ADDR];
-	/** Active reg	 */
-	uint32_t active_reg_addr;
 	/** Address used by for reading/writing data to device */
 	uint32_t ddr_base_addr;
 	/** Size of memory to read/write data */
@@ -83,11 +78,6 @@ struct iio_adrv9001_init_param {
 /******************************************************************************/
 /************************ Functions Declarations ******************************/
 /******************************************************************************/
-
-ssize_t get_adrv9001_reg_attr(void *device, char *buf, size_t len,
-			  const struct iio_ch_info *channel);
-ssize_t set_adrv9001_reg_attr(void *device, char *buf, size_t len,
-			  const struct iio_ch_info *channel);
 
 ssize_t iio_adrv9001_transfer_mem_to_dev(void *iio_inst,
 				     size_t bytes_count,
