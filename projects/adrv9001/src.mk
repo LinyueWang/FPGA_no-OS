@@ -173,7 +173,7 @@ INCS += $(DRIVERS)/rf-transceiver/navassa/devices/adrv9001/public/include/adi_ad
 	$(DRIVERS)/rf-transceiver/navassa/devices/adrv9001/public/include/adi_adrv9001_version.h \
 	$(DRIVERS)/rf-transceiver/navassa/devices/adrv9001/public/include/adrv9001_Init_t_parser.h
 
-SRC_DIRS += $(NO-OS)/iio/iio_demo
+SRC_DIRS += $(NO-OS)/iio/iio_adrv9001
 
 LIBRARIES += iio
 

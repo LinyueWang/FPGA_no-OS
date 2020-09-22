@@ -44,8 +44,8 @@
 #include "parameters.h"
 
 #ifdef IIO_SUPPORT
-#include "demo_dev.h"
-#include "iio_demo_dev.h"
+#include "adrv9001_dev.h"
+#include "iio_adrv9001_dev.h"
 #include "iio.h"
 #include "irq.h"
 #include "irq_extra.h"
@@ -558,23 +558,23 @@ int main(void)
 
 #ifdef IIO_SUPPORT
 int32_t status;
-	char demo_device_output[] = "demo_device_output";
-	char demo_device_input[] = "demo_device_input";
+	char tx1_name[] = "axi-adrv9002-tx-lpc";
+	char rx1_name[] = "axi-adrv9002-rx-lpc";
 
-	/* iio demo configurations. */
-	struct iio_demo_init_param iio_demo_in_init_par;
+	/* iio adrv9001 configurations. */
+	struct iio_adrv9001_init_param iio_adrv9001_in_init_par;
 
-	/* iio demo configurations. */
-	struct iio_demo_init_param iio_demo_out_init_par;
+	/* iio adrv9001 configurations. */
+	struct iio_adrv9001_init_param iio_adrv9001_out_init_par;
 
 	/* iio descriptor. */
 	struct iio_desc  *iio_desc;
 
 	/* iio instance descriptor. */
-	struct iio_demo_desc *iio_demo_in_desc;
+	struct iio_adrv9001_desc *iio_adrv9001_in_desc;
 
 	/* iio instance descriptor. */
-	struct iio_demo_desc *iio_demo_out_desc;
+	struct iio_adrv9001_desc *iio_adrv9001_out_desc;
 
 	/* iio init param */
 	struct iio_init_param iio_init_param;
@@ -768,34 +768,35 @@ status = iio_init(&iio_desc, &iio_init_param);
 	if(status < 0)
 		return status;
 
-	iio_demo_out_init_par = (struct iio_demo_init_param) {
+	iio_adrv9001_out_init_par = (struct iio_adrv9001_init_param) {
 		.dev_global_attr = 1100,
 		.dev_ch_attr = 1111,
 		.ddr_base_addr = DAC_DDR_BASEADDR,
 		.ddr_base_size = 3000
 	};
-	status = iio_demo_dev_init(&iio_demo_out_desc, &iio_demo_out_init_par);
+	status = iio_adrv9001_dev_init(&iio_adrv9001_out_desc, &iio_adrv9001_out_init_par);
 	if (status < 0)
 		return status;
 
-	iio_demo_in_init_par = (struct iio_demo_init_param) {
+	iio_adrv9001_in_init_par = (struct iio_adrv9001_init_param) {
 		.dev_global_attr = 2200,
 		.dev_ch_attr = 2211,
 		.ddr_base_addr = ADC_DDR_BASEADDR,
 		.ddr_base_size = 3000
 	};
 
-	status = iio_demo_dev_init(&iio_demo_in_desc, &iio_demo_in_init_par);
+	status = iio_adrv9001_dev_init(&iio_adrv9001_in_desc, &iio_adrv9001_in_init_par);
 	if (status < 0)
 		return status;
 
-	status = iio_register(iio_desc, &iio_demo_dev_in_descriptor,
-			      demo_device_input, iio_demo_in_desc);
+	status = iio_register(iio_desc, &iio_adrv9001_dev_in_descriptor,
+			      rx1_name, iio_adrv9001_in_desc);
 	if (status < 0)
 		return status;
 
-	status = iio_register(iio_desc, &iio_demo_dev_out_descriptor,
-			      demo_device_output, iio_demo_out_desc);
+	status = iio_register(iio_desc, &iio_adrv9001_dev_out_descriptor,
+			      tx1_name
+		, iio_adrv9001_out_desc);
 	if (status < 0)
 		return status;
 
