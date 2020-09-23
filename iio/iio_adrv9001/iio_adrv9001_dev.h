@@ -42,9 +42,10 @@
 
 #include <stdlib.h>
 #include "adrv9001_dev.h"
+#include "xil_cache.h"
 
-static struct iio_channel iio_adrv9001_channel_voltage0_in = {
-	.name = "voltage0",
+static struct iio_channel iio_adrv9001_channel_voltage0_i_in = {
+	.name = "voltage0_i",
 	.scan_index = 0,
 	.scan_type = {
 		.sign = 's',
@@ -56,8 +57,34 @@ static struct iio_channel iio_adrv9001_channel_voltage0_in = {
 	.ch_out = false,
 };
 
-static struct iio_channel iio_adrv9001_channel_voltage0_out = {
-	.name = "voltage0",
+static struct iio_channel iio_adrv9001_channel_voltage0_q_in = {
+	.name = "voltage0_q",
+	.scan_index = 0,
+	.scan_type = {
+		.sign = 's',
+		.realbits = 16,
+		.storagebits = 16,
+		.shift = 0,
+		.is_big_endian = false
+	},
+	.ch_out = false,
+};
+
+static struct iio_channel iio_adrv9001_channel_voltage0_i_out = {
+	.name = "voltage0_i",
+	.scan_index = 0,
+	.scan_type = {
+		.sign = 's',
+		.realbits = 16,
+		.storagebits = 16,
+		.shift = 0,
+		.is_big_endian = false
+	},
+	.ch_out = true,
+};
+
+static struct iio_channel iio_adrv9001_channel_voltage0_q_out = {
+	.name = "voltage0_q",
 	.scan_index = 0,
 	.scan_type = {
 		.sign = 's',
@@ -70,12 +97,14 @@ static struct iio_channel iio_adrv9001_channel_voltage0_out = {
 };
 
 static struct iio_channel *iio_adrv9001_channels_in[] = {
-	&iio_adrv9001_channel_voltage0_in,
+	&iio_adrv9001_channel_voltage0_i_in,
+	&iio_adrv9001_channel_voltage0_q_in,
 	NULL,
 };
 
 static struct iio_channel *iio_adrv9001_channels_out[] = {
-	&iio_adrv9001_channel_voltage0_out,
+	&iio_adrv9001_channel_voltage0_i_out,
+	&iio_adrv9001_channel_voltage0_q_out,
 	NULL,
 };
 

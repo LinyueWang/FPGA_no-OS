@@ -47,6 +47,8 @@
 #include "adrv9001_dev.h"
 #include "error.h"
 #include "util.h"
+#include "parameters.h"
+#include "xil_cache.h"
 
 /******************************************************************************/
 /************************ Functions Definitions *******************************/
@@ -62,10 +64,16 @@ ssize_t iio_adrv9001_transfer_mem_to_dev(void *iio_inst,
 				     size_t bytes_count,
 				     uint32_t ch_mask)
 {
-	struct iio_adrv9001_device *adrv9001_device;
-	adrv9001_device = (struct iio_adrv9001_device *)iio_inst;
+	struct iio_adrv9001_desc *adrv9001_device;
+	adrv9001_device = (struct iio_adrv9001_desc *)iio_inst;
 	if (!adrv9001_device)
-		return FAILURE;
+		return -EINVAL;
+
+	axi_dmac_transfer(adrv9001_device->dmac,
+			  adrv9001_device->ddr_base_addr,
+			  bytes_count);
+	Xil_DCacheInvalidateRange(adrv9001_device->ddr_base_addr,
+				  bytes_count);
 
 	return bytes_count;
 }
@@ -81,16 +89,16 @@ ssize_t iio_adrv9001_transfer_dev_to_mem(void *iio_inst,
 				     size_t bytes_count,
 				     uint32_t ch_mask)
 {
-	struct iio_adrv9001_device *adrv9001_device;
-	adrv9001_device = (struct iio_adrv9001_device *)iio_inst;
+	struct iio_adrv9001_desc *adrv9001_device;
+	adrv9001_device = (struct iio_adrv9001_desc *)iio_inst;
 	if (!adrv9001_device)
-		return FAILURE;
+		return -EINVAL;
 
-	/* In some cases a transfer is necessary before a "iio_adrv9001_read_dev"
-	 * function is called. In this case an implementation should be provided
-	 * in this location. For an example check "iio_axi_adc" module, where
-	 * data is transfered from device to RAM memory by DMA.
-	 */
+	axi_dmac_transfer(adrv9001_device->dmac,
+			  adrv9001_device->ddr_base_addr,
+			  bytes_count);
+	Xil_DCacheInvalidateRange(adrv9001_device->ddr_base_addr,
+				  bytes_count);
 	return bytes_count;
 }
 
@@ -113,11 +121,8 @@ ssize_t iio_adrv9001_write_dev(void *iio_inst, char *buf,
 	uint32_t index, addr;
 	uint16_t *buf16;
 
-	if (!iio_inst)
-		return FAILURE;
-
-	if (!buf)
-		return FAILURE;
+	if (!iio_inst || !buf)
+		return -EINVAL;
 
 	buf16 = (uint16_t *)buf;
 	adrv9001_device = (struct iio_adrv9001_desc *)iio_inst;
@@ -153,17 +158,14 @@ ssize_t iio_adrv9001_read_dev(void *iio_inst, char *pbuf, size_t offset,
 	uint16_t *pbuf16;
 	size_t samples;
 
-	if (!iio_inst)
-		return FAILURE;
-
-	if (!pbuf)
-		return FAILURE;
+	if (!iio_inst || !pbuf)
+		return -EINVAL;
 
 	adrv9001_device = (struct iio_adrv9001_desc*)iio_inst;
 	pbuf16 = (uint16_t*)pbuf;
 	samples = (bytes_count * ADRV9001_NUM_CHANNELS) / hweight8(
 			  ch_mask);
-	samples /= 2; /* because of uint16_t *pbuf16 = (uint16_t*)pbuf; */
+	samples /= 2;
 	offset = (offset * ADRV9001_NUM_CHANNELS) / hweight8(ch_mask);
 
 	for (i = 0; i < samples; i++) {
@@ -194,17 +196,25 @@ int32_t iio_adrv9001_dev_init(struct iio_adrv9001_desc **desc,
 			  struct iio_adrv9001_init_param *init)
 {
 	struct iio_adrv9001_desc *ldesc;
+	int ret;
 
 	ldesc = (struct iio_adrv9001_desc*)calloc(1, sizeof(*ldesc));
 	if (!ldesc)
-		return FAILURE;
+		return -ENOMEM;
 
 	ldesc->ddr_base_addr = init->ddr_base_addr;
 	ldesc->ddr_base_size = init->ddr_base_size;
 
+	ret = axi_dmac_init(&ldesc->dmac, &init->dmac_init);
+	if (ret)
+		goto error;
+
 	*desc = ldesc;
 
-	return SUCCESS;
+	return ret;
+error:
+	free(ldesc);
+	return ret;
 }
 
 /**
@@ -215,7 +225,7 @@ int32_t iio_adrv9001_dev_init(struct iio_adrv9001_desc **desc,
 int32_t iio_adrv9001_dev_remove(struct iio_adrv9001_desc *desc)
 {
 	if (!desc)
-		return FAILURE;
+		return -EINVAL;
 
 	free(desc);
 

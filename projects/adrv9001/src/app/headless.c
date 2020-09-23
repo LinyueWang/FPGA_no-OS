@@ -751,7 +751,7 @@ int32_t status;
 				  NUM_CHANNELS * /* nr of channels */
 				  2 /* bytes per sample */);
 #ifndef ADRV9002_RX2TX2
-	axi_dmac_transfer(phy.rx1_dmac,
+	axi_dmac_transfer(phy.rx2_dmac,
 			  ADC_DDR_BASEADDR + 16384 * 2 * 2,
 			  16384 * /* nr of samples */
 			  NUM_CHANNELS * /* nr of channels */
@@ -770,7 +770,13 @@ status = iio_init(&iio_desc, &iio_init_param);
 
 	iio_adrv9001_out_init_par = (struct iio_adrv9001_init_param) {
 		.ddr_base_addr = DAC_DDR_BASEADDR,
-		.ddr_base_size = 3000
+		.ddr_base_size = 16384 * 2 * NUM_CHANNELS,
+		.dmac_init = {
+			"tx1_dmac",
+			TX1_DMA_BASEADDR,
+			DMA_MEM_TO_DEV,
+			DMA_CYCLIC
+		},
 	};
 	status = iio_adrv9001_dev_init(&iio_adrv9001_out_desc, &iio_adrv9001_out_init_par);
 	if (status < 0)
@@ -778,7 +784,13 @@ status = iio_init(&iio_desc, &iio_init_param);
 
 	iio_adrv9001_in_init_par = (struct iio_adrv9001_init_param) {
 		.ddr_base_addr = ADC_DDR_BASEADDR,
-		.ddr_base_size = 3000
+		.ddr_base_size = 16384 * 2 * NUM_CHANNELS,
+		.dmac_init = {
+			"rx1_dmac",
+			RX1_DMA_BASEADDR,
+			DMA_DEV_TO_MEM,
+			0
+		},
 	};
 
 	status = iio_adrv9001_dev_init(&iio_adrv9001_in_desc, &iio_adrv9001_in_init_par);
@@ -791,8 +803,7 @@ status = iio_init(&iio_desc, &iio_init_param);
 		return status;
 
 	status = iio_register(iio_desc, &iio_adrv9001_dev_out_descriptor,
-			      tx1_name
-		, iio_adrv9001_out_desc);
+			      tx1_name, iio_adrv9001_out_desc);
 	if (status < 0)
 		return status;
 

@@ -40,18 +40,11 @@
 #ifndef IIO_ADRV9001_H_
 #define IIO_ADRV9001_H_
 
-/******************************************************************************/
-/***************************** Include Files **********************************/
-/******************************************************************************/
-
 #include <stdio.h>
 #include "iio_types.h"
+#include "axi_dmac.h"
 
-/******************************************************************************/
-/*************************** Types Declarations *******************************/
-/******************************************************************************/
-
-#define ADRV9001_NUM_CHANNELS	4
+#define ADRV9001_NUM_CHANNELS	2
 
 /**
  * @struct iio_adrv9001_desc
@@ -62,6 +55,8 @@ struct iio_adrv9001_desc {
 	uint32_t ddr_base_addr;
 	/** Size of memory to read/write data */
 	uint32_t ddr_base_size;
+	/** DMA Controller descriptor */
+	struct axi_dmac *dmac;
 };
 
 /**
@@ -73,6 +68,8 @@ struct iio_adrv9001_init_param {
 	uint32_t ddr_base_addr;
 	/** Size of memory to read/write data */
 	uint32_t ddr_base_size;
+	/** DMA Controller parameters */
+	struct axi_dmac_init dmac_init;
 };
 
 /******************************************************************************/
