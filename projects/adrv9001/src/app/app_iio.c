@@ -51,7 +51,7 @@ int32_t iio_server_init(struct iio_axi_adc_init_param *adc_init,
 		.irq_id = UART_IRQ_ID,
 	};
 	struct uart_init_param uart_init_par = {
-		.baud_rate = 115200,
+		.baud_rate = 921600,
 		.device_id = UART_DEVICE_ID,
 		.extra = &xil_uart_init_par,
 	};
