@@ -172,20 +172,29 @@ INCS += $(DRIVERS)/rf-transceiver/navassa/devices/adrv9001/public/include/adi_ad
 	$(DRIVERS)/rf-transceiver/navassa/devices/adrv9001/public/include/adi_adrv9001_utilities_types.h \
 	$(DRIVERS)/rf-transceiver/navassa/devices/adrv9001/public/include/adi_adrv9001_version.h \
 	$(DRIVERS)/rf-transceiver/navassa/devices/adrv9001/public/include/adrv9001_Init_t_parser.h
-
-SRC_DIRS += $(NO-OS)/iio/iio_adrv9001
-
-LIBRARIES += iio
-
-SRCS += $(PLATFORM_DRIVERS)/uart.c \
+# IIO
+ifeq (y,$(strip $(TINYIIOD)))
+SRCS += $(PROJECT)/src/app/app_iio.c \
+	$(PLATFORM_DRIVERS)/uart.c \
 	$(PLATFORM_DRIVERS)/irq.c \
+	$(NO-OS)/util/fifo.c \
 	$(NO-OS)/util/xml.c \
-	$(NO-OS)/util/list.c \
-	$(NO-OS)/util/fifo.c
-INCS += $(INCLUDE)/xml.h \
-	$(INCLUDE)/fifo.h \
-	$(INCLUDE)/irq.h \
+	$(NO-OS)/iio/iio.c \
+	$(NO-OS)/iio/iio_app/iio_app.c \
+	$(NO-OS)/iio/iio_axi_adc/iio_axi_adc.c \
+	$(NO-OS)/iio/iio_axi_dac/iio_axi_dac.c
+INCS += $(PROJECT)/src/app/app_iio.h \
 	$(INCLUDE)/uart.h \
-	$(INCLUDE)/list.h \
+	$(INCLUDE)/irq.h \
 	$(PLATFORM_DRIVERS)/irq_extra.h \
-	$(PLATFORM_DRIVERS)/uart_extra.h
+	$(PLATFORM_DRIVERS)/uart_extra.h \
+	$(INCLUDE)/fifo.h \
+	$(INCLUDE)/xml.h \
+	$(NO-OS)/iio/iio.h \
+	$(NO-OS)/iio/iio_types.h \
+	$(NO-OS)/iio/iio_app/iio_app.h \
+	$(NO-OS)/iio/iio_axi_adc/iio_axi_adc.h \
+	$(NO-OS)/iio/iio_axi_dac/iio_axi_dac.h \
+	$(NO-OS)/libraries/libtinyiiod/compat.h \
+	$(NO-OS)/libraries/libtinyiiod/tinyiiod.h
+endif

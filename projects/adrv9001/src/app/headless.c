@@ -44,13 +44,7 @@
 #include "parameters.h"
 
 #ifdef IIO_SUPPORT
-#include "adrv9001_dev.h"
-#include "iio_adrv9001_dev.h"
-#include "iio.h"
-#include "irq.h"
-#include "irq_extra.h"
-#include "uart.h"
-#include "uart_extra.h"
+#include "app_iio.h"
 #endif
 
 /* gpio0 starts at 1 in the API enum */
@@ -556,84 +550,6 @@ int main(void)
 #endif
 #endif
 
-#ifdef IIO_SUPPORT
-int32_t status;
-	char tx1_name[] = "axi-adrv9002-tx-lpc";
-	char rx1_name[] = "axi-adrv9002-rx-lpc";
-
-	/* iio adrv9001 configurations. */
-	struct iio_adrv9001_init_param iio_adrv9001_in_init_par;
-
-	/* iio adrv9001 configurations. */
-	struct iio_adrv9001_init_param iio_adrv9001_out_init_par;
-
-	/* iio descriptor. */
-	struct iio_desc  *iio_desc;
-
-	/* iio instance descriptor. */
-	struct iio_adrv9001_desc *iio_adrv9001_in_desc;
-
-	/* iio instance descriptor. */
-	struct iio_adrv9001_desc *iio_adrv9001_out_desc;
-
-	/* iio init param */
-	struct iio_init_param iio_init_param;
-
-	/* Initialization for UART. */
-	struct uart_init_param uart_init_par;
-
-	/* IRQ initial configuration. */
-	struct irq_init_param irq_init_param;
-
-	/* IRQ instance. */
-	struct irq_ctrl_desc *irq_desc;
-
-	/* Xilinx platform dependent initialization for IRQ. */
-	struct xil_irq_init_param platform_irq_init_par;
-
-	platform_irq_init_par = (struct xil_irq_init_param ) {
-#ifdef XPAR_INTC_SINGLE_DEVICE_ID
-		.type = IRQ_PL,
-#else
-		.type = IRQ_PS,
-#endif
-	};
-
-	irq_init_param = (struct irq_init_param ) {
-		.irq_ctrl_id = INTC_DEVICE_ID,
-		.extra = &platform_irq_init_par
-	};
-
-	status = irq_ctrl_init(&irq_desc, &irq_init_param);
-	if(status < 0)
-		return status;
-
-	/* Xilinx platform dependent initialization for UART. */
-	struct xil_uart_init_param platform_uart_init_par;
-
-	platform_uart_init_par = (struct xil_uart_init_param) {
-#ifdef XPAR_XUARTLITE_NUM_INSTANCES
-		.type = UART_PL,
-#else
-		.type = UART_PS,
-#endif
-		.irq_id = UART_IRQ_ID,
-		.irq_desc = irq_desc,
-	};
-
-	uart_init_par = (struct uart_init_param) {
-		.device_id = UART_DEVICE_ID,
-		.baud_rate = 921600,
-		.extra = &platform_uart_init_par
-	};
-
-	status = irq_global_enable(irq_desc);
-	if (status < 0)
-		return status;
-
-	iio_init_param.phy_type = USE_UART;
-	iio_init_param.uart_init_param = &uart_init_par;
-#endif
 	printf("Hello\n");
 
 	memset(&phy, 0, sizeof(struct adrv9002_rf_phy));
@@ -764,56 +680,25 @@ int32_t status;
 #endif
 
 #ifdef IIO_SUPPORT
-status = iio_init(&iio_desc, &iio_init_param);
-	if(status < 0)
-		return status;
+        printf("The board accepts libiio clients connections through the serial backend.\n");
 
-	iio_adrv9001_out_init_par = (struct iio_adrv9001_init_param) {
-		.ddr_base_addr = DAC_DDR_BASEADDR,
-		.ddr_base_size = 16384 * 2 * NUM_CHANNELS,
-		.dmac_init = {
-			"tx1_dmac",
-			TX1_DMA_BASEADDR,
-			DMA_MEM_TO_DEV,
-			DMA_CYCLIC
-		},
-	};
-	status = iio_adrv9001_dev_init(&iio_adrv9001_out_desc, &iio_adrv9001_out_init_par);
-	if (status < 0)
-		return status;
+        struct iio_axi_adc_init_param iio_axi_adc_init_par;
+        iio_axi_adc_init_par = (struct iio_axi_adc_init_param) {
+                .rx_adc = phy.rx1_adc,
+                .rx_dmac = phy.rx1_dmac,
+                .adc_ddr_base = ADC_DDR_BASEADDR,
+        };
 
-	iio_adrv9001_in_init_par = (struct iio_adrv9001_init_param) {
-		.ddr_base_addr = ADC_DDR_BASEADDR,
-		.ddr_base_size = 16384 * 2 * NUM_CHANNELS,
-		.dmac_init = {
-			"rx1_dmac",
-			RX1_DMA_BASEADDR,
-			DMA_DEV_TO_MEM,
-			0
-		},
-	};
+        struct iio_axi_dac_init_param iio_axi_dac_init_par;
+        iio_axi_dac_init_par = (struct iio_axi_dac_init_param) {
+                .tx_dac = phy.tx1_dac,
+                .tx_dmac = phy.tx1_dmac,
+                .dac_ddr_base = DAC_DDR_BASEADDR
+        };
 
-	status = iio_adrv9001_dev_init(&iio_adrv9001_in_desc, &iio_adrv9001_in_init_par);
-	if (status < 0)
-		return status;
-
-	status = iio_register(iio_desc, &iio_adrv9001_dev_in_descriptor,
-			      rx1_name, iio_adrv9001_in_desc);
-	if (status < 0)
-		return status;
-
-	status = iio_register(iio_desc, &iio_adrv9001_dev_out_descriptor,
-			      tx1_name, iio_adrv9001_out_desc);
-	if (status < 0)
-		return status;
-
-	printf("The board accepts libiio clients connections through the serial backend.\n");
-
-	do {
-		status = iio_step(iio_desc);
-	} while (true);
+        return iio_server_init(&iio_axi_adc_init_par, &iio_axi_dac_init_par);
 #else
-	printf("Bye\n");
+        printf("Bye\n");
 #endif
 error:
 	adi_adrv9001_HwClose(phy.adrv9001);
