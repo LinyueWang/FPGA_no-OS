@@ -676,23 +676,21 @@ int main(void)
 #ifdef IIO_SUPPORT
         printf("The board accepts libiio clients connections through the serial backend.\n");
 
-		struct iio_axi_adc_init_param iio_axi_adc_init_par;
-		iio_axi_adc_init_par = (struct iio_axi_adc_init_param) {
-			.rx_adc = phy.rx1_adc,
-			.rx_dmac = phy.rx1_dmac,
-			.adc_ddr_base = ADC_DDR_BASEADDR,
-			.dcache_invalidate_range = (void (*)(uint32_t,
-										uint32_t))Xil_DCacheInvalidateRange,
-		};
+	struct iio_axi_adc_init_param iio_axi_adc_init_par;
+	iio_axi_adc_init_par = (struct iio_axi_adc_init_param) {
+		.rx_adc = phy.rx1_adc,
+		.rx_dmac = phy.rx1_dmac,
+		.adc_ddr_base = ADC_DDR_BASEADDR,
+		.dcache_invalidate_range = (void (*)(uint32_t, uint32_t))Xil_DCacheInvalidateRange,
+	};
 
-		struct iio_axi_dac_init_param iio_axi_dac_init_par;
-		iio_axi_dac_init_par = (struct iio_axi_dac_init_param) {
-			.tx_dac = phy.tx1_dac,
-			.tx_dmac = phy.tx1_dmac,
-			.dac_ddr_base = DAC_DDR_BASEADDR,
-			.dcache_flush_range = (void (*)(uint32_t,
-										uint32_t))Xil_DCacheFlushRange,
-		};
+	struct iio_axi_dac_init_param iio_axi_dac_init_par;
+	iio_axi_dac_init_par = (struct iio_axi_dac_init_param) {
+		.tx_dac = phy.tx1_dac,
+		.tx_dmac = phy.tx1_dmac,
+		.dac_ddr_base = DAC_DDR_BASEADDR,
+		.dcache_flush_range = (void (*)(uint32_t, uint32_t))Xil_DCacheFlushRange,
+	};
 
         ret = iio_server_init(&iio_axi_adc_init_par, &iio_axi_dac_init_par);
 #endif
