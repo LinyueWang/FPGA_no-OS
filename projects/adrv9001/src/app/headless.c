@@ -485,7 +485,7 @@ int main(void)
 #ifndef ADRV9002_RX2TX2
 		ADRV9001_NUM_SUBCHANNELS,
 #else
-		ADRV9001_NUM_SUBCHANNELS * 2,
+		ADRV9001_NUM_CHANNELS,
 #endif
 	};
 
@@ -499,7 +499,7 @@ int main(void)
 #ifndef ADRV9002_RX2TX2
 		ADRV9001_NUM_SUBCHANNELS,
 #else
-		ADRV9001_NUM_SUBCHANNELS * 2,
+		ADRV9001_NUM_CHANNELS,
 #endif
 		tx1_dac_channels,
 	};
@@ -667,21 +667,29 @@ int main(void)
 	axi_dmac_transfer(phy.rx1_dmac,
 			  ADC1_DDR_BASEADDR,
 			  16384 * /* nr of samples */
-			  ADRV9001_NUM_CHANNELS * /* nr of channels */
+#ifndef ADRV9002_RX2TX2
+			  ADRV9001_NUM_SUBCHANNELS * /* rx1 i/q */
+#else
+			  ADRV9001_NUM_CHANNELS * /* rx1 i/q, rx2 i/q*/
+#endif
 			  2 /* bytes per sample */);
 	Xil_DCacheInvalidateRange(ADC1_DDR_BASEADDR,
 				  16384 * /* nr of samples */
-				  ADRV9001_NUM_CHANNELS * /* nr of channels */
+#ifndef ADRV9002_RX2TX2
+				  ADRV9001_NUM_SUBCHANNELS * /* rx1 i/q */
+#else
+				  ADRV9001_NUM_CHANNELS * /* rx1 i/q, rx2 i/q*/
+#endif
 				  2 /* bytes per sample */);
 #ifndef ADRV9002_RX2TX2
 	axi_dmac_transfer(phy.rx2_dmac,
 			  ADC2_DDR_BASEADDR,
 			  16384 * /* nr of samples */
-			  ADRV9001_NUM_CHANNELS * /* nr of channels */
+			  ADRV9001_NUM_SUBCHANNELS * /* nr of channels */
 			  2 /* bytes per sample */);
 	Xil_DCacheInvalidateRange(ADC2_DDR_BASEADDR,
 				  16384 * /* nr of samples */
-				  ADRV9001_NUM_CHANNELS * /* nr of channels */
+				  ADRV9001_NUM_SUBCHANNELS * /* nr of channels */
 				  2 /* bytes per sample */);
 #endif
 #endif
