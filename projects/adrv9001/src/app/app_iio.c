@@ -35,8 +35,10 @@ static ssize_t iio_server_read(char *buf, size_t len)
  * @brief Application IIO setup.
  * @return SUCCESS in case of success, FAILURE otherwise.
  */
-int32_t iio_server_init(struct iio_axi_adc_init_param *adc_init,
-			struct iio_axi_dac_init_param *dac_init)
+int32_t iio_server_init(struct iio_axi_adc_init_param *adc1_init,
+			struct iio_axi_adc_init_param *adc2_init,
+			struct iio_axi_dac_init_param *dac1_init,
+			struct iio_axi_dac_init_param *dac2_init)
 {
 	struct irq_ctrl_desc *irq_desc;
 	struct xil_irq_init_param xil_irq_init_par = {
@@ -84,11 +86,19 @@ int32_t iio_server_init(struct iio_axi_adc_init_param *adc_init,
 	if (status < 0)
 		return status;
 
-	status = iio_axi_adc_init(&iio_axi_adc_desc, adc_init);
+	status = iio_axi_adc_init(&iio_axi_adc_desc, adc1_init);
 	if (status < 0)
 		return status;
 
-	status = iio_axi_dac_init(&iio_axi_dac_desc, dac_init);
+	status = iio_axi_dac_init(&iio_axi_dac_desc, dac1_init);
+	if (status < 0)
+		return status;
+
+	status = iio_axi_adc_init(&iio_axi_adc_desc, adc2_init);
+	if (status < 0)
+		return status;
+
+	status = iio_axi_dac_init(&iio_axi_dac_desc, dac2_init);
 	if (status < 0)
 		return status;
 

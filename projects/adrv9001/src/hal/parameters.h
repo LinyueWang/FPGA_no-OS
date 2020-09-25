@@ -47,6 +47,10 @@
 /******************************************************************************/
 /********************** Macros and Constants Definitions **********************/
 /******************************************************************************/
+#define ADRV9001_NUM_SUBCHANNELS	2 /* I - in-phase and Q - quadrature channels */
+#define ADRV9001_NUM_CHAIN_CHANNELS	2 /* channels per RX/TX chain */
+#define ADRV9001_NUM_CHANNELS		(ADRV9001_NUM_CHAIN_CHANNELS * ADRV9001_NUM_SUBCHANNELS)
+
 #if defined(PLATFORM_MB)
 #define GPIO_OFFSET			54
 #else
@@ -82,8 +86,10 @@
 
 /* Memory */
 #define DDR_MEM_BASEADDR		XPAR_DDR_MEM_BASEADDR
-#define ADC_DDR_BASEADDR		(DDR_MEM_BASEADDR + 0x800000)
-#define DAC_DDR_BASEADDR		(DDR_MEM_BASEADDR + 0xA000000)
+#define ADC1_DDR_BASEADDR		(DDR_MEM_BASEADDR + 0x800000)
+#define ADC2_DDR_BASEADDR		(DDR_MEM_BASEADDR + 0x900000)
+#define DAC1_DDR_BASEADDR		(DDR_MEM_BASEADDR + 0xA000000)
+#define DAC2_DDR_BASEADDR		(DDR_MEM_BASEADDR + 0xA100000)
 
 /* AXI ADC/DAC */
 #define RX1_ADC_BASEADDR		XPAR_AXI_ADRV9001_BASEADDR
