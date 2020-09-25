@@ -610,14 +610,14 @@ int main(void)
 	}
 
 	/* TODO: investigate why this is needed, it shouldn't be needed. */
-	ret = adi_adrv9001_Radio_Channel_ToState(phy.adrv9001, ADI_RX,
-						 ADI_CHANNEL_1, ADI_ADRV9001_CHANNEL_PRIMED);
-	ret = adi_adrv9001_Radio_Channel_ToState(phy.adrv9001, ADI_RX,
-						 ADI_CHANNEL_1, ADI_ADRV9001_CHANNEL_RF_ENABLED);
-	ret = adi_adrv9001_Radio_Channel_ToState(phy.adrv9001, ADI_RX,
-						 ADI_CHANNEL_2, ADI_ADRV9001_CHANNEL_PRIMED);
-	ret = adi_adrv9001_Radio_Channel_ToState(phy.adrv9001, ADI_RX,
-						 ADI_CHANNEL_2, ADI_ADRV9001_CHANNEL_RF_ENABLED);
+	adi_adrv9001_Radio_Channel_ToState(phy.adrv9001, ADI_RX,
+					   ADI_CHANNEL_1, ADI_ADRV9001_CHANNEL_PRIMED);
+	adi_adrv9001_Radio_Channel_ToState(phy.adrv9001, ADI_RX,
+					   ADI_CHANNEL_1, ADI_ADRV9001_CHANNEL_RF_ENABLED);
+	adi_adrv9001_Radio_Channel_ToState(phy.adrv9001, ADI_RX,
+					   ADI_CHANNEL_2, ADI_ADRV9001_CHANNEL_PRIMED);
+	adi_adrv9001_Radio_Channel_ToState(phy.adrv9001, ADI_RX,
+					   ADI_CHANNEL_2, ADI_ADRV9001_CHANNEL_RF_ENABLED);
 
 	/* Initialize the AXI DMA Controller cores */
 	ret = axi_dmac_init(&phy.tx1_dmac, &tx1_dmac_init);
