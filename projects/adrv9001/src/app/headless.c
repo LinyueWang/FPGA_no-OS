@@ -478,10 +478,15 @@ int main(void)
 	struct adi_adrv9001_ArmVersion arm_version;
 	struct adi_adrv9001_SiliconVersion silicon_version;
 	struct adrv9002_rf_phy phy;
+
 	struct axi_adc_init rx1_adc_init = {
 		"axi-adrv9002-rx-lpc",
 		RX1_ADC_BASEADDR,
+#ifndef ADRV9002_RX2TX2
 		ADRV9001_NUM_SUBCHANNELS,
+#else
+		ADRV9001_NUM_SUBCHANNELS * 2,
+#endif
 	};
 
 	struct axi_dac_channel  tx1_dac_channels[2];
@@ -491,10 +496,15 @@ int main(void)
 	struct axi_dac_init tx1_dac_init = {
 		"axi-adrv9002-tx-lpc",
 		TX1_DAC_BASEADDR,
+#ifndef ADRV9002_RX2TX2
 		ADRV9001_NUM_SUBCHANNELS,
+#else
+		ADRV9001_NUM_SUBCHANNELS * 2,
+#endif
 		tx1_dac_channels,
 	};
 
+#ifndef ADRV9002_RX2TX2
 	struct axi_adc_init rx2_adc_init = {
 		"axi-adrv9002-rx2-lpc",
 		RX2_ADC_BASEADDR,
@@ -511,7 +521,7 @@ int main(void)
 		ADRV9001_NUM_SUBCHANNELS,
 		tx2_dac_channels,
 	};
-
+#endif
 	struct axi_dmac_init rx1_dmac_init = {
 		"rx_dmac",
 		RX1_DMA_BASEADDR,
@@ -579,7 +589,7 @@ int main(void)
 		printf("axi_dac_init() failed with status %d\n", ret);
 		goto error;
 	}
-
+#ifndef ADRV9002_RX2TX2
 	ret = axi_adc_init(&phy.rx2_adc, &rx2_adc_init);
 	if (ret) {
 		printf("axi_adc_init() failed with status %d\n", ret);
@@ -591,7 +601,7 @@ int main(void)
 		printf("axi_dac_init() failed with status %d\n", ret);
 		goto error;
 	}
-
+#endif
 	/* Post AXI DAC/ADC setup, digital interface tuning */
 	ret = adrv9002_post_setup(&phy);
 	if (ret) {
@@ -686,39 +696,36 @@ int main(void)
 		.dcache_invalidate_range = (void (*)(uint32_t, uint32_t))Xil_DCacheInvalidateRange,
 	};
 
-	struct iio_axi_adc_init_param iio_axi_adc2_init_par = {
-		.rx_adc = phy.rx2_adc,
-#ifndef ADRV9002_RX2TX2
-		.rx_dmac = phy.rx2_dmac,
-#else
-		.rx_dmac = phy.rx1_dmac,
-#endif
-		.adc_ddr_base = ADC2_DDR_BASEADDR,
-		.dcache_invalidate_range = (void (*)(uint32_t, uint32_t))Xil_DCacheInvalidateRange,
-	};
-
 	struct iio_axi_dac_init_param iio_axi_dac1_init_par = {
 		.tx_dac = phy.tx1_dac,
 		.tx_dmac = phy.tx1_dmac,
 		.dac_ddr_base = DAC1_DDR_BASEADDR,
 		.dcache_flush_range = (void (*)(uint32_t, uint32_t))Xil_DCacheFlushRange,
 	};
+#ifndef ADRV9002_RX2TX2
+	struct iio_axi_adc_init_param iio_axi_adc2_init_par = {
+		.rx_adc = phy.rx2_adc,
+		.rx_dmac = phy.rx2_dmac,
+		.adc_ddr_base = ADC2_DDR_BASEADDR,
+		.dcache_invalidate_range = (void (*)(uint32_t, uint32_t))Xil_DCacheInvalidateRange,
+	};
 
 	struct iio_axi_dac_init_param iio_axi_dac2_init_par = {
 		.tx_dac = phy.tx2_dac,
-#ifndef ADRV9002_RX2TX2
 		.tx_dmac = phy.tx2_dmac,
-#else
-		.tx_dmac = phy.tx1_dmac,
-#endif
 		.dac_ddr_base = DAC2_DDR_BASEADDR,
 		.dcache_flush_range = (void (*)(uint32_t, uint32_t))Xil_DCacheFlushRange,
 	};
-
-        ret = iio_server_init(&iio_axi_adc1_init_par,
+	ret = iio_server_init(&iio_axi_adc1_init_par,
 			      &iio_axi_adc2_init_par,
 			      &iio_axi_dac1_init_par,
 			      &iio_axi_dac2_init_par);
+#else
+	ret = iio_server_init(&iio_axi_adc1_init_par,
+			      NULL,
+			      &iio_axi_dac1_init_par,
+			      NULL);
+#endif
 #endif
         printf("Bye\n");
 

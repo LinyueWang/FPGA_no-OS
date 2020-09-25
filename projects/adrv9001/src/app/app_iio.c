@@ -87,19 +87,19 @@ int32_t iio_server_init(struct iio_axi_adc_init_param *adc1_init,
 		return status;
 
 	status = iio_axi_adc_init(&iio_axi_adc_desc, adc1_init);
-	if (status < 0)
+	if (adc1_init && status < 0)
 		return status;
 
 	status = iio_axi_dac_init(&iio_axi_dac_desc, dac1_init);
-	if (status < 0)
+	if (dac1_init && status < 0)
 		return status;
 
 	status = iio_axi_adc_init(&iio_axi_adc_desc, adc2_init);
-	if (status < 0)
+	if (adc2_init && status < 0)
 		return status;
 
 	status = iio_axi_dac_init(&iio_axi_dac_desc, dac2_init);
-	if (status < 0)
+	if (dac2_init && status < 0)
 		return status;
 
 	return iio_app(iio_app_desc);
