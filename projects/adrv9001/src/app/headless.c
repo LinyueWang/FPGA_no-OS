@@ -175,24 +175,28 @@ int main(void)
 		printf("axi_adc_init() failed with status %d\n", ret);
 		goto error;
 	}
+	phy.rx1_adc->clock_hz = adrv9002_init_get()->rx.rxChannelCfg[0].profile.rxOutputRate_Hz;
 
 	ret = axi_dac_init(&phy.tx1_dac, &tx1_dac_init);
 	if (ret) {
 		printf("axi_dac_init() failed with status %d\n", ret);
 		goto error;
 	}
+	phy.tx1_dac->clock_hz = adrv9002_init_get()->tx.txProfile[0].txInputRate_Hz;
 #ifndef ADRV9002_RX2TX2
 	ret = axi_adc_init(&phy.rx2_adc, &rx2_adc_init);
 	if (ret) {
 		printf("axi_adc_init() failed with status %d\n", ret);
 		goto error;
 	}
+	phy.rx2_adc->clock_hz = adrv9002_init_get()->rx.rxChannelCfg[1].profile.rxOutputRate_Hz;
 
 	ret = axi_dac_init(&phy.tx2_dac, &tx2_dac_init);
 	if (ret) {
 		printf("axi_dac_init() failed with status %d\n", ret);
 		goto error;
 	}
+	phy.tx2_dac->clock_hz = adrv9002_init_get()->tx.txProfile[1].txInputRate_Hz;
 #endif
 
 	/* Post AXI DAC/ADC setup, digital interface tuning */

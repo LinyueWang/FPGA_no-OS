@@ -128,14 +128,15 @@ int32_t axi_adc_get_sampling_freq(struct axi_adc *adc,
 				  uint32_t chan,
 				  uint64_t *sampling_freq)
 {
-	uint32_t freq;
+/*	uint32_t freq;
 	uint32_t ratio;
 
 	axi_adc_read(adc, AXI_ADC_REG_CLK_FREQ, &freq);
 	axi_adc_read(adc, AXI_ADC_REG_CLK_RATIO, &ratio);
 	*sampling_freq = freq * ratio;
 	*sampling_freq = ((*sampling_freq) * 390625) >> 8;
-
+*/
+	*sampling_freq = adc->clock_hz;
 	return SUCCESS;
 }
 
